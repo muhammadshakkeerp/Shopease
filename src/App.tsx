@@ -1,12 +1,27 @@
-import './App.css'
+import { FC } from "react";
+import { Cart, Error, Home } from "./paths";
+import { Footer, Header, ProductDatails } from "./paths";
+import { Route, Routes } from "react-router-dom";
+import { ProductDetailsProps } from "./assets/types";
 
-function App() {
-
+const App: FC<ProductDetailsProps> = () => {
   return (
-    <div className="bg-red-500/50">
-      Hello world
+    <div className="">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/productDetails/:id"
+          element={
+            <ProductDatails id={0} title={""} img={""} offerAvailable={false} />
+          }
+        />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/*" element={<Error />} />
+      </Routes>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

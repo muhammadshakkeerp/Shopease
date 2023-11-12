@@ -15,6 +15,9 @@ body{
 .primary-bg-h:hover {
   background:#6778b0;
 }
+.footer-bg{
+  background-color: #172337;
+}
 /* bg end */
 /* fonts */
 .primary-font {

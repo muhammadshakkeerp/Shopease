@@ -1,6 +1,6 @@
 import { FooterDataProps } from "./types";
 
-const footerData: FooterDataProps = {
+export const footerData: FooterDataProps = {
   aboutFlipkart: {
     heading: "Flipkart: The One-stop Shopping Destination",
     content:
@@ -33,4 +33,39 @@ const footerData: FooterDataProps = {
   },
 };
 
-export default footerData;
+export const  footerLinks = [
+  {
+    title: 'About Us',
+    links: [
+      { text: 'Company Information', url: '/company-info' },
+      { text: 'Contact Us', url: '/contact' },
+      { text: 'Careers', url: '/careers' },
+    ],
+  },
+  {
+    title: 'Help',
+    links: [
+      { text: 'Payments', url: '/payments' },
+      { text: 'Shipping', url: '/shipping' },
+      { text: 'Cancellation & Returns', url: '/returns' },
+      { text: 'FAQ', url: '/faq' },
+    ],
+  },
+  {
+    title: 'Policy',
+    links: [
+      { text: 'Return Policy', url: '/return-policy' },
+      { text: 'Terms Of Use', url: '/terms' },
+      { text: 'Security', url: '/security' },
+      { text: 'Privacy', url: '/privacy' },
+    ],
+  },
+  {
+    title: 'Social',
+    links: [
+      { text: 'Facebook', url: 'https://www.facebook.com/flipkart' },
+      { text: 'Twitter', url: 'https://twitter.com/flipkart' },
+      { text: 'Instagram', url: 'https://www.instagram.com/flipkart/' },
+    ],
+  },
+];

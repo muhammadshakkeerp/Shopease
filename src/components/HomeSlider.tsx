@@ -23,6 +23,7 @@ const HomeSlider = () => {
       const nextImg = (currentImg + 1) % bannerImgArray.length;
       setCurrentImg(nextImg);
     }, 2000);
+    console.log(currentImg)
     return () => clearInterval(timer);
   }, [currentImg]);
 

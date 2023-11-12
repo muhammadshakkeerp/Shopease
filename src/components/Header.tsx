@@ -1,11 +1,18 @@
-import { cartIcon, searchIcon, userIcon } from "../assets/globalUtlities";
-import logo from "../assets/imgs/logo.svg";
+import {
+  cartIcon,
+  headerMoreBtnData,
+  searchIcon,
+  userIcon,
+} from "../assets/globalUtlities";
+// import { useState } from "react";
+import logo from "/imgs/logo.svg";
 import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai";
 import { PiDotsThreeVerticalBold } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
 export function Header() {
+  // const [isHovered, setHovered] = useState(false);
   return (
     <header className="h-[104px]  bg-[#2874f0] md:bg-white md:h-[66px] flex items-center justify-around md:justify-between overflow-hidden">
       {/* Logo */}
@@ -35,18 +42,29 @@ export function Header() {
           <AiOutlineHome />
           <p className="hidden lg:block">Become a Seller</p>
         </button>
-        <div className="flex p-2 cursor-pointer group primary-bg-h rounded-md">
+        <Link
+          to={"/login"}
+          className="flex p-2 cursor-pointer group primary-bg-h rounded-md"
+        >
           <img src={userIcon} alt="user" className=" group-hover:text-white" />
           <button className="hidden lg:block">Sign in </button>
           <span className="transition-transform transform-gpu  ease-in-out group-hover:rotate-180">
             <BiChevronDown />
           </span>
+        </Link>
+        <div className="group">
+          <button>More</button>
+          <ul className="hidden group-hover:flex flex-col w-48  absolute  right-5 top-10 bg-white border border-blue-800 z-50">
+            {headerMoreBtnData?.map((data) => (
+              <li key={data} className=" border px-5 py-5" >{data}</li>
+            ))}
+          </ul>
         </div>
-
         <Link to={"/cart"}>
           <img src={cartIcon} alt="cart_icon" />
         </Link>
         <PiDotsThreeVerticalBold />
+       
       </div>
     </header>
   );

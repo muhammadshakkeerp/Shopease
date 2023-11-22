@@ -11,6 +11,7 @@ const CustomProductsRows = () => {
         {rowProductsData?.map((product,index) => (
           <ProductCard index={index} key={index}
             product={{
+              id:product.id,
               title: product.title,
               img: product.img,
               offerAvailable: false,

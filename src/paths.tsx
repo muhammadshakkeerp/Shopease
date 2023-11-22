@@ -14,6 +14,7 @@ import { ProductDatails } from "./components/ProductDatails";
 import { SearchBar } from "./components/SearchBar";
 import { ProductCard } from "./components/ProductCard";
 import { Footer } from "./components/Footer";
+import { PopupCard } from "./components/PopuUpLikeBtn";
 
 export {
   CatogoryToggles,
@@ -30,6 +31,7 @@ export {
   Offer,
   ProductDatails,
   SearchBar,
+  PopupCard,
   ProductCard,
   Footer,
 };

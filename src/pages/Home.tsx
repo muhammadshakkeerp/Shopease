@@ -1,4 +1,9 @@
-import { CustomProductsRows, HeaderCatogory, HomeSlider, Offer } from "../paths";
+import {
+  CustomProductsRows,
+  HeaderCatogory,
+  HomeSlider,
+  Offer,
+} from "../paths";
 
 type Props = {};
 

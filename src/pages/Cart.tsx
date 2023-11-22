@@ -1,4 +1,6 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 // Sample product data
 const products = [
@@ -18,6 +20,10 @@ const products = [
 ];
 
 const Cart: React.FC = () => {
+
+  const cart = useSelector((state:RootState)=>state.cart)
+
+  console.log(cart.items.length)
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-semibold mb-4">My Cart</h1>
@@ -29,11 +35,11 @@ const Cart: React.FC = () => {
         )}
         {products.map((product) => (
           <div key={product.id} className="bg-white p-4 rounded-lg shadow">
-            <img
+            {/* <img
               src={product.image}
               alt={product.name}
               className="w-full h-48 object-contain"
-            />
+            /> */}
             <div className="mt-2">
               <p className="text-lg font-semibold">{product.name}</p>
               <p className="text-gray-600">{product.price}</p>

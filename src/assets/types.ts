@@ -24,9 +24,19 @@ interface FooterDataProps {
   [section: string]: FooterDataItem;
 }
 
+type headerCategoriesProps = {
+  category: string;
+  title: string;
+  subItems: {
+    name: string;
+    id: string;
+  }[];
+}[];
+
 export type {
   HeaderCategoriesProps,
   RowProductsProps,
   ProductDetailsProps,
   FooterDataProps,
+  headerCategoriesProps
 };

@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  flipkart:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5180:5173" # Map the container's port 3000 to the host machine's port 3000
+    volumes:
+      - .:/usr/src/app # Enable live code reloading by mounting the current directory to the container
+    environment:
+      - NODE_ENV=development # Set Node environment to development

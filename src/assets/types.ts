@@ -4,13 +4,13 @@ type HeaderCategoriesProps = {
 }[];
 
 type RowProductsProps = {
-  id: number;
+  id:   number ;
   title: string;
   img: string;
   offerAvailable: boolean;
 }[];
 type ProductDetailsProps = {
-  id: number;
+  id:   number ;
   title: string;
   img: string;
   offerAvailable: boolean;
@@ -38,5 +38,5 @@ export type {
   RowProductsProps,
   ProductDetailsProps,
   FooterDataProps,
-  headerCategoriesProps
+  headerCategoriesProps,
 };

@@ -1,11 +1,12 @@
 // PopupCard.tsx
-import React, { useState } from "react";
+import React, { useState, SetStateAction } from "react";
 
 interface PopupCardProps {
   //   onClose: () => void;
+  setShowPopUp: React.Dispatch<SetStateAction<boolean>>;
 }
 
-export const PopupCard: React.FC<PopupCardProps> = () => {
+export const PopupCard: React.FC<PopupCardProps> = ({ setShowPopUp }) => {
   const [like, setLike] = useState(false);
   const [dislike, setDislike] = useState(false);
   const [isClose, setIsClose] = useState(false);
@@ -21,8 +22,11 @@ export const PopupCard: React.FC<PopupCardProps> = () => {
     setDislike(true);
     setIsClose(true);
   };
+  
   const onClose = () => {
     setIsClose(true);
+    localStorage.setItem("isPopupClosed", "true");
+    setShowPopUp(false);
   };
 
   return (
@@ -31,6 +35,12 @@ export const PopupCard: React.FC<PopupCardProps> = () => {
         isClose && "hidden"
       }`}
     >
+      <button
+        className="mt-4 px-2 py-1 bg-blue-500/20 text-white rounded-md focus:outline-none absolute -top-2 right-2"
+        onClick={onClose}
+      >
+        X
+      </button>
       <div className=" p-8 rounded-md shadow-md ">
         <p className="text-lg font-semibold mb-4 text-white">
           Like the new Design?
@@ -55,12 +65,6 @@ export const PopupCard: React.FC<PopupCardProps> = () => {
             Dislike
           </button>
         </div>
-        <button
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md focus:outline-none"
-          onClick={onClose}
-        >
-          Close
-        </button>
       </div>
     </div>
   );

@@ -1,51 +1,43 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import { RowProductsProps } from "../assets/types";
+import { removeToCart } from "../redux/actions/cartActions";
 
-// Sample product data
-const products = [
-  {
-    id: 1,
-    name: "Product 1",
-    price: "$10.99",
-    image: "product1.jpg",
-  },
-  {
-    id: 2,
-    name: "Product 2",
-    price: "$15.99",
-    image: "product2.jpg",
-  },
-  // Add more product data
-];
+type CartProps = {
+  items: RowProductsProps;
+};
 
-const Cart: React.FC = () => {
-
-  const cart = useSelector((state:RootState)=>state.cart)
-
-  console.log(cart.items.length)
+const Cart: React.FC<CartProps> = ({}) => {
+  const cart = useSelector((state: RootState) => state.cart);
+  const dispatch = useDispatch();
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-semibold mb-4">My Cart</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {products.length === 0 && (
+        {cart?.items?.length === 0 ? (
           <div className="h-[50vh] w-full flex justify-center items-center">
             empty
           </div>
-        )}
-        {products.map((product) => (
-          <div key={product.id} className="bg-white p-4 rounded-lg shadow">
-            {/* <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-48 object-contain"
-            /> */}
-            <div className="mt-2">
-              <p className="text-lg font-semibold">{product.name}</p>
-              <p className="text-gray-600">{product.price}</p>
+        ) : (
+          cart?.items?.map((product) => (
+            <div key={product.id} className="bg-white p-4 rounded-lg shadow">
+              <button onClick={() => dispatch(removeToCart(product.id))}>
+                X
+              </button>
+              <img
+                src={product.img}
+                alt={product.title}
+                className="w-full h-48 object-contain"
+              />
+              <div className="mt-2">
+                <p className="text-lg font-semibold">{product.title}</p>
+                <p className="text-gray-600">{`500`}</p>
+              </div>
+              {/* The closing div tag is missing */}
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );

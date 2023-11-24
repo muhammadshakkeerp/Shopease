@@ -3,17 +3,14 @@ import { useDispatch } from "react-redux/es/exports";
 import { useParams } from "react-router-dom";
 import { rowProductsData } from "../assets/globalUtlities";
 import { ProductDetailsProps, RowProductsProps } from "../assets/types";
-import {
-  addToCart,
-  removeToCart,
-} from "../redux/actions/cartActions";
+import { addToCart, removeToCart } from "../redux/actions/cartActions";
 
-const ProductDatails: FC<ProductDetailsProps> = ({}) => {
+const ProductDatails: FC<ProductDetailsProps> = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
 
   const [showDetails, setShowDetials] = useState<RowProductsProps>([
-    { id: 0, title: "", img: "", offerAvailable: false },
+    { id:  0, title: "", img: "", offerAvailable: false },
   ]);
   const getProductDetails = () => {
     if (id) {

@@ -1,18 +1,37 @@
-type HeaderCategoriesProps = {
+type SubItem = {
+  name: string;
+  id: string;
+};
+
+export type SubCategory = {
+  
+  category: string;
+  title: string;
+  subItems: SubItem[];
+};
+
+type HeaderCategory = {
   title: string;
   img: string;
-}[];
+  subCategories: SubCategory[];
+};
+
+type  headerCategoriesProps = HeaderCategory[] 
 
 type RowProductsProps = {
   id:   number ;
   title: string;
   img: string;
+  price:number,
+  quantity:number,
   offerAvailable: boolean;
 }[];
 type ProductDetailsProps = {
   id:   number ;
   title: string;
   img: string;
+  price:number,
+  quantity:number,
   offerAvailable: boolean;
 };
 interface FooterDataItem {
@@ -24,19 +43,12 @@ interface FooterDataProps {
   [section: string]: FooterDataItem;
 }
 
-type headerCategoriesProps = {
-  category: string;
-  title: string;
-  subItems: {
-    name: string;
-    id: string;
-  }[];
-}[];
+
 
 export type {
-  HeaderCategoriesProps,
   RowProductsProps,
   ProductDetailsProps,
   FooterDataProps,
   headerCategoriesProps,
+  HeaderCategory
 };

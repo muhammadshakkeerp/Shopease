@@ -1,3 +1,5 @@
+import { FC } from "react";
+import { HeaderCategory } from "../assets/types";
 import {
   CustomProductsRows,
   HeaderCatogory,
@@ -5,16 +7,28 @@ import {
   Offer,
 } from "../paths";
 
-type Props = {};
+interface headerCategoriesProps {
+  headerCategories: HeaderCategory[]
+}
 
-function Home({}: Props) {
+
+const  Home:FC<headerCategoriesProps >=()=> {
+
   return (
     <div>
       <HomeSlider />
-      <HeaderCatogory />
+      <HeaderCatogory headerCategories={[]} />
       <Offer />
-      <CustomProductsRows />
-      <CustomProductsRows />
+      <CustomProductsRows title={"Popular Products"} />
+      <CustomProductsRows title={"Offers"} />
+      <CustomProductsRows title={undefined} />
+      <CustomProductsRows title={"Trending Products"} />
+      
+      <CustomProductsRows title={"Popular Products"} />
+      <CustomProductsRows title={"Offers"} />
+      <CustomProductsRows title={undefined} />
+      <CustomProductsRows title={"Trending Products"} />
+      
     </div>
   );
 }

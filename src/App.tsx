@@ -1,9 +1,13 @@
 import { FC, useEffect, useState } from "react";
-import { Cart, Error, Home, Login, PopupCard } from "./paths";
+import { Cart,  ColumGallery,  Home, Login, Orders, PopupCard, Profile, Rewards, Wishlist } from "./paths";
 import { Footer, Header, ProductDatails } from "./paths";
 import { Route, Routes } from "react-router-dom";
-import { ProductDetailsProps,  } from "./assets/types";
+import {  ProductDetailsProps } from "./assets/types";
 import NestedHoverNavlink from "./components/NestedHoverNavlink";
+
+
+
+// graphQl apollo client
 
 const App: FC<ProductDetailsProps> = () => {
   const [showPopUp, setShowPopUp] = useState(false);
@@ -27,11 +31,17 @@ const App: FC<ProductDetailsProps> = () => {
       {showPopUp && <PopupCard setShowPopUp={setShowPopUp} />}
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home headerCategories={[]} />} />
         <Route
           path="/productDetails/:id"
           element={
-            <ProductDatails id={0} title={""} img={""} offerAvailable={false} />
+            <ProductDatails
+              id={0}
+              title={""}
+              img={""}
+              offerAvailable={false}
+              price={0}
+              quantity={0} cart={[]}            />
           }
         />
         <Route path="/login" element={<Login />} />
@@ -44,14 +54,21 @@ const App: FC<ProductDetailsProps> = () => {
                   id: 0,
                   title: "",
                   img: "",
+                  price: 0,
+                  quantity: 0,
                   offerAvailable: false,
                 },
               ]}
             />
           }
         />
-        <Route path="/*" element={<Error />} />
+        {/* <Route path="/*" element={<Error />} /> */}
         <Route path="/nested" element={<NestedHoverNavlink />} />
+        <Route path="/productGallery" element={<ColumGallery />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/rewards" element={<Rewards />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/orders" element={<Orders />} />
       </Routes>
       <Footer />
     </div>

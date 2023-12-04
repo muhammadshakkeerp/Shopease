@@ -1,25 +1,34 @@
-// Example authentication reducer handling Firebase login state
-// The implementation would depend on your specific requirements and Firebase setup.
-// This example assumes a simple authentication state management.
+import { createReducer, PayloadAction } from "@reduxjs/toolkit";
+import { ConfirmationResult } from "firebase/auth";
+import {
+  SET_CONFIRMATION_RESULT,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
+} from "../actions/authActions";
 
-// Example auth state interface
-interface AuthState {
-    isLoggedIn: boolean;
-    // Other relevant auth state properties
-  }
-  
-  // Example initial auth state
-  const initialState: AuthState = {
-    isLoggedIn: false,
-    // Initialize other auth state properties
-  };
-  
-  const authReducer = (state = initialState, _action: any): AuthState => {
-    // Implement reducers handling authentication state changes based on actions
-    // Update state based on Firebase login, logout, OTP verification, etc.
-    // Example cases might include handling LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT actions, etc.
-    return state;
-  };
-  
-  export default authReducer;
-  
+export interface AuthState {
+  confirmationResult: ConfirmationResult | null;
+  isLoggedIn: boolean;
+}
+
+const initialState: AuthState = {
+  confirmationResult: null,
+  isLoggedIn: false,
+};
+
+const authReducer = createReducer(initialState, {
+  [SET_CONFIRMATION_RESULT]: (
+    state: AuthState,
+    action: PayloadAction<ConfirmationResult | null>
+  ) => {
+    state.confirmationResult = action.payload;
+  },
+  [LOGIN_SUCCESS]: (state: AuthState) => {
+    state.isLoggedIn = true;
+  },
+  [LOGIN_FAILURE]: (state: AuthState) => {
+    state.isLoggedIn = false;
+  },
+});
+
+export default authReducer;

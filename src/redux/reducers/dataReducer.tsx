@@ -1,36 +1,30 @@
-import {
-    FETCH_PRODUCT_REQUEST,
-    FETCH_PRODUCT_SUCCESS,
-    FETCH_PRODUCT_FAILURE,
-  } from '../actions/dataAction';
+import { DataFunctionsTypes, } from "../actions/dataAction";
+
   
-  export interface DataState {
-    loading: boolean;
-    product: any; // Define appropriate type for product data
-    error: any;
-  }
-  
-  const initialState: DataState = {
+  // Define the initial state
+  const initialState = {
     loading: false,
-    product: null,
-    error: null,
+    data: [],
+    error: '',
   };
   
-  const dataReducer = (state = initialState, action: any): DataState => {
+  // Reducer function
+  const dataReducer = (state = initialState, action: DataFunctionsTypes) => {
+    console.log(state)
     switch (action.type) {
-      case FETCH_PRODUCT_REQUEST:
+      case "FETCH_DATA_REQUEST":
         return {
           ...state,
           loading: true,
-          error: null,
         };
-      case FETCH_PRODUCT_SUCCESS:
+      case "FETCH_DATA_SUCCESS":
         return {
           ...state,
           loading: false,
-          product: action.payload,
+          data: action.payload,
+          error: '',
         };
-      case FETCH_PRODUCT_FAILURE:
+      case "FETCH_DATA_FAILURE":
         return {
           ...state,
           loading: false,

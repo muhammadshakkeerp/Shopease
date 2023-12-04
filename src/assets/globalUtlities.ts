@@ -28,8 +28,12 @@ export {
   AiOutlineRight,
 };
 
-export const headerMoreBtnData = ["Nofication & preference","24*7 customer care","Advertise","Download App"]
-
+export const headerMoreBtnData = [
+  "Nofication & preference",
+  "24*7 customer care",
+  "Advertise",
+  "Download App",
+];
 
 export const offerImgs = [
   {
@@ -57,74 +61,96 @@ export const rowProductsData = [
     id: 1,
     title: "title",
     img: "/imgs/demo_row_products/1.png",
+    price: 20,
+    quantity: 0,
     offerAvailable: true,
   },
   {
     id: 2,
     title: "title",
     img: "/imgs/demo_row_products/2.png",
+    price: 20,
+    quantity: 0,
     offerAvailable: true,
   },
   {
     id: 3,
     title: "title",
     img: "/imgs/demo_row_products/3.png",
+    price: 20,
+    quantity: 0,
     offerAvailable: true,
   },
   {
     id: 4,
     title: "title",
     img: "/imgs/demo_row_products/4.png",
+    price: 20,
+    quantity: 0,
     offerAvailable: true,
   },
   {
     id: 5,
     title: "title",
     img: "/imgs/demo_row_products/5.png",
+    price: 20,
+    quantity: 0,
     offerAvailable: true,
   },
   {
     id: 6,
     title: "title",
     img: "/imgs/demo_row_products/6.png",
+    price: 20,
+    quantity: 0,
     offerAvailable: true,
   },
   {
     id: 7,
     title: "title",
     img: "/imgs/demo_row_products/7.png",
+    price: 20,
+    quantity: 0,
     offerAvailable: true,
   },
   {
     id: 8,
     title: "title",
     img: "/imgs/demo_row_products/8.png",
+    price: 20,
+    quantity: 0,
     offerAvailable: true,
   },
   {
     id: 9,
     title: "title",
     img: "/imgs/demo_row_products/8.png",
+    price: 20,
+    quantity: 0,
     offerAvailable: true,
   },
   {
     id: 10,
     title: "title",
     img: "/imgs/demo_row_products/8.png",
+    price: 20,
+    quantity: 0,
     offerAvailable: true,
   },
   {
     id: 11,
     title: "title",
     img: "/imgs/demo_row_products/8.png",
+    price: 20,
+    quantity: 0,
     offerAvailable: true,
   },
   {
     id: 12,
     title: "title",
     img: "/imgs/demo_row_products/8.png",
+    price: 20,
+    quantity: 0,
     offerAvailable: true,
   },
 ];
-
-

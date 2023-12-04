@@ -1,29 +1,55 @@
-// import firebase from "../../firebase/firebase";
+import { Action,  } from "@reduxjs/toolkit";
+import { ThunkAction } from "redux-thunk";
+import { RootState } from "../store"; // Update the path as per your file structure
+import {
+  ConfirmationResult,
+  getAuth,
+  signInWithPhoneNumber,
+} from "firebase/auth";
 
-// // Example action creators for Firebase auth
-// export const loginWithMobile = (mobileNumber: string) => {
-//   // Implement Firebase login logic here
-//   // Example: Firebase authentication using mobile number
-//   firebase.auth().signInWithPhoneNumber(mobileNumber, ...)
-//   .then((confirmationResult) => {
-//     // Handle OTP confirmation
-//     // Dispatch action to handle success or failure
-//   })
-//   .catch((error:any) => {
-//     // Handle error
-//     // Dispatch action to handle failure
-//   });
-// };
+// Action Types
+export const SET_CONFIRMATION_RESULT = "SET_CONFIRMATION_RESULT";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAILURE = "LOGIN_FAILURE";
 
-// export const forgotPassword = (email: string) => {
-//   // Implement Firebase logic for password recovery
-//   // Example: Firebase password reset logic
-//   firebase.auth().sendPasswordResetEmail(email)
-//   .then(() => {
-//     // Dispatch action for successful password reset
-//   })
-//   .catch((error:any) => {
-//     // Handle error
-//     // Dispatch action to handle failure
-//   });
-// };
+interface setConfirmationResultAction {
+  type: typeof SET_CONFIRMATION_RESULT;
+  payload: ConfirmationResult | null;
+}
+
+// Action Creators
+export const setConfirmationResult = (
+  confirmationResult: ConfirmationResult | null
+): setConfirmationResultAction => ({
+  type: SET_CONFIRMATION_RESULT,
+  payload: confirmationResult,
+});
+
+export const loginSuccess = (): Action => ({
+  type: LOGIN_SUCCESS,
+});
+
+export const loginFailure = (): Action => ({
+  type: LOGIN_FAILURE,
+});
+
+// Async action to sign in with phone number
+export const signInWithPhoneNumberAction = (
+  phoneNumber: string,
+  appVerifier: any
+): ThunkAction<void, RootState, undefined, Action<string>> => {
+  return async (dispatch) => {
+    const auth = getAuth();
+    try {
+      const confirmationResult = await signInWithPhoneNumber(
+        auth,
+        phoneNumber,
+        appVerifier
+      );
+      dispatch(setConfirmationResult(confirmationResult));
+    } catch (error) {
+      dispatch(loginFailure());
+      // Handle error (SMS not sent)
+    }
+  };
+};

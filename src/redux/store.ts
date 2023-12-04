@@ -2,22 +2,30 @@ import { configureStore, Middleware } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import cartReducer from "./reducers/cartReducer";
 import searchReducer from "./reducers/searchReducer";
-import authReducer from "./reducers/authReducer";
+// import authReducer, { AuthState } from "./reducers/authReducer";
+import dataReducer from "./reducers/dataReducer";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 
+// Define Apollo Client
+export const client = new ApolloClient({
+  uri: "http://localhost:3000/graphql",
+  cache: new InMemoryCache(),
+});
 
-
-export type CartState = ReturnType<typeof cartReducer>
+export type CartState = ReturnType<typeof cartReducer>;
+export type DataState = ReturnType<typeof dataReducer>;
 
 export type RootState = {
-  cart:CartState
-}
+  cart: CartState;
+  data: DataState;
+  // auth: AuthState;
+};
 
-// Combine all reducers
 const rootReducer = combineReducers({
   cart: cartReducer,
+  data: dataReducer,
   search: searchReducer,
-  auth: authReducer,
-  // Add other reducers here if needed
+  // auth: authReducer,
 });
 
 // Define any additional middleware here

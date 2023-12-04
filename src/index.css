@@ -5,8 +5,13 @@
 
 body{
   background-color: #f1f2f4;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+/* hide scrollbar */
+::-webkit-scrollbar-thumb{
+  display: none;
+}
 
 /* bg */
 .primary-bg {
@@ -26,31 +31,33 @@ body{
 .category-font {
   font-size: 20px;
 }
+.text-color{
+  color: #212121;
+}
 .mob-category-font {
   font-size: 16px;
 }
 .font-fam {
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
+
 .font-fam2{
   font-family: inter_semi_bold,fallback-inter_semi_bold,Arial,sans-serif;
 }
 /* end fonts */
 
 /* imgs */
-.banner-img-w {
-}
+
 .header-category-img {
   width: 92px;
 }
-/* end - imgs */
 
 /* padding */
 .header-category-img-p{
-    padding:16px;
+    padding:10px;
 }
 .mob-header-category-img-p{
-    padding:12px 12px 8px;
+    padding:5px;
 }
 .category-name-p {
     padding: 16px 12px;

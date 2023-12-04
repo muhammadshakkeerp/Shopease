@@ -1,52 +1,38 @@
 import { rowProductsData } from "../../assets/globalUtlities";
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/cartActions";
+import { ProductProps } from "../../types/globalTypes";
+import { CartFunctionType, CartAction } from "../actions/cartActions";
 
 export interface CartState {
-  items: {
-    id: number;
-    title: string;
-    img: string;
-    offerAvailable: boolean;
-  }[];
+  cart: ProductProps[];
 }
 
 const initialState: CartState = {
-  items: [],
+  cart: [],
 };
 
-const cartReducer = (state = initialState, action: any) => {
+const cartReducer = (state = initialState, action: CartFunctionType) => {
   switch (action.type) {
-    case ADD_TO_CART:
+    case CartAction.ADD_TO_CART:
       // Do not re-add if already added
-      const isAlreadyAdded = state.items.some(
-        (product) => product.id === action.payload.itemId
+      const isAlreadyAdded = state.cart.some(
+        (product) => product.id === action.payload
       );
 
-      let findAddedItem: {
-        id: number;
-        title: string;
-        img: string;
-        offerAvailable: boolean;
-      }[] = [];
+      let addedItem: ProductProps[] = [];
       if (!isAlreadyAdded) {
-        findAddedItem = rowProductsData?.filter(
-          (item) => item.id === action.payload.itemId
+        addedItem = rowProductsData?.filter(
+          (item) => item.id === action.payload
         );
       }
-      if (findAddedItem) {
-        return {
-          ...state,
-          items: [...state.items, ...findAddedItem],
-        };
+      if (addedItem) {
+        return { ...state, cart: [...state.cart, ...addedItem] };
       }
       return state;
 
-    case REMOVE_FROM_CART:
+    case CartAction.REMOVE_FROM_CART:
       return {
         ...state,
-        items: state?.items?.filter(
-          (item) => item.id != action.payload.itemId
-        ),
+        cart: state?.cart?.filter((item) => item.id != action.payload),
       };
     default:
       return state;

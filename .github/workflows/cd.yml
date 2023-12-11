@@ -20,7 +20,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to Netlify
-        uses: netlify/actions/cli@v1
+        uses: netlify/actions/cli@v2.0
         with:
           args: deploy --prod
         # env:

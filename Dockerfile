@@ -1,5 +1,5 @@
 # Use the Node.js image as the base image
-FROM node:latest
+FROM node:alpine AS builder
 
 # Set the working directory inside the container
 WORKDIR /usr/src/app
@@ -16,8 +16,17 @@ COPY . .
 # Build your application (replace with your build command)
 RUN npm run build
 
+# Use a minimal production image
+FROM node:alpine
+
+WORKDIR /usr/src/app
+
+COPY --from=builder /usr/src/app/dist ./dist
+COPY package.json package-lock.json ./
+RUN npm install --only=production
+
 # Expose the port your app is running on (if needed)
 EXPOSE 5173
 
 # Start the app in development mode
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "dev"]   

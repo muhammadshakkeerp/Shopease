@@ -13,6 +13,9 @@ RUN npm install
 # Copy all project files to the working directory
 COPY . .
 
+# Build your application (replace with your build command)
+RUN npm run build
+
 # Expose the port your app is running on (if needed)
 EXPOSE 5173
 

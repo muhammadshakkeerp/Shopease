@@ -49,6 +49,7 @@ console.log(inViewport && inViewport)
     }
     // console.log(e);
   };
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleScroll = (_e: React.UIEvent<HTMLDivElement>) => {
     // e.preventDefault(); // Prevent the default window scroll behavior when using touch events (optional)
   };

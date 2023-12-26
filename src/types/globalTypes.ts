@@ -8,7 +8,7 @@ interface ProductProps {
 }
 
 interface GraphProducts {
-  data: any;
+  data: unknown;
   id: number;
   title: string;
   image: string;

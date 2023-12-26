@@ -1,13 +1,14 @@
 import {
-  cartIcon,
   headerMoreBtnData,
   searchIcon,
-  userIcon,
 } from "../assets/globalUtlities";
 import logo from "/logo.png";
 import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai";
 import { PiDotsThreeVerticalBold } from "react-icons/pi";
+import {CgProfile} from 'react-icons/cg' 
+import { MdOutlineMenu } from "react-icons/md";
+import {BsCart} from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import { RootState } from "../redux/store";
 import { useSelector } from "react-redux";
@@ -27,17 +28,22 @@ export function Header() {
 
   const [showHoverItem, setShowHoverItem] = useState<boolean>(false);
   return (
-    <header className="h-[104px]  bg-[#2874f0] md:bg-white md:h-[66px] flex items-center justify-around  flex-col-reverse md:flex-row  md:justify-between relative">
+    <header className="h-[50px] bg-white md:h-[66px] flex items-center justify-around   md:flex-row  md:justify-between relative">
       {/* Logo */}
-      <Link to={`/`} className="absolute z-30 top-[20px] left-[20px] md:left-0 md:flex flex-col">
-        <img src={logo} alt="logo" className="w-[100px] md:w-[150px]" />
-        {/* <h4 className=" text-[#a1a09e] primary-font font-fam2 ">
+
+      <div className="flex items-center gap-4 md:gap-0">
+        <MdOutlineMenu className="md:hidden" />
+        <Link to={`/`} className=" z-30 top-[20px] left-[20px] md:left-0 md:flex flex-col">
+          <img src={logo} alt="logo" className="w-[100px] md:w-[150px] object-none" />
+          {/* <h4 className=" text-[#a1a09e] primary-font font-fam2 ">
           Explore<span className="text-[#ffc200]">Plus</span>
           <img src="" alt="" />
         </h4> */}
-      </Link>
+        </Link>
+      </div>
       {/* Searchbar */}
-      <div className="flex items-center border-2 border-none w-full md:w-[600px] bg-[#f0f5ff] h-[40px] px-2 rounded-md">
+
+      <div className="hidden md:flex items-center border-2 border-none w-full  md:w-2/3 bg-[#f0f5ff] h-[40px] px-2 rounded-md">
         <img
           src={searchIcon}
           alt="serach_icon"
@@ -46,47 +52,50 @@ export function Header() {
         <input
           type="text"
           placeholder="Search for Products,Brands and More"
-          className=" border-none bg-transparent outline-none h-[40px]  md:w-[570px] text-[10px] md:text-[18px] placeholder-[#717478] pl-5"
+          className=" md:w-full border-none bg-transparent outline-none h-[40px]   text-[10px] md:text-[18px] placeholder-[#717478] pl-5"
         />
       </div>
       {/* third */}
-      <div className="flex gap-3 lg:gap-0 items-center justify-between w-[40%] lg:w-[540px] font-fam">
+      <div className="flex gap-3 lg:gap-0 items-center justify-evenly w-[40%] lg:w-1/3 font-fam">
         <button className="hidden md:flex lg:ml-2 lg:gap-2">
           <AiOutlineHome />
           <p className="hidden lg:block primary-font">Become a Seller</p>
         </button>
-        <Link
-          to={"/login"}
-          className="flex p-2 cursor-pointer group primary-bg-h rounded-md relative"
-          onMouseEnter={() => setShowHoverItem(true)}
-          onMouseLeave={() => setShowHoverItem(false)}
-        >
-          <img src={userIcon} alt="user" className=" group-hover:text-white" />
-          <button className="hidden lg:block primary-fon">Login</button>
-          <span className="hidden lg:block transition-transform transform-gpu  ease-in-out group-hover:rotate-180">
-            <BiChevronDown />
-          </span>
-          {showHoverItem && (
-            <ul className="hidden md:flex flex-col primary-font font-[400] absolute z-50 bg-white md:px-[10px] md:py-[15px] md:w-[200px] md:top-[40px] md:right-[20px]">
-              {logginArray?.map((item) => (
-                <Link key={item.id} to={`/${item.id}`}>
-                  <li key={item.id} className="py-1 ">
-                    {item.value}
-                  </li>
-                </Link>
-              ))}
-            </ul>
-          )}
-        </Link>
-
-        <Link to={"/cart"}>
-          <div className="relative ">
-            <img src={cartIcon} alt="cart_icon" />
-            <span className="absolute bg-red-500/50 px-1 rounded-full -top-4 -right-2">
-              {cart?.cart?.length > 0 && cart?.cart?.length}
+        <div className="flex items-center gap-4">
+          {/* Login  icon */}
+          <Link
+            to={"/login"}
+            className="flex p-2 cursor-pointer group primary-bg-h rounded-md relative"
+            onMouseEnter={() => setShowHoverItem(true)}
+            onMouseLeave={() => setShowHoverItem(false)}
+          >
+            <CgProfile className=" group-hover:text-white" />
+            <button className="hidden lg:block primary-fon">Login</button>
+            <span className="hidden lg:block transition-transform transform-gpu  ease-in-out group-hover:rotate-180">
+              <BiChevronDown />
             </span>
-          </div>
-        </Link>
+            {showHoverItem && (
+              <ul className="hidden md:flex flex-col primary-font font-[400] absolute z-50 bg-white md:px-[10px] md:py-[15px] md:w-[200px] md:top-[40px] md:right-[20px]">
+                {logginArray?.map((item) => (
+                  <Link key={item.id} to={`/${item.id}`}>
+                    <li key={item.id} className="py-1 ">
+                      {item.value}
+                    </li>
+                  </Link>
+                ))}
+              </ul>
+            )}
+          </Link>
+          {/* Cart icon */}
+          <Link to={"/cart"}>
+            <div className="relative ">
+            <BsCart/>
+              <span className="absolute bg-red-500/50 px-1 rounded-full -top-4 -right-2">
+                {cart?.cart?.length > 0 && cart?.cart?.length}
+              </span>
+            </div>
+          </Link>
+        </div>
 
         <div className="hidden md:flex group">
           <button>

@@ -13,6 +13,9 @@ RUN npm install
 # Copy all project files to the working directory
 COPY . .
 
+# Install Vite globally or run commands directly using npx
+RUN npm install -g vite
+
 # Build your application (replace with your build command)
 RUN npm run build
 
@@ -29,4 +32,4 @@ RUN npm install --only=production
 EXPOSE 5173
 
 # Start the app in development mode
-CMD ["npm", "run", "dev"]   
+CMD ["npm", "run", "dev"]

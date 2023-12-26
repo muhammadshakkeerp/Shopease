@@ -19,6 +19,8 @@ import { Profile } from "./components/Profile";
 import { Wishlist } from "./components/WishList";
 import { Orders } from "./components/Orders";
 import { Login } from "./firebase/Login";
+import { ProductGroupsTab } from "./components/ProductGroupsTab";
+import {ProductFilterSiderbar} from "./components/ProductFilterSiderbar"
 
 export {
   CatogoryToggles,
@@ -41,14 +43,17 @@ export {
   SearchBar,
   PopupCard,
   ProductCard,
+  ProductGroupsTab,
+  ProductFilterSiderbar,
   Footer,
 };
 
 // pages
 import { default as Home } from "./pages/Home";
 import { default as Cart } from "./pages/Cart";
+import  ProductsGroup  from "./pages/ProductsGroup";
 import { default as Error } from "./pages/Error";
 import { default as RowGallery } from "./pages/RowGallery";
 import { default as ColumGallery } from "./pages/ColumGallery";
 
-export { Home, Cart, Error, RowGallery, ColumGallery };
+export { Home, Cart, Error, RowGallery, ColumGallery, ProductsGroup };

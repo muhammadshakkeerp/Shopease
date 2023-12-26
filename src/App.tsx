@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from "react";
-import { Cart,  ColumGallery,  Home, Login, Orders, PopupCard, ProductsGroup, Profile, Rewards, Wishlist } from "./paths";
+import { Cart, ColumGallery, Home, Login, Orders, PopupCard, ProductsGroup, Profile, Rewards, Wishlist } from "./paths";
 import { Footer, Header, ProductDatails } from "./paths";
 import { Route, Routes } from "react-router-dom";
-import {  ProductDetailsProps } from "./assets/types";
+import { ProductDetailsProps } from "./assets/types";
 import NestedHoverNavlink from "./components/NestedHoverNavlink";
 
 
@@ -11,6 +11,7 @@ import NestedHoverNavlink from "./components/NestedHoverNavlink";
 
 const App: FC<ProductDetailsProps> = () => {
   const [showPopUp, setShowPopUp] = useState(false);
+  const [darkMode, setDarkMode] = useState(false)
 
   // after 4 sec of initial loading
   useEffect(() => {
@@ -27,9 +28,9 @@ const App: FC<ProductDetailsProps> = () => {
   }, []);
 
   return (
-    <div className="">
+    <div className={`${darkMode && "dark:bg-dark dark:text-lightText"}`}>
       {showPopUp && <PopupCard setShowPopUp={setShowPopUp} />}
-      <Header />
+      <Header setDarkMode={setDarkMode} darkMode={darkMode} />
       <Routes>
         <Route path="/" element={<Home headerCategories={[]} />} />
         <Route
@@ -41,7 +42,7 @@ const App: FC<ProductDetailsProps> = () => {
               img={""}
               offerAvailable={false}
               price={0}
-              quantity={0} cart={[]}            />
+              quantity={0} cart={[]} />
           }
         />
         <Route path="/login" element={<Login />} />
@@ -63,7 +64,7 @@ const App: FC<ProductDetailsProps> = () => {
           }
         />
         {/* <Route path="/*" element={<Error />} /> */}
-        <Route path="/productsGroup" element={<ProductsGroup/>}/>
+        <Route path="/productsGroup" element={<ProductsGroup />} />
         <Route path="/nested" element={<NestedHoverNavlink />} />
         <Route path="/productGallery" element={<ColumGallery />} />
         <Route path="/profile" element={<Profile />} />

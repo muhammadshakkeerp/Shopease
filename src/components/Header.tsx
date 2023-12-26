@@ -6,15 +6,20 @@ import logo from "/logo.png";
 import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai";
 import { PiDotsThreeVerticalBold } from "react-icons/pi";
-import {CgProfile} from 'react-icons/cg' 
+import { CgDarkMode, CgProfile } from 'react-icons/cg'
 import { MdOutlineMenu } from "react-icons/md";
-import {BsCart} from 'react-icons/bs'
+import { BsCart } from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import { RootState } from "../redux/store";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { Dispatch, FC, SetStateAction, useState } from "react";
 
-export function Header() {
+interface HeaderProps {
+  setDarkMode: Dispatch<SetStateAction<boolean>>;
+  darkMode:boolean
+}
+
+export const Header: FC<HeaderProps> = ({ setDarkMode ,darkMode}) => {
   const cart = useSelector((state: RootState) => state.cart);
   const logginArray = [
     { id: "newCustomer", value: "New Customer" },
@@ -89,14 +94,14 @@ export function Header() {
           {/* Cart icon */}
           <Link to={"/cart"}>
             <div className="relative ">
-            <BsCart/>
+              <BsCart />
               <span className="absolute bg-red-500/50 px-1 rounded-full -top-4 -right-2">
                 {cart?.cart?.length > 0 && cart?.cart?.length}
               </span>
             </div>
           </Link>
         </div>
-
+        <button onClick={()=>setDarkMode(!darkMode)}><CgDarkMode /></button>
         <div className="hidden md:flex group">
           <button>
             <PiDotsThreeVerticalBold />

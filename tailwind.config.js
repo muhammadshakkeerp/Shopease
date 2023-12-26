@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode:"class",
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -13,7 +14,10 @@ export default {
         lightGray:"#D1D5DB"
       },
       colors:{
-        lightGray:"#D1D5DB"
+        dark:"#1A202C",
+        lightText:"#FFFFFF",
+        lightGray:"#D1D5DB",
+        primary:"#2874f0"
       },
       
       
@@ -27,6 +31,7 @@ export default {
           alignItems: 'center',
           justifyContent: 'center',
         },
+        
       };
       addUtilities(newUtilities, ['responsive', 'hover']);
     },

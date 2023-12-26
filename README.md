@@ -1,3 +1,4 @@
+![zqlOUxCwBw](https://github.com/MuhammadShakkeer2030/flipkart_clone/assets/121001685/567ea6af-fb9f-475a-bc5b-482bc8aef3e4)
 
 
 # Flikart clone
@@ -12,7 +13,7 @@ Before getting started, ensure you have Node.js and npm installed on your machin
 
 ```bash
 # Clone the repository
-git clone [repository URL]
+git clone https://github.com/MuhammadShakkeer2030/flipkart_clone.git
 
 # Navigate to the project directory
 cd flikart
@@ -40,6 +41,16 @@ To run tests:
 ```bash
 npm test
 ```
+
+## Key Features
+
+  - Add-to-Cart
+  - Header + Dropdown menu
+  - Image slider
+  - Product Details
+  - Login Section
+  - Order & Wishlist section
+
 
 ## Technologies Used
 

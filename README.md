@@ -1,27 +1,80 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# Flikart clone
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Description
 
-## Expanding the ESLint configuration
+Flikart is a project developed for [briefly describe the purpose or goal of the project]. It incorporates various technologies and libraries to achieve [mention the key goals].
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation
 
-- Configure the top-level `parserOptions` property like this:
+Before getting started, ensure you have Node.js and npm installed on your machine.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```bash
+# Clone the repository
+git clone [repository URL]
+
+# Navigate to the project directory
+cd flikart
+
+# Install dependencies
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Usage
+
+To run the development server:
+
+```bash
+npm run dev
+```
+
+To build the project:
+
+```bash
+npm run build
+```
+
+To run tests:
+
+```bash
+npm test
+```
+
+## Technologies Used
+
+- **Frontend:**
+  - React
+  - Redux Toolkit
+  - Tailwind CSS
+  - Apollo Client
+  - React Router Dom
+  - Firebase
+  - GraphQL
+  - Jest
+
+- **Dev Dependencies:**
+  - TypeScript
+  - ESLint
+  - Vite
+
+## Folder Structure
+
+```plaintext
+flikart/
+│
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── utils/
+│   └── App.tsx
+│
+├── public/
+│   ├── index.html
+│   └── ...
+│
+├── package.json
+├── tsconfig.json
+└── ...
+```
+

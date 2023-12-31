@@ -45,6 +45,7 @@ npm test
 ## Key Features
 
   - Add-to-Cart
+  - Dark Mode
   - Header + Dropdown menu
   - Image slider
   - Product Details

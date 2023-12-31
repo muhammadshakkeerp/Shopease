@@ -11,9 +11,11 @@ export default {
         robo:['Roboto','sans-serif']
       },
       backgroundColor:{
-        lightGray:"#D1D5DB"
+        lightGray:"#D1D5DB",
+        darkModeBg:"#1f2937"
       },
       colors:{
+        darkModeText:"#FFFFFF",
         dark:"#1A202C",
         lightText:"#FFFFFF",
         lightGray:"#D1D5DB",

@@ -1,17 +1,21 @@
 import { ProductCard } from "../paths";
 import { AiOutlineRight, rowProductsData } from "../assets/globalUtlities";
 import { Link } from "react-router-dom";
-import {useState,useEffect, useRef, WheelEvent, FC } from "react";
+import { useState, useEffect, useRef, WheelEvent, FC } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 interface RowProps {
-  title:string | undefined
+  title: string | undefined
 }
 
-const CustomProductsRows:FC<RowProps> = ({title}) => {
+const CustomProductsRows: FC<RowProps> = ({ title }) => {
   console.log(title)
+  // Darkmode
+  const darkMode = useSelector((state: RootState) => state?.dark)
   // INTERSECTION OBSERVER - LAZY LOADING
   const [inViewport, setInViewport] = useState(false);
-console.log(inViewport && inViewport)
+  console.log(inViewport && inViewport)
   useEffect(() => {
     const options = {
       root: null,
@@ -54,7 +58,7 @@ console.log(inViewport && inViewport)
     // e.preventDefault(); // Prevent the default window scroll behavior when using touch events (optional)
   };
   return (
-    <div className="relative bg-white m-2" onWheel={handleScroll} >
+    <div className={`relative ${darkMode?.isEnabled ? "bg-darkModeBg text-darkModeText" : "bg-white"} m-2 `} onWheel={handleScroll} >
       <Link to="/productGallery">
         {
           <AiOutlineRight className="absolute right-0 top-2 bg-blue-500 text-white rounded-full text-[14px] md:text-[20px] " />
@@ -65,9 +69,8 @@ console.log(inViewport && inViewport)
         {title}
       </h5>
       <div
-        className={`flex gap-2 w-full overflow-x-auto scroll-smooth ${
-          inViewport ? "fade-in" : "opacity-0"
-        }`}
+        className={`flex gap-2 w-full overflow-x-auto scroll-smooth ${inViewport ? "fade-in" : "opacity-0"
+          }`}
         onWheel={handleWheel}
         ref={galleryRef}
       >

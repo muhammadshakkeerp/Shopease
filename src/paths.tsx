@@ -1,8 +1,5 @@
-import { CatogoryToggles } from "./components/CatogoryToggles";
-import { AddToCart } from "./components/AddToCart";
 import { CusomProductsGallery } from "./components/CusomProductsGallery";
 import { CustomProductsRows } from "./components/CustomProductsRows";
-import { FeaturedBrands } from "./components/FeaturedBrands";
 import { HalfPageAd } from "./components/HalfPageAd";
 import { Header } from "./components/Header";
 import { HeaderCatogory } from "./components/HeaderCatogory";
@@ -23,11 +20,8 @@ import { ProductGroupsTab } from "./components/ProductGroupsTab";
 import {ProductFilterSiderbar} from "./components/ProductFilterSiderbar"
 
 export {
-  CatogoryToggles,
-  AddToCart,
   CusomProductsGallery,
   CustomProductsRows,
-  FeaturedBrands,
   HalfPageAd,
   Header,
   HeaderCatogory,

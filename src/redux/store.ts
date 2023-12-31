@@ -5,6 +5,7 @@ import searchReducer from "./reducers/searchReducer";
 // import authReducer, { AuthState } from "./reducers/authReducer";
 import dataReducer from "./reducers/dataReducer";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
+import DarkReducer from "./reducers/DarkReducer";
 
 // Define Apollo Client
 export const client = new ApolloClient({
@@ -14,11 +15,13 @@ export const client = new ApolloClient({
 
 export type CartState = ReturnType<typeof cartReducer>;
 export type DataState = ReturnType<typeof dataReducer>;
+export type DarkState = ReturnType<typeof DarkReducer>;
 
 export type RootState = {
   cart: CartState;
   data: DataState;
   // auth: AuthState;
+  dark:DarkState
 };
 
 const rootReducer = combineReducers({
@@ -26,6 +29,7 @@ const rootReducer = combineReducers({
   data: dataReducer,
   search: searchReducer,
   // auth: authReducer,
+  dark:DarkReducer
 });
 
 // Define any additional middleware here

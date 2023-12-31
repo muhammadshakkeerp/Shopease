@@ -3,6 +3,8 @@ import { FC, useState } from "react";
 import { headerCategories } from "../assets/HeaderCatogoryData";
 import { HeaderCategory, SubCategory } from "../assets/types";
 import { Link } from "react-router-dom";
+import { RootState } from "../redux/store";
+import { useSelector } from "react-redux";
 
 interface headerCategoriesProps {
   headerCategories: HeaderCategory[]
@@ -14,6 +16,9 @@ export const HeaderCatogory: FC<headerCategoriesProps> = () => {
     SubCategory[] | undefined
   >([]);
 
+  // Darkmode
+  const DarkMode = useSelector((state: RootState) => state?.dark)
+
   const handleMouseEnter = (categoryName: string) => {
     setHoveredCategory(categoryName);
   };
@@ -22,7 +27,6 @@ export const HeaderCatogory: FC<headerCategoriesProps> = () => {
     setHoveredCategory(null);
   };
   const handleHoverCategory = (categoryName: string) => {
-    // console.log(categoryName);
     let foundSubCategory: SubCategory[] | undefined;
     if (categoryName) {
       const foundCategory = headerCategories.find(
@@ -33,14 +37,12 @@ export const HeaderCatogory: FC<headerCategoriesProps> = () => {
       } else {
         foundSubCategory = undefined;
       }
-      // console.log(foundSubCategory)
     }
     setFindSubCetogory(foundSubCategory);
   };
 
-  // console.log(findSubCetogory);
   return (
-    <div className="flex   gap-1 flex-shrink-0 justify-between bg-[#e4adff] md:bg-white md:gap-3 header-category-img-p  relative">
+    <div className={`flex   gap-1 flex-shrink-0 justify-between ${DarkMode?.isEnabled ? "bg-slate-800 text-white" : "bg-[#e4adff] md:bg-white"}  md:gap-3 header-category-img-p  relative`}>
       {headerCategories?.map((category, index) => (
         <Link to="/productsGroup" key={index}>
           <div

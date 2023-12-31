@@ -11,16 +11,20 @@ import { MdOutlineMenu } from "react-icons/md";
 import { BsCart } from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import { RootState } from "../redux/store";
-import { useSelector } from "react-redux";
-import { Dispatch, FC, SetStateAction, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {  FC,  useState } from "react";
+import { toggleDarkMode } from "../redux/actions/DarkModeAction";
 
 interface HeaderProps {
-  setDarkMode: Dispatch<SetStateAction<boolean>>;
-  darkMode:boolean
+  toggleDarkMode: () => void
+
 }
 
-export const Header: FC<HeaderProps> = ({ setDarkMode ,darkMode}) => {
+export const Header: FC<HeaderProps> = () => {
   const cart = useSelector((state: RootState) => state.cart);
+  const dispatch = useDispatch()
+  const darkMode = useSelector((state: RootState) => state?.dark)
+  console.log(darkMode)
   const logginArray = [
     { id: "newCustomer", value: "New Customer" },
     { id: "profile", value: "Profile" },
@@ -32,8 +36,12 @@ export const Header: FC<HeaderProps> = ({ setDarkMode ,darkMode}) => {
   ];
 
   const [showHoverItem, setShowHoverItem] = useState<boolean>(false);
+
+  const handleDarkMode = () => {
+    dispatch(toggleDarkMode())
+  }
   return (
-    <header className="h-[50px] bg-white md:h-[66px] flex items-center justify-around   md:flex-row  md:justify-between relative">
+    <header className={`h-[50px] ${darkMode?.isEnabled ? " bg-darkModeBg text-darkModeText" : "bg-white"} md:h-[66px] flex items-center justify-around   md:flex-row  md:justify-between relative`}>
       {/* Logo */}
 
       <div className="flex items-center gap-4 md:gap-0">
@@ -101,7 +109,7 @@ export const Header: FC<HeaderProps> = ({ setDarkMode ,darkMode}) => {
             </div>
           </Link>
         </div>
-        <button onClick={()=>setDarkMode(!darkMode)}><CgDarkMode /></button>
+        <button onClick={handleDarkMode}><CgDarkMode /></button>
         <div className="hidden md:flex group">
           <button>
             <PiDotsThreeVerticalBold />

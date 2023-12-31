@@ -1,7 +1,7 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { offerImgs } from '../assets/globalUtlities';
 
-const Offer = () => {
+export  const Offer = () => {
   const [numImagesToShow, setNumImagesToShow] = useState(4);
 
   useEffect(() => {
@@ -38,4 +38,4 @@ const Offer = () => {
   );
 };
 
-export { Offer };
+

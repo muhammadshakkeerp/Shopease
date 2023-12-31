@@ -4,6 +4,8 @@ import { Footer, Header, ProductDatails } from "./paths";
 import { Route, Routes } from "react-router-dom";
 import { ProductDetailsProps } from "./assets/types";
 import NestedHoverNavlink from "./components/NestedHoverNavlink";
+import { useSelector } from "react-redux";
+import { RootState } from "./redux/store";
 
 
 
@@ -11,8 +13,8 @@ import NestedHoverNavlink from "./components/NestedHoverNavlink";
 
 const App: FC<ProductDetailsProps> = () => {
   const [showPopUp, setShowPopUp] = useState(false);
-  const [darkMode, setDarkMode] = useState(false)
 
+  const DarkMode = useSelector((state: RootState) => state?.dark)
   // after 4 sec of initial loading
   useEffect(() => {
     const timeOut = setTimeout(() => {
@@ -28,9 +30,9 @@ const App: FC<ProductDetailsProps> = () => {
   }, []);
 
   return (
-    <div className={`${darkMode && "dark:bg-dark dark:text-lightText"}`}>
+    <div className={`${DarkMode?.isEnabled ? "dark:bg-darkModeBg text-darkModeText" : "bg-white"}`}>
       {showPopUp && <PopupCard setShowPopUp={setShowPopUp} />}
-      <Header setDarkMode={setDarkMode} darkMode={darkMode} />
+      <Header toggleDarkMode={() => { }} />
       <Routes>
         <Route path="/" element={<Home headerCategories={[]} />} />
         <Route

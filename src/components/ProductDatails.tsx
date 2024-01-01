@@ -58,10 +58,13 @@ const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
               <div className="flex flex-col xl:flex-row mx-auto">
                 <div className="xl:w-2/5 flex flex-col items-center relative">
                   <img src={item.img} alt={item.title} className="w-full h-[60vh] xl:h-auto object-contain border" />
-                  <BsHeart className="absolute top-4 right-4" />
-                  <div className="flex gap-4 justify-center mt-2">
-                    <button className="bg-[#ff9f00] px-6 py-3 tracking-wider font-semibold">Add To Cart</button>
-                    <button className="bg-[#fb641b] px-6 py-3 tracking-wider font-semibold">Buy Now</button>
+                  <span className="absolute top-4 right-4 p-4 rounded-md bg-gray-500"  >
+
+                    <BsHeart />
+                  </span>
+                  <div className="fixed w-full md:w-auto bottom-0 md:static  md:flex gap-4 justify-center mt-2">
+                    <button className="bg-[#ff9f00] px-6 py-3 tracking-wider font-semibold w-1/2 md:w-auto">Add To Cart</button>
+                    <button className="bg-[#fb641b] px-6 py-3 tracking-wider font-semibold w-1/2 md:w-auto">Buy Now</button>
                   </div>
                 </div>
                 <div className="max-w-3/5 mx-auto p-6">
@@ -74,10 +77,36 @@ const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
                     <p className="text-sm text-gray-600 mt-2">Available offers:</p>
                     <div className=" py-4 rounded-lg mb-4">
                       <p className="text-green-600 font-semibold">Bank Offer</p>
-                      <p className="mb-2 flex  items-start"><MdLocalOffer className="text-green-800 text-[40px]" /> 10% off on HDFC Bank Credit Card EMI Transactions, up to ₹1,500 on orders of ₹7,500 and above <span className="text-sm">(T&C)</span></p>
-                      <p className="mb-2 flex  items-start"><MdLocalOffer className="text-green-800 text-[40px]" /> 5% Cashback on Flipkart Axis Bank Card <span className="text-sm">(T&C)</span></p>
-                      <p className="mb-2 flex  items-start"><MdLocalOffer className="text-green-800 text-[40px]" /> Special Price: Get extra 29% off (price inclusive of cashback/coupon) <span className="text-sm">(T&C)</span></p>
-                      <p className="mb-2 flex  items-start"><MdLocalOffer className="text-green-800 text-[40px]" /> Combo Offer: Buy 2 items save ₹20; Buy 3-4 save ₹30; Buy 5+ save ₹50 <span className="text-sm">(See all products, T&C)</span></p>
+
+                      <div className={`flex`}>
+                        <MdLocalOffer className="text-green-800 tex-[20px] xl:text-[40px]" />
+                        <p>5% Cashback on Flipkart Axis Bank Card <span className="text-sm">(T&C)</span></p>
+                      </div>
+
+                      <div className={`flex`}>
+                        <MdLocalOffer className="text-green-800 tex-[20px] xl:text-[40px]" />
+                        <p>10% off on HDFC Bank Credit Card EMI Transactions, up to ₹1,500 on orders of ₹7,500 and above
+                          <span className="text-sm">(T&C)</span>  </p>
+                      </div>
+
+                      <div className={`flex`}>
+                        <MdLocalOffer className="text-green-800 tex-[20px] xl:text-[40px]" />
+                        <p>Special Price: Get extra 29% off (price inclusive of cashback/coupon) <span className="text-sm">(T&C)</span>
+                        </p>
+                      </div>
+                      <div className={`flex`}>
+                        <MdLocalOffer className="text-green-800 tex-[20px] xl:text-[40px]" />
+                        <p>Combo Offer: Buy 2 items save ₹20; Buy 3-4 save ₹30; Buy 5+ save ₹50 <span className="text-sm">(See all products, T&C)</span>
+                        </p>
+                      </div>
+
+                    </div>
+
+                    <div className="mb-2 flex  items-start">
+
+
+
+
                     </div>
 
                     {/* Include your available offers content here */}

@@ -81,3 +81,8 @@ body{
 
 
 /* header  */
+
+/* custom icon */
+.custom_icon_size {
+  font-size: 40px;
+}

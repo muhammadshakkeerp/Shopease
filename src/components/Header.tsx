@@ -88,7 +88,7 @@ export const Header: FC<HeaderProps> = () => {
               <BiChevronDown />
             </span>
             {showHoverItem && (
-              <ul className="hidden md:flex flex-col primary-font font-[400] absolute z-50 bg-white md:px-[10px] md:py-[15px] md:w-[200px] md:top-[40px] md:right-[20px]">
+              <ul className={`hidden md:flex flex-col primary-font font-[400] absolute z-50 ${darkMode ? "bg-darkModeBg text-darkModeText" : "bg-white"} md:px-[10px] md:py-[15px] md:w-[200px] md:top-[40px] md:right-[20px]`}>
                 {logginArray?.map((item) => (
                   <Link key={item.id} to={`/${item.id}`}>
                     <li key={item.id} className="py-1 ">

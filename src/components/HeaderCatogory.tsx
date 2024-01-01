@@ -47,7 +47,7 @@ export const HeaderCatogory: FC<headerCategoriesProps> = () => {
         <Link to="/productsGroup" key={index}>
           <div
 
-            className="mob-header-category-img-p cursor-pointer md:header-category-img-p group flex flex-col justify-between relative"
+            className="mob-header-category-img-p -[15px] cursor-pointer md:header-category-img-p group flex flex-col justify-between relative group"
             onMouseEnter={() => handleMouseEnter(category.title)}
             onMouseLeave={handleMouseLeave}
           >
@@ -67,7 +67,7 @@ export const HeaderCatogory: FC<headerCategoriesProps> = () => {
             {hoveredCategory === category.title && (
               <ul
                 onMouseEnter={() => handleHoverCategory(category.title)}
-                className="hidden md:block absolute w-[200px] top-[120px] left-0 bg-white shadow-2xl shadow-slate-700 px-2 py-1 rounded-sm z-50"
+                className={`hidden md:block absolute w-[200px] transform origin-top -translate-y-10 group-hover:-translate-y-0 transition-transform duration-300 top-[120px] left-0 ${DarkMode ? "bg-darkModeBg/90 border border-white/50 text-darkModeText" : "bg-white"} shadow-2xl shadow-slate-700 px-2 py-1 rounded-sm z-50`}
               >
                 {findSubCetogory &&
                   Array.from(findSubCetogory)?.map((item, subIndex) => (

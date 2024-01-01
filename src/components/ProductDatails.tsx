@@ -1,12 +1,13 @@
 import { useState, FC, useEffect } from "react";
 
-import {  useSelector } from "react-redux/es/exports";
+import { useSelector } from "react-redux/es/exports";
 import { useParams } from "react-router-dom";
 import { rowProductsData } from "../assets/globalUtlities";
 import { ProductDetailsProps, } from "../assets/types";
 import { CartState } from "../redux/store";
 import { ProductProps } from "../types/globalTypes";
 import { MdLocalOffer, MdLocationSearching } from "react-icons/md";
+import { BsHeart } from "react-icons/bs";
 
 const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
   const { id } = useParams();
@@ -51,20 +52,27 @@ const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
       {showDetails.length > 0 &&
         showDetails.map((item) => (
           // ProductDetails section
-          <div key={item.id} className="flex items-center justify-between">
+          <div key={item.id} className="flex items-center justify-center xl:justify-between">
             <div className="flex flex-col xl:flex-row items-start">
               {/* Left side with item details */}
               <div className="flex flex-col xl:flex-row mx-auto">
-                <img src={item.img} alt={item.title} className="w-full xl:w-2/5 h-[100vh] object-contain" />
+                <div className="xl:w-2/5 flex flex-col items-center relative">
+                  <img src={item.img} alt={item.title} className="w-full h-[60vh] xl:h-auto object-contain border" />
+                  <BsHeart className="absolute top-4 right-4" />
+                  <div className="flex gap-4 justify-center mt-2">
+                    <button className="bg-[#ff9f00] px-6 py-3 tracking-wider font-semibold">Add To Cart</button>
+                    <button className="bg-[#fb641b] px-6 py-3 tracking-wider font-semibold">Buy Now</button>
+                  </div>
+                </div>
                 <div className="max-w-3/5 mx-auto p-6">
                   <h1 className="text-3xl font-semibold mb-4">SAMSUNG Evo Plus 256 GB MicroSDXC Class 10</h1>
                   <p className="text-sm mb-2 text-gray-600 font-semibold"> <span className="h-2 bg-green-700 text-white rounded-md px-1 py-[2px]">4.4 ★</span> 4,41,04,486 Ratings & 9,287 Reviews</p>
-                  <div className="bg-gray-100 p-4 rounded-lg mb-4">
+                  <div className=" p-4 rounded-lg mb-4">
                     <p className="text-green-800 text-sm font-semibold">Special price</p>
                     <p className="text-2xl font-semibold mb-2">₹1,689 <span className="text-gray-500 text-sm line-through">₹4,999</span>  <span className="text-green-800" >66% off</span> </p>
                     {/* Add your available offers section */}
                     <p className="text-sm text-gray-600 mt-2">Available offers:</p>
-                    <div className="bg-gray-100 py-4 rounded-lg mb-4">
+                    <div className=" py-4 rounded-lg mb-4">
                       <p className="text-green-600 font-semibold">Bank Offer</p>
                       <p className="mb-2 flex  items-start"><MdLocalOffer className="text-green-800 text-[40px]" /> 10% off on HDFC Bank Credit Card EMI Transactions, up to ₹1,500 on orders of ₹7,500 and above <span className="text-sm">(T&C)</span></p>
                       <p className="mb-2 flex  items-start"><MdLocalOffer className="text-green-800 text-[40px]" /> 5% Cashback on Flipkart Axis Bank Card <span className="text-sm">(T&C)</span></p>
@@ -76,7 +84,7 @@ const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
                   </div>
 
                   {/* delivery ,  ,  */}
-                  <div className="max-w-3/5 mx-auto p-6 bg-gray-100 rounded-lg mb-4">
+                  <div className="max-w-3/5 mx-auto p-6  rounded-lg mb-4">
                     <div className=" flex gap-2 mb-4">
                       <h2 className="text-base   items-center text-black">10 Years Domestic Warranty <p className="text-primary text-sm font-semibold">Know More</p> </h2>
 
@@ -143,7 +151,7 @@ const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
                           <p><span className="font-semibold">Domestic Warranty:</span> 10 Year</p>
                         </div>
                         <div>
-                          
+
                         </div>
                       </div>
                     </div>

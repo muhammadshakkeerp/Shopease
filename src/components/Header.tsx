@@ -63,7 +63,7 @@ export const Header: FC<HeaderProps> = () => {
           className="w-[22px] opacity-50 mr-2"
         />
         <input
-          type="text"
+          type="search"
           placeholder="Search for Products,Brands and More"
           className=" md:w-full border-none bg-transparent outline-none h-[40px]   text-[10px] md:text-[18px] placeholder-[#717478] pl-5"
         />

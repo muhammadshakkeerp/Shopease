@@ -6,16 +6,22 @@ import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 
 interface RowProps {
-  title: string | undefined
+  title: string | undefined;
+  totalProductsDisplay: number  | undefined;
 }
 
-const CustomProductsRows: FC<RowProps> = ({ title }) => {
-  console.log(title)
+const CustomProductsRows: FC<RowProps> = ({ title, totalProductsDisplay }) => {
   // Darkmode
   const darkMode = useSelector((state: RootState) => state?.dark)
   // INTERSECTION OBSERVER - LAZY LOADING
   const [inViewport, setInViewport] = useState(false);
-  console.log(inViewport && inViewport)
+
+
+
+
+
+
+
   useEffect(() => {
     const options = {
       root: null,
@@ -74,7 +80,7 @@ const CustomProductsRows: FC<RowProps> = ({ title }) => {
         onWheel={handleWheel}
         ref={galleryRef}
       >
-        {rowProductsData?.map((product, index) => (
+        {rowProductsData?.slice(0, totalProductsDisplay).map((product, index) => (
           <ProductCard
             index={index}
             key={index}

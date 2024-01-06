@@ -1,4 +1,3 @@
-import { CusomProductsGallery } from "./components/CusomProductsGallery";
 import { CustomProductsRows } from "./components/CustomProductsRows";
 import { HalfPageAd } from "./components/HalfPageAd";
 import { Header } from "./components/Header";
@@ -18,10 +17,11 @@ import { Orders } from "./components/Orders";
 import { Login } from "./firebase/Login";
 import { ProductGroupsTab } from "./components/ProductGroupsTab";
 import {ProductFilterSiderbar} from "./components/ProductFilterSiderbar"
+import { Ad } from "./components/Ad";
 
 export {
-  CusomProductsGallery,
   CustomProductsRows,
+  Ad,
   HalfPageAd,
   Header,
   HeaderCatogory,

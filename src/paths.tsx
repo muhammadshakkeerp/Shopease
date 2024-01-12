@@ -1,5 +1,4 @@
 import { CustomProductsRows } from "./components/CustomProductsRows";
-import { HalfPageAd } from "./components/HalfPageAd";
 import { Header } from "./components/Header";
 import { HeaderCatogory } from "./components/HeaderCatogory";
 import { HomeBanner } from "./components/HomeBanner";
@@ -22,7 +21,6 @@ import { Ad } from "./components/Ad";
 export {
   CustomProductsRows,
   Ad,
-  HalfPageAd,
   Header,
   HeaderCatogory,
   HomeBanner,

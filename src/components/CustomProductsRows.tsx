@@ -16,12 +16,6 @@ const CustomProductsRows: FC<RowProps> = ({ title, totalProductsDisplay }) => {
   // INTERSECTION OBSERVER - LAZY LOADING
   const [inViewport, setInViewport] = useState(false);
 
-
-
-
-
-
-
   useEffect(() => {
     const options = {
       root: null,

@@ -28,7 +28,7 @@ const HomeSlider = () => {
 
   return (
     <div className=" transition-all ease-linear transform-gpu">
-      <img src={bannerImgArray[currentImg]} alt="banner_img"  />
+      <img src={bannerImgArray[currentImg]} alt="banner_img" className="w-full" />
     </div>
   );
 };

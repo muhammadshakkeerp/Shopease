@@ -1,16 +1,23 @@
-import {  Route, Routes } from "react-router-dom"
-import { AccountSidebar } from "../paths"
+import { Route, Routes } from "react-router-dom"
+import { AccountSidebar, Login, Orders, Profile, Rewards, Wishlist } from "../paths"
 
 const Account = () => {
     return (
-        <div>
+        <div className="flex justify-between">
             {/* first section */}
-            <AccountSidebar />
+            <div className="hidden xl:block w-1/5">
+                <AccountSidebar />
+            </div>
             {/* second section */}
-            <div>
+            <div className="bg-gray-500 w-full xl:w-4/5">
                 <Routes>
-                        <Route path="/login/login" element={``} />
-                </Routes>
+                    <Route path="/" element={<Account />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/rewards" element={<Rewards />} />
+                    <Route path="/wishlist" element={<Wishlist />} />
+                    <Route path="/orders" element={<Orders />} />
+                </Routes>;
             </div>
         </div>
     )

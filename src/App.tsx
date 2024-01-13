@@ -1,24 +1,11 @@
 import { FC, useEffect, useState } from "react";
-import { Account, Cart, ColumGallery, Home,  Login,  Orders, PopupCard, ProductsGroup, Profile, Rewards, Wishlist } from "./paths";
+import { Account, Cart, ColumGallery, Home,   PopupCard, ProductsGroup,} from "./paths";
 import { Footer, Header, ProductDatails } from "./paths";
 import { Route, Routes } from "react-router-dom";
 import { ProductDetailsProps } from "./assets/types";
 import NestedHoverNavlink from "./components/NestedHoverNavlink";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
-
-
-// Account Nested Routing
-const AccountRoutes:FC = () => {
-  return <Routes>
-    <Route path="/" element={<Account />} />
-    <Route path="/login" element={<Login />} />
-    <Route path="/profile" element={<Profile />} />
-    <Route path="/rewards" element={<Rewards />} />
-    <Route path="/wishlist" element={<Wishlist />} />
-    <Route path="/orders" element={<Orders />} />
-  </Routes>;
-}
 
 // graphQl apollo client
 
@@ -62,7 +49,7 @@ const App: FC<ProductDetailsProps> = () => {
           }
         />
         {/* Nested Routing... */}
-        <Route path="/account/*" element={<AccountRoutes />} />
+        <Route path="/account/*" element={<Account />} />
         {/* END -- Nested Routing... */}
 
         <Route

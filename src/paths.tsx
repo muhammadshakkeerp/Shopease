@@ -18,7 +18,6 @@ import { ProductGroupsTab } from "./components/ProductGroupsTab";
 import { ProductFilterSiderbar } from "./components/ProductFilterSiderbar"
 import { Ad } from "./components/Ad";
 import { AccountSidebar } from "./components/AccountSidebar";
-import { AccountSection } from "./components/AccountSection";
 
 export {
   CustomProductsRows,
@@ -39,7 +38,7 @@ export {
   ProductCard,
   ProductGroupsTab,
   ProductFilterSiderbar,
-  AccountSidebar, AccountSection,
+  AccountSidebar,
   Footer,
 };
 

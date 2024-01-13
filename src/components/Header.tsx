@@ -12,7 +12,7 @@ import { BsCart } from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import { RootState } from "../redux/store";
 import { useDispatch, useSelector } from "react-redux";
-import {  FC,  useState } from "react";
+import { FC, useState } from "react";
 import { toggleDarkMode } from "../redux/actions/DarkModeAction";
 
 interface HeaderProps {
@@ -90,7 +90,7 @@ export const Header: FC<HeaderProps> = () => {
             {showHoverItem && (
               <ul className={`hidden md:flex flex-col primary-font font-[400] absolute z-50 ${darkMode ? "bg-darkModeBg text-darkModeText" : "bg-white"} md:px-[10px] md:py-[15px] md:w-[200px] md:top-[40px] md:right-[20px]`}>
                 {logginArray?.map((item) => (
-                  <Link key={item.id} to={`/${item.id}`}>
+                  <Link key={item.id} to={`/login/${item.id}`}>
                     <li key={item.id} className="py-1 ">
                       {item.value}
                     </li>

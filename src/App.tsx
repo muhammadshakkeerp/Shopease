@@ -8,6 +8,16 @@ import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 
 
+// Account Nested Routing
+const AccountRoutes:FC = () => {
+  return <Routes>
+    <Route path="/" element={<Login />} />
+    <Route path="/profile" element={<Profile />} />
+    <Route path="/rewards" element={<Rewards />} />
+    <Route path="/wishlist" element={<Wishlist />} />
+    <Route path="/orders" element={<Orders />} />
+  </Routes>;
+}
 
 // graphQl apollo client
 
@@ -33,6 +43,7 @@ const App: FC<ProductDetailsProps> = () => {
     <div className={`${DarkMode?.isEnabled ? "dark:bg-darkModeBg text-darkModeText" : "bg-white"}`}>
       {showPopUp && <PopupCard setShowPopUp={setShowPopUp} />}
       <Header toggleDarkMode={() => { }} />
+
       <Routes>
         <Route path="/" element={<Home headerCategories={[]} />} />
         <Route
@@ -44,10 +55,15 @@ const App: FC<ProductDetailsProps> = () => {
               img={""}
               offerAvailable={false}
               price={0}
-              quantity={0} cart={[]} />
+              quantity={0}
+              cart={[]}
+            />
           }
         />
-        <Route path="/login" element={<Login />} />
+        {/* Nested Routing... */}
+        <Route path="/login/*" element={<AccountRoutes />} />
+        {/* END -- Nested Routing... */}
+
         <Route
           path="/cart"
           element={
@@ -65,17 +81,12 @@ const App: FC<ProductDetailsProps> = () => {
             />
           }
         />
-        {/* <Route path="/*" element={<Error />} /> */}
         <Route path="/productsGroup" element={<ProductsGroup />} />
         <Route path="/nested" element={<NestedHoverNavlink />} />
         <Route path="/productGallery" element={<ColumGallery />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/rewards" element={<Rewards />} />
-        <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/orders" element={<Orders />} />
       </Routes>
       <Footer />
-    </div>
+    </div >
   );
 };
 

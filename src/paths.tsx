@@ -15,8 +15,10 @@ import { Wishlist } from "./components/WishList";
 import { Orders } from "./components/Orders";
 import { Login } from "./firebase/Login";
 import { ProductGroupsTab } from "./components/ProductGroupsTab";
-import {ProductFilterSiderbar} from "./components/ProductFilterSiderbar"
+import { ProductFilterSiderbar } from "./components/ProductFilterSiderbar"
 import { Ad } from "./components/Ad";
+import { AccountSidebar } from "./components/AccountSidebar";
+import { AccountSection } from "./components/AccountSection";
 
 export {
   CustomProductsRows,
@@ -37,15 +39,17 @@ export {
   ProductCard,
   ProductGroupsTab,
   ProductFilterSiderbar,
+  AccountSidebar, AccountSection,
   Footer,
 };
 
 // pages
 import { default as Home } from "./pages/Home";
 import { default as Cart } from "./pages/Cart";
-import  ProductsGroup  from "./pages/ProductsGroup";
+import ProductsGroup from "./pages/ProductsGroup";
 import { default as Error } from "./pages/Error";
 import { default as RowGallery } from "./pages/RowGallery";
 import { default as ColumGallery } from "./pages/ColumGallery";
+import Account from "./pages/Accout";
 
-export { Home, Cart, Error, RowGallery, ColumGallery, ProductsGroup };
+export { Home,  Cart, Error, RowGallery, ColumGallery, ProductsGroup,Account };

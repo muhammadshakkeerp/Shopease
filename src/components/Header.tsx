@@ -1,4 +1,5 @@
 import {
+  accountLinks,
   headerMoreBtnData,
   searchIcon,
 } from "../assets/globalUtlities";
@@ -24,16 +25,7 @@ export const Header: FC<HeaderProps> = () => {
   const cart = useSelector((state: RootState) => state.cart);
   const dispatch = useDispatch()
   const darkMode = useSelector((state: RootState) => state?.dark)
-  console.log(darkMode)
-  const logginArray = [
-    { id: "newCustomer", value: "New Customer" },
-    { id: "profile", value: "Profile" },
-    { id: "flipkartPlus", value: "Flipkart pluse zone" },
-    { id: "orders", value: "Orders" },
-    { id: "wishlist", value: "WishList" },
-    { id: "rewards", value: "Rewards" },
-    { id: "gitcards", value: "Git Cards" },
-  ];
+ 
 
   const [showHoverItem, setShowHoverItem] = useState<boolean>(false);
 
@@ -77,7 +69,7 @@ export const Header: FC<HeaderProps> = () => {
         <div className="flex items-center gap-4">
           {/* Login  icon */}
           <Link
-            to={"/login"}
+            to={"/account"}
             className="flex p-2 cursor-pointer group primary-bg-h rounded-md relative"
             onMouseEnter={() => setShowHoverItem(true)}
             onMouseLeave={() => setShowHoverItem(false)}
@@ -89,8 +81,8 @@ export const Header: FC<HeaderProps> = () => {
             </span>
             {showHoverItem && (
               <ul className={`hidden md:flex flex-col primary-font font-[400] absolute z-50 ${darkMode ? "bg-darkModeBg text-darkModeText" : "bg-white"} md:px-[10px] md:py-[15px] md:w-[200px] md:top-[40px] md:right-[20px]`}>
-                {logginArray?.map((item) => (
-                  <Link key={item.id} to={`/login/${item.id}`}>
+                {accountLinks?.map((item) => (
+                  <Link key={item.id} to={`/account/${item.id}`}>
                     <li key={item.id} className="py-1 ">
                       {item.value}
                     </li>

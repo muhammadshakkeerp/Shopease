@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { Cart, ColumGallery, Home, Login, Orders, PopupCard, ProductsGroup, Profile, Rewards, Wishlist } from "./paths";
+import { Account, Cart, ColumGallery, Home,  Login,  Orders, PopupCard, ProductsGroup, Profile, Rewards, Wishlist } from "./paths";
 import { Footer, Header, ProductDatails } from "./paths";
 import { Route, Routes } from "react-router-dom";
 import { ProductDetailsProps } from "./assets/types";
@@ -11,7 +11,8 @@ import { RootState } from "./redux/store";
 // Account Nested Routing
 const AccountRoutes:FC = () => {
   return <Routes>
-    <Route path="/" element={<Login />} />
+    <Route path="/" element={<Account />} />
+    <Route path="/login" element={<Login />} />
     <Route path="/profile" element={<Profile />} />
     <Route path="/rewards" element={<Rewards />} />
     <Route path="/wishlist" element={<Wishlist />} />
@@ -61,7 +62,7 @@ const App: FC<ProductDetailsProps> = () => {
           }
         />
         {/* Nested Routing... */}
-        <Route path="/login/*" element={<AccountRoutes />} />
+        <Route path="/account/*" element={<AccountRoutes />} />
         {/* END -- Nested Routing... */}
 
         <Route

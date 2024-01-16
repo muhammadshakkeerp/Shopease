@@ -68,12 +68,11 @@ export const Header: FC<HeaderProps> = () => {
         </button>
         <div className="flex items-center gap-4">
           {/* Login  icon */}
-          <Link
-            to={"/account"}
+          <div
             className="flex p-2 cursor-pointer group primary-bg-h rounded-md relative"
             onMouseEnter={() => setShowHoverItem(true)}
             onMouseLeave={() => setShowHoverItem(false)}
-          >
+          > 
             <CgProfile className=" group-hover:text-white" />
             <button className="hidden lg:block text-sm">Login</button>
             <span className="hidden lg:block transition-transform transform-gpu  ease-in-out group-hover:rotate-180">
@@ -90,7 +89,7 @@ export const Header: FC<HeaderProps> = () => {
                 ))}
               </ul>
             )}
-          </Link>
+          </div>
           {/* Cart icon */}
           <Link to={"/cart"}>
             <div className="relative ">

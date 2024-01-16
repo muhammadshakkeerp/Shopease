@@ -29,13 +29,14 @@ export {
 };
 export  const accountLinks = [
   {id:"account",value:"Account"},
-  { id: "newCustomer", value: "New Customer" },
+  {id:"login",value:"Login"},
+  // { id: "newCustomer", value: "New Customer" },
   { id: "profile", value: "Profile" },
-  { id: "flipkartPlus", value: "Flipkart pluse zone" },
+  // { id: "flipkartPlus", value: "Flipkart pluse zone" },
   { id: "orders", value: "Orders" },
   { id: "wishlist", value: "WishList" },
   { id: "rewards", value: "Rewards" },
-  { id: "gitcards", value: "Git Cards" },
+  // { id: "gitcards", value: "Git Cards" },
 ];
 export const headerMoreBtnData = [
   "Nofication & preference",

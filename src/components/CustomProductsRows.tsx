@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect, useRef, WheelEvent, FC } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import React from "react";
 
 interface RowProps {
   title: string | undefined;

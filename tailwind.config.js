@@ -26,6 +26,10 @@ export default {
     },
   },
   plugins: [
+    // eslint-disable-next-line no-undef
+    require('tailwindcss'),
+    // eslint-disable-next-line no-undef
+    require('autoprefixer'),
     function ({ addUtilities }) {
       const newUtilities = {
         '.flexCenter': {
@@ -37,5 +41,6 @@ export default {
       };
       addUtilities(newUtilities, ['responsive', 'hover']);
     },
+  
   ],
 }

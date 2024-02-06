@@ -1,13 +1,11 @@
 import { FC, useEffect, useState } from "react";
-import { Cart, ColumGallery, Home, Login, Orders, PopupCard, ProductsGroup, Profile, Rewards, Wishlist } from "./paths";
+import { Account, Cart, ColumGallery, Home,   PopupCard, ProductsGroup,} from "./paths";
 import { Footer, Header, ProductDatails } from "./paths";
 import { Route, Routes } from "react-router-dom";
 import { ProductDetailsProps } from "./assets/types";
 import NestedHoverNavlink from "./components/NestedHoverNavlink";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
-
-
 
 // graphQl apollo client
 
@@ -33,6 +31,7 @@ const App: FC<ProductDetailsProps> = () => {
     <div className={`${DarkMode?.isEnabled ? "dark:bg-darkModeBg text-darkModeText" : "bg-white"}`}>
       {showPopUp && <PopupCard setShowPopUp={setShowPopUp} />}
       <Header toggleDarkMode={() => { }} />
+
       <Routes>
         <Route path="/" element={<Home headerCategories={[]} />} />
         <Route
@@ -44,10 +43,15 @@ const App: FC<ProductDetailsProps> = () => {
               img={""}
               offerAvailable={false}
               price={0}
-              quantity={0} cart={[]} />
+              quantity={0}
+              cart={[]}
+            />
           }
         />
-        <Route path="/login" element={<Login />} />
+        {/* Nested Routing... */}
+        <Route path="/account/*" element={<Account />} />
+        {/* END -- Nested Routing... */}
+
         <Route
           path="/cart"
           element={
@@ -65,17 +69,12 @@ const App: FC<ProductDetailsProps> = () => {
             />
           }
         />
-        {/* <Route path="/*" element={<Error />} /> */}
         <Route path="/productsGroup" element={<ProductsGroup />} />
         <Route path="/nested" element={<NestedHoverNavlink />} />
         <Route path="/productGallery" element={<ColumGallery />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/rewards" element={<Rewards />} />
-        <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/orders" element={<Orders />} />
       </Routes>
       <Footer />
-    </div>
+    </div >
   );
 };
 

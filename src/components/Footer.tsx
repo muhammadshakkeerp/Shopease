@@ -1,11 +1,9 @@
-// Footer.tsx
-
 import React from "react";
 import { footerData, footerLinks } from "../assets/footerUtility";
 import { FooterDataProps } from "../assets/types";
 import { Link } from "react-router-dom";
 
-const Footer: React.FC<FooterDataProps> = () => {
+export const Footer: React.FC<FooterDataProps> = () => {
   return (
     <div>
       <div>
@@ -17,13 +15,15 @@ const Footer: React.FC<FooterDataProps> = () => {
           return (
             <div key={index} className="opacity-40 m-0 md:mx-5">
               <p className="primary-font capitalize">{key}</p>
-              <h5 className="text-[8px] md:text-[12px]">{section.heading}</h5>
+              <h5 className="text-[0.5em] md:text-[0.75em]">{section.heading}</h5>
               <div
-                className="text-[3px] md:text-[7px]"
-                dangerouslySetInnerHTML={{ __html: section.content }}
-              />
+                className="text-[0.25em] md:text-[0.8em]"
+              // dangerouslySetInnerHTML={{ __html: section.content }}
+              >{section.content}
+              </div>
               <br />
             </div>
+
           );
         })}
       </div>
@@ -49,4 +49,4 @@ const Footer: React.FC<FooterDataProps> = () => {
   );
 };
 
-export { Footer };
+

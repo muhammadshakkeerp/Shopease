@@ -1,29 +1,27 @@
-import { DataFunctionsTypes, } from "../actions/dataAction";
+import { DataFunctionsTypes, FETCH_DATA_FAILURE, FETCH_DATA_REQUEST, FETCH_DATA_SUCCESS, } from "../actions/dataAction";
 
-
-// Define the initial state
 const initialState = {
   loading: false,
-  data: [],
+  result: [],
   error: '',
 };
 
-// Reducer function
 const dataReducer = (state = initialState, action: DataFunctionsTypes) => {
+  console.log(state)
   switch (action.type) {
-    case "FETCH_DATA_REQUEST":
+    case FETCH_DATA_REQUEST:
       return {
         ...state,
         loading: true,
       };
-    case "FETCH_DATA_SUCCESS":
+    case FETCH_DATA_SUCCESS:
       return {
         ...state,
         loading: false,
-        data: action.payload,
+        result: action.payload,
         error: '',
       };
-    case "FETCH_DATA_FAILURE":
+    case FETCH_DATA_FAILURE:
       return {
         ...state,
         loading: false,

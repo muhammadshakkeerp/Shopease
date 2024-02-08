@@ -4,13 +4,13 @@ import { useLocation } from "react-router-dom";
 import { DataState } from "../redux/store";
 import { BiHeart, BiStar } from "react-icons/bi";
 import { GraphProducts } from "../types/globalTypes";
+import { fetchData } from "../redux/actions/dataAction";
 
 const ColumGallery = () => {
   const dispatch = useDispatch();
-  // const data = useSelector((state:{data:DataState}) => state.data.data.products);
-  const data = useSelector((state: { data: DataState }) => state?.data.data);
+  const data = useSelector((state: { fetchData: DataState }) => state.fetchData);
   console.log(data);
-  console.log("Loading", data?.loading);
+  console.log("Loading", data.loading);
 
 
   const [toggleFevourite, setToggleFevourite] = useState<number[]>([]);
@@ -21,18 +21,10 @@ const ColumGallery = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    // const fetchDataAsync = async () => {
-    //   await dispatch(fetchData());
-    // }
-    // fetchDataAsync();
+    dispatch(fetchData());
   }, [pathname, dispatch]);
 
-  useEffect(() => {
-    // const fetchDataAsync = async () => {
-    //   await dispatch(fetchData());
-    // }
-    // fetchDataAsync();
-  }, []);
+
 
 
   useEffect(() => {
@@ -70,30 +62,28 @@ const ColumGallery = () => {
           transition: "opacity .5s ease-in-out"
         }}  >
 
-        {data?.map(
-          (item: GraphProducts) => (
-            <div key={item?.id} className="w-[250px] font-robo"
-            >
-              <img className="w-[200px] h-[200px]" src={item?.image} alt="img" />
-              <h3>{item?.title}</h3>
-              <h3>$ {item?.price}</h3>
-              <p className="text-sm">{item?.rating?.count}</p>
-              <p className="flex items-center">
-                <BiStar />
-                {item?.rating?.rate}
-              </p>
-              <button
-                onClick={() => setToggleFevourite((prev) => [...prev, item?.id])}
-              >
-                <BiHeart
-                  className={
-                    toggleFevourite?.includes(item.id) ? "text-yellow-500" : ""
-                  }
-                />
-              </button>
-            </div>
-          )
-        )}
+
+
+        {data && data?.result.map((item) => <div key={item?.id} className="w-[250px] font-robo"
+        >
+          <img className="w-[200px] h-[200px]" src={item?.image} alt="img" />
+          <h3>{item?.title}</h3>
+          <h3>$ {item?.price}</h3>
+          <p className="text-sm">{item?.rating?.count}</p>
+          <p className="flex items-center">
+            <BiStar />
+            {item?.rating?.rate}
+          </p>
+          <button
+            onClick={() => setToggleFevourite((prev) =>  [...prev, item?.id])}
+          >
+            <BiHeart
+              className={
+                toggleFevourite?.includes(item.id) ? "text-yellow-500" : ""
+              }
+            />
+          </button>
+        </div>)}
       </div>
       <div>{data?.error && "Error..."}</div>
     </div>

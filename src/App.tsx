@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { Account, Cart, ColumGallery, Home,   PopupCard, ProductsGroup,} from "./paths";
+import { Account, Cart, ColumGallery, Home, PopupCard, ProductsGroup, } from "./paths";
 import { Footer, Header, ProductDatails } from "./paths";
 import { Route, Routes } from "react-router-dom";
 import { ProductDetailsProps } from "./assets/types";

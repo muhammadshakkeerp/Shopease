@@ -4,14 +4,7 @@ import cartReducer from "./reducers/cartReducer";
 import searchReducer from "./reducers/searchReducer";
 // import authReducer, { AuthState } from "./reducers/authReducer";
 import dataReducer from "./reducers/dataReducer";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
 import DarkReducer from "./reducers/DarkReducer";
-
-// Define Apollo Client
-export const client = new ApolloClient({
-  uri: "http://localhost:3000/graphql",
-  cache: new InMemoryCache(),
-});
 
 export type CartState = ReturnType<typeof cartReducer>;
 export type DataState = ReturnType<typeof dataReducer>;

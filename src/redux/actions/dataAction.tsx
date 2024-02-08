@@ -1,7 +1,9 @@
 import { Dispatch, AnyAction } from "redux";
 
 import { gql } from "@apollo/client/core";
-import { client } from "../store";
+import { client } from "../../apollo/client";
+import { FetchProducts } from "../../types/globalTypes";
+
 // Action Types
 export const FETCH_DATA_REQUEST = "FETCH_DATA_REQUEST";
 export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
@@ -14,7 +16,7 @@ interface fetchDataRequesAction {
 interface fetchDataSuccessAction {
   type: typeof FETCH_DATA_SUCCESS;
   loading: boolean;
-  payload: any;
+  payload: FetchProducts[];
 }
 interface fatchDataFailureAction {
   type: typeof FETCH_DATA_FAILURE;
@@ -31,12 +33,12 @@ export const fetchDataRequest = () => ({
   type: FETCH_DATA_REQUEST,
 });
 
-export const fetchDataSuccess = (data: any) => ({
+export const fetchDataSuccess = (data: FetchProducts[]) => ({
   type: FETCH_DATA_SUCCESS,
   payload: data,
 });
 
-export const fetchDataFailure = (error: any) => ({
+export const fetchDataFailure = (error: FetchProducts[]) => ({
   type: FETCH_DATA_FAILURE,
   payload: error,
 });

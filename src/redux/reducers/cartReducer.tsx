@@ -13,11 +13,12 @@ const initialState: CartState = {
 const cartReducer = (state = initialState, action: CartFunctionType) => {
   switch (action.type) {
     case CartAction.ADD_TO_CART:
-      // Do not re-add if already added
+      // eslint-disable-next-line no-case-declarations
       const isAlreadyAdded = state.cart.some(
         (product) => product.id === action.payload
       );
 
+      // eslint-disable-next-line no-case-declarations
       let addedItem: ProductProps[] = [];
       if (!isAlreadyAdded) {
         addedItem = rowProductsData?.filter(

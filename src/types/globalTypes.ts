@@ -1,3 +1,18 @@
+interface FetchProducts {
+  id: string;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: RatingProps;
+}
+
+interface RatingProps {
+  rate: number;
+  count: number;
+}
+
 interface ProductProps {
   id: number;
   title: string;
@@ -19,4 +34,4 @@ interface GraphProducts {
   };
 }
 
-export type { ProductProps ,GraphProducts};
+export type { FetchProducts, ProductProps, GraphProducts };

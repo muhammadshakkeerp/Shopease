@@ -1,7 +1,7 @@
-import downArrowIcon from "/imgs/icons/down-arrow.svg";
-import leftArrowIcon from "/imgs/icons/left-arrow.svg";
-import userIcon from "/imgs/icons/user.svg";
-import cartIcon from "/imgs/icons/shopping-cart.svg";
+// import downArrowIcon from "./imgs/icons/down-arrow.svg";
+// import leftArrowIcon from "./imgs/icons/left-arrow.svg";
+// import userIcon from "/imgs/icons/user.svg";
+// import cartIcon from "/imgs/icons/shopping-cart.svg";
 import menuIcon from "/imgs/icons/menu.svg";
 import refreshIcon from "/imgs/icons/refresh.svg";
 import searchIcon from "/imgs/icons/search.svg";
@@ -13,10 +13,10 @@ import bannerImg5 from "/imgs/homeBanners/5.webp";
 import { AiOutlineRight } from "react-icons/ai";
 
 export {
-  downArrowIcon,
-  leftArrowIcon,
-  userIcon,
-  cartIcon,
+  // downArrowIcon,
+  // leftArrowIcon,
+  // userIcon,
+  // cartIcon,
   menuIcon,
   refreshIcon,
   searchIcon,

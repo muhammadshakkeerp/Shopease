@@ -1,11 +1,4 @@
-import { Dispatch } from "redux";
 import { FetchProducts } from "../../types/globalTypes";
-import { gql, useQuery } from "@apollo/client";
-import { ThunkAction } from "redux-thunk";
-import { RootState } from "../store";
-import { AnyAction } from "@reduxjs/toolkit";
-import { client } from "../../apollo/client";
-
 // Action Types
 export const FETCH_DATA_REQUEST = "FETCH_DATA_REQUEST";
 export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
@@ -40,38 +33,3 @@ export const fetchDataFailure = (error: string): fatchDataFailureAction => ({
   type: FETCH_DATA_FAILURE,
   payload: error,
 });
-
-export const fetchData = () => {
-  return async (dispatch: Dispatch<AnyAction>) => {
-    try {
-      dispatch(fetchDataRequest());
-      const GET_PRODUCTS = gql`
-      query {
-        products {
-          id
-          title 
-          price
-          description
-          category
-          image
-          rating {
-            rate
-            count
-          }
-        }
-      }
-      `
-      const { data, error, loading } = await client.query({ query: GET_PRODUCTS })
-      dispatch(fetchDataSuccess(data.products));
-    } catch (error) {
-      if (error instanceof Error) {
-        dispatch(fetchDataFailure(error.message));
-      } else {
-        dispatch(fetchDataFailure("An unknown error occurred"));
-      }
-
-    }
-  };
-
-};
-

@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { DataState } from "../redux/store";
 import { BiHeart, BiStar } from "react-icons/bi";
-import { GraphProducts } from "../types/globalTypes";
-import { fetchData } from "../redux/actions/dataAction";
+import { fetchData } from "../apollo/fetchData";
 
 const ColumGallery = () => {
   const dispatch = useDispatch();
@@ -12,8 +11,8 @@ const ColumGallery = () => {
   console.log(data);
   console.log("Loading", data.loading);
 
+  const [toggleFevourite, setToggleFevourite] = useState<string[]>([])
 
-  const [toggleFevourite, setToggleFevourite] = useState<number[]>([]);
   const [inViewPort, setInViewport] = useState(false)
   const galleryRef = useRef<HTMLDivElement>(null)
   const { pathname } = useLocation();
@@ -21,7 +20,14 @@ const ColumGallery = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(fetchData());
+    fetchData()(dispatch);
+
+    // refetching when network is restored
+    const handleOnline = async () => {
+      await fetchData()(dispatch)
+    }
+    window.addEventListener("online", handleOnline)
+    return () => window.addEventListener("online", handleOnline)
   }, [pathname, dispatch]);
 
 
@@ -75,7 +81,8 @@ const ColumGallery = () => {
             {item?.rating?.rate}
           </p>
           <button
-            onClick={() => setToggleFevourite((prev) =>  [...prev, item?.id])}
+            onClick={() => setToggleFevourite((prev) => [...prev, item?.id]
+            )}
           >
             <BiHeart
               className={
@@ -85,7 +92,7 @@ const ColumGallery = () => {
           </button>
         </div>)}
       </div>
-      <div>{data?.error && "Error..."}</div>
+      <div>{data?.error && data?.error}</div>
     </div>
 
   );

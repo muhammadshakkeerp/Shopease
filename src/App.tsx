@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { Account, Cart, ColumGallery, Home, PopupCard, ProductsGroup, } from "./paths";
+import { Account, Cart, ProductGallery, Home, PopupCard, ProductsGroup, } from "./paths";
 import { Footer, Header, ProductDatails } from "./paths";
 import { Route, Routes } from "react-router-dom";
 import { ProductDetailsProps } from "./assets/types";
@@ -71,7 +71,7 @@ const App: FC<ProductDetailsProps> = () => {
         />
         <Route path="/productsGroup" element={<ProductsGroup />} />
         <Route path="/nested" element={<NestedHoverNavlink />} />
-        <Route path="/productGallery" element={<ColumGallery />} />
+        <Route path="/productGallery" element={<ProductGallery />} />
       </Routes>
       <Footer />
     </div >

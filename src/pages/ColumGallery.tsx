@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, } from "react-router-dom";
 import { DataState } from "../redux/store";
 import { BiHeart, BiStar } from "react-icons/bi";
 import { fetchData } from "../apollo/fetchData";
@@ -8,15 +8,15 @@ import { fetchData } from "../apollo/fetchData";
 const ColumGallery = () => {
   const dispatch = useDispatch();
   const data = useSelector((state: { fetchData: DataState }) => state.fetchData);
-  console.log(data);
-  console.log("Loading", data.loading);
+  // console.log(data);
+  // console.log("Loading", data.loading);
 
   const [toggleFevourite, setToggleFevourite] = useState<string[]>([])
 
   const [inViewPort, setInViewport] = useState(false)
   const galleryRef = useRef<HTMLDivElement>(null)
   const { pathname } = useLocation();
-  console.log(toggleFevourite);
+  console.log("view port",inViewPort);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -30,7 +30,9 @@ const ColumGallery = () => {
     return () => window.addEventListener("online", handleOnline)
   }, [pathname, dispatch]);
 
-
+  useEffect(() => {
+    fetchData()(dispatch)
+  }, [])
 
 
   useEffect(() => {
@@ -57,19 +59,13 @@ const ColumGallery = () => {
         observer.unobserve(galleryRef.current)
       }
     }
-  }, [])
+  }, [pathname])
   return (
 
     <div>
       {data?.loading && <h3 className="text-xl text-center">Loading...</h3>}
-      <div className="flex flex-wrap items-center justify-center" ref={galleryRef}
-        style={{
-          opacity: inViewPort ? 1 : 0,
-          transition: "opacity .5s ease-in-out"
-        }}  >
-
-
-
+      <div className={`flex flex-wrap items-center justify-center transition-opacity duration-500 ease-in-out ${inViewPort ? "opacity-100" : "opacity-0"}`} ref={galleryRef}
+      >
         {data && data?.result.map((item) => <div key={item?.id} className="w-[250px] font-robo"
         >
           <img className="w-[200px] h-[200px]" src={item?.image} alt="img" />

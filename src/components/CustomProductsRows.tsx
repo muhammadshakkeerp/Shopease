@@ -8,12 +8,14 @@ import React from "react";
 
 interface RowProps {
   title: string | undefined;
-  totalProductsDisplay: number  | undefined;
+  totalProductsDisplay: number | undefined;
 }
 
 const CustomProductsRows: FC<RowProps> = ({ title, totalProductsDisplay }) => {
   // Darkmode
   const darkMode = useSelector((state: RootState) => state?.dark)
+  // refresh window when click home more allow btn 
+  const [refreshSite, setRefreshSite] = useState(false)
   // INTERSECTION OBSERVER - LAZY LOADING
   const [inViewport, setInViewport] = useState(false);
 
@@ -60,10 +62,12 @@ const CustomProductsRows: FC<RowProps> = ({ title, totalProductsDisplay }) => {
   };
   return (
     <div className={`relative ${darkMode?.isEnabled ? "bg-darkModeBg text-darkModeText" : "bg-white"} m-2 `} onWheel={handleScroll} >
-      <Link to="/productGallery">
-        {
-          <AiOutlineRight className="absolute right-0 top-2 bg-blue-500 text-white rounded-full text-[14px] md:text-[20px] " />
-        }{" "}
+      <Link to="/ProductGallery" >
+        <button type="button" title="Display More products" onClick={() => setRefreshSite(true)}>
+          {
+            <AiOutlineRight className="absolute right-0 top-2 bg-blue-500 text-white rounded-full text-[14px] md:text-[20px] " />
+          }{" "}
+        </button>
       </Link>
       {/* ROW TITLE */}
       <h5 className="primary-font text-color font-bold md:text-[20px] md:py-5 md:px-5">
@@ -86,6 +90,7 @@ const CustomProductsRows: FC<RowProps> = ({ title, totalProductsDisplay }) => {
               price: product.price,
               offerAvailable: false,
             }}
+            refreshSite={refreshSite}
           />
         ))}
       </div>

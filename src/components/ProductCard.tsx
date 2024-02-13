@@ -7,6 +7,7 @@ const ProductCard = ({
 }: {
   product: ProductProps | undefined;
   index: number;
+  refreshSite:boolean
 }) => {
   return (
     <div className="w-[100px] md:w-[160px] h-[150px] md:h-[212px] border img-card-p flex-shrink-0 md:mx-2">

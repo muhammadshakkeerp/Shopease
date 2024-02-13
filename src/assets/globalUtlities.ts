@@ -1,22 +1,14 @@
-// import downArrowIcon from "./imgs/icons/down-arrow.svg";
-// import leftArrowIcon from "./imgs/icons/left-arrow.svg";
-// import userIcon from "/imgs/icons/user.svg";
-// import cartIcon from "/imgs/icons/shopping-cart.svg";
-import menuIcon from "/imgs/icons/menu.svg";
-import refreshIcon from "/imgs/icons/refresh.svg";
-import searchIcon from "/imgs/icons/search.svg";
-import bannerImg1 from "/imgs/homeBanners/1.webp";
-import bannerImg2 from "/imgs/homeBanners/2.webp";
-import bannerImg3 from "/imgs/homeBanners/3.webp";
-import bannerImg4 from "/imgs/homeBanners/4.webp";
-import bannerImg5 from "/imgs/homeBanners/5.webp";
+import menuIcon from "./imgs/icons/menu.svg";
+import refreshIcon from "./imgs/icons/refresh.svg";
+import searchIcon from "./imgs/icons/search.svg";
+import bannerImg1 from "./imgs/homeBanners/1.webp";
+import bannerImg2 from "./imgs/homeBanners/2.webp";
+import bannerImg3 from "./imgs/homeBanners/3.webp";
+import bannerImg4 from "./imgs/homeBanners/4.webp";
+import bannerImg5 from "./imgs/homeBanners/5.webp";
 import { AiOutlineRight } from "react-icons/ai";
 
 export {
-  // downArrowIcon,
-  // leftArrowIcon,
-  // userIcon,
-  // cartIcon,
   menuIcon,
   refreshIcon,
   searchIcon,
@@ -27,9 +19,9 @@ export {
   bannerImg5,
   AiOutlineRight,
 };
-export  const accountLinks = [
-  {id:"account",value:"Account"},
-  {id:"login",value:"Login"},
+export const accountLinks = [
+  { id: "account", value: "Account" },
+  { id: "login", value: "Login" },
   // { id: "newCustomer", value: "New Customer" },
   { id: "profile", value: "Profile" },
   // { id: "flipkartPlus", value: "Flipkart pluse zone" },
@@ -164,4 +156,3 @@ export const rowProductsData = [
     offerAvailable: true,
   },
 ];
-

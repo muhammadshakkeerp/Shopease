@@ -5,7 +5,7 @@ import { DataState } from "../redux/store";
 import { BiHeart, BiStar } from "react-icons/bi";
 import { fetchData } from "../apollo/fetchData";
 
-const ColumGallery = () => {
+const ProductGallery = () => {
   const dispatch = useDispatch();
   const data = useSelector((state: { fetchData: DataState }) => state.fetchData);
   // console.log(data);
@@ -16,7 +16,7 @@ const ColumGallery = () => {
   const [inViewPort, setInViewport] = useState(false)
   const galleryRef = useRef<HTMLDivElement>(null)
   const { pathname } = useLocation();
-  console.log("view port",inViewPort);
+  console.log("view port", inViewPort);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -63,35 +63,27 @@ const ColumGallery = () => {
   return (
 
     <div>
-      {data?.loading && <h3 className="text-xl text-center">Loading...</h3>}
-      <div className={`flex flex-wrap items-center justify-center transition-opacity duration-500 ease-in-out ${inViewPort ? "opacity-100" : "opacity-0"}`} ref={galleryRef}
-      >
-        {data && data?.result.map((item) => <div key={item?.id} className="w-[250px] font-robo"
-        >
-          <img className="w-[200px] h-[200px]" src={item?.image} alt="img" />
-          <h3>{item?.title}</h3>
-          <h3>$ {item?.price}</h3>
-          <p className="text-sm">{item?.rating?.count}</p>
-          <p className="flex items-center">
-            <BiStar />
-            {item?.rating?.rate}
-          </p>
-          <button
-            onClick={() => setToggleFevourite((prev) => [...prev, item?.id]
-            )}
-          >
-            <BiHeart
-              className={
-                toggleFevourite?.includes(item.id) ? "text-yellow-500" : ""
-              }
-            />
-          </button>
-        </div>)}
+      {data && data.loading && <h3 className="text-xl text-center">Loading...</h3>}
+      <div className={`flex flex-wrap items-center justify-center transition-opacity duration-500 ease-in-out ${inViewPort ? "opacity-100" : "opacity-0"}`} ref={galleryRef}>
+        {data && data.result.map((item) => (
+          <div key={item?.id} className="w-[250px] font-robo">
+            <img className="w-[200px] h-[200px]" src={item?.image} alt={item?.title} />
+            <h3>{item?.title}</h3>
+            <h3>$ {item?.price}</h3>
+            <p className="text-sm">{item?.rating?.count}</p>
+            <p className="flex items-center">
+              <BiStar />
+              {item?.rating?.rate}
+            </p>
+            <button type="button" onClick={() => setToggleFevourite((prev) => [...prev, item?.id])}>
+              <BiHeart className={toggleFevourite?.includes(item.id) ? "text-yellow-500" : ""} />
+            </button>
+          </div>
+        ))}
       </div>
-      <div>{data?.error && data?.error}</div>
+      {data && data.error && <div>Error: {data.error}</div>}
     </div>
-
   );
 };
 
-export default ColumGallery;
+export default ProductGallery;

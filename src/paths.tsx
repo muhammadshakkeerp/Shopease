@@ -47,15 +47,7 @@ import { default as Home } from "./pages/Home";
 import { default as Cart } from "./pages/Cart";
 import ProductsGroup from "./pages/ProductsGroup";
 import { default as Error } from "./pages/Error";
-<<<<<<< Updated upstream
-import { default as RowGallery } from "./pages/RowGallery";
-import { default as ColumGallery } from "./pages/ColumGallery";
+import { default as ProductGallery } from "./pages/ProductGallery";
 import Account from "./pages/Accout";
 
-export { Home,  Cart, Error, RowGallery, ColumGallery, ProductsGroup,Account };
-=======
-import { default as ProductGallery } from "./pages/productGallery";
-import Account from "./pages/Accout";
-
-export { Home,  Cart, Error, ProductGallery, ProductsGroup,Account };
->>>>>>> Stashed changes
+export { Home, Cart, Error, ProductGallery, ProductsGroup, Account };

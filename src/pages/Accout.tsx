@@ -9,7 +9,7 @@ const Account = () => {
                 <AccountSidebar />
             </div>
             {/* second section */}
-            <div className="bg-gray-500 w-full xl:w-4/5">
+            <div className="bg-primary w-full xl:w-4/5">
                 <Routes>
                     <Route path="/" element={<Account />} />
                     <Route path="/login" element={<Login />} />

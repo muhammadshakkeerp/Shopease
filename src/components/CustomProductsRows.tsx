@@ -74,7 +74,7 @@ const CustomProductsRows: FC<RowProps> = ({ title, totalProductsDisplay }) => {
         {title}
       </h5>
       <div
-        className={`flex gap-2 w-full overflow-x-auto scroll-smooth ${inViewport ? "fade-in" : "opacity-0"
+        className={`flex justify-between gap-2 w-full overflow-x-auto scroll-smooth ${inViewport ? "fade-in" : "opacity-0"
           }`}
         onWheel={handleWheel}
         ref={galleryRef}

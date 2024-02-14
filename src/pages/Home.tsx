@@ -20,7 +20,6 @@ const Home: FC<headerCategoriesProps> = () => {
       <HomeSlider />
       <HeaderCatogory headerCategories={[]} />
       <Offer />
-
       <CustomProductsRows title={"Popular Products"} totalProductsDisplay={12} />
       <CustomProductsRows title={"Offers"} totalProductsDisplay={12} />
 

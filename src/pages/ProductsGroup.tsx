@@ -8,7 +8,7 @@ const ProductsGroup = () => {
       <section className="flex flex-col xl:flex-row mt-2">
         <ProductFilterSiderbar />
         <div className="flex flex-wrap justify-between gap-2 bg-black ml-2" >
-          {rowProductsData?.map((_item, index) => <ProductCard product={undefined} index={index} />)}
+          {rowProductsData?.map((_item, index) => <ProductCard product={undefined} index={index} refreshSite={false} />)}
         </div>
       </section>
     </div>
@@ -16,3 +16,8 @@ const ProductsGroup = () => {
 }
 
 export default ProductsGroup
+
+
+
+
+

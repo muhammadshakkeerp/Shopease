@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { AccountSidebar, Login, Orders, Profile, Rewards, Wishlist } from "../paths"
+import { AccountDetails, AccountSidebar, Login, Orders, Profile, Rewards, Wishlist } from "../paths"
 
 const Account = () => {
     return (
@@ -11,7 +11,7 @@ const Account = () => {
             {/* second section */}
             <div className="bg-primary w-full xl:w-4/5">
                 <Routes>
-                    <Route path="/" element={<Account />} />
+                    <Route path="/account" element={<AccountDetails />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/rewards" element={<Rewards />} />
@@ -24,3 +24,4 @@ const Account = () => {
 }
 
 export default Account
+

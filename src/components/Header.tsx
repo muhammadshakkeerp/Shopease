@@ -36,7 +36,7 @@ export const Header: FC<HeaderProps> = () => {
 
   const [toggleMenu, setToggleMenu] = useState(false)
   const [showHoverItem, setShowHoverItem] = useState<boolean>(false);
-
+  console.log(darkMode)
   const handleDarkMode = () => {
     dispatch(toggleDarkMode())
   }
@@ -49,13 +49,13 @@ export const Header: FC<HeaderProps> = () => {
         </button>
 
         {toggleMenu && (
-          <div className="absolute xl:hidden z-50  left-0 right-0 top-5 mt-2  bg-white border rounded-lg shadow-lg">
+          <div className={`absolute xl:hidden z-50  left-0 right-0 top-5 mt-2   ${darkMode?.isEnabled ? "bg-darkModeBg text-darkModeText" : "bg-[#f0f5ff]"} border rounded-lg shadow-lg`}>
             <ul>
               {menuItems.map((item, index) => (
                 <li key={index}>
                   <a
                     href={item.link}
-                    className="block text-gray-800 px-4 py-3 hover:bg-gray-200"
+                    className="block  px-4 py-3 hover:bg-gray-600 hover:text-black"
                   >
                     {item.title}
                   </a>
@@ -88,7 +88,7 @@ export const Header: FC<HeaderProps> = () => {
         />
       </div>
       {/* third */}
-      <div className="flex gap-3 lg:gap-0 items-center justify-evenly w-[40%] lg:w-1/3 font-fam">
+      <div className="flex gap-3 lg:gap-0 items-center justify-evenly w-[40%] h-full lg:w-1/3 font-fam">
         <button className="hidden md:flex lg:ml-2 lg:gap-2">
           <AiOutlineHome />
           <p className="hidden lg:block text-sm ">Become a Seller</p>
@@ -106,10 +106,10 @@ export const Header: FC<HeaderProps> = () => {
               <BiChevronDown />
             </span>
             {showHoverItem && (
-              <ul className={`hidden md:flex flex-col primary-font font-[400] absolute z-50 ${darkMode ? "bg-darkModeBg text-darkModeText" : "bg-white"} md:px-[10px] md:py-[15px] md:w-[200px] md:top-[40px] md:right-[20px]`}>
+              <ul className={`hidden md:flex flex-col primary-font font-[400] absolute z-50 ${darkMode?.isEnabled ? "bg-darkModeBg text-darkModeText" : "bg-[#f0f5ff]"} md:px-[10px] md:py-[15px] md:w-[200px] md:top-[40px] md:right-[20px]`}>
                 {accountLinks?.map((item) => (
                   <Link key={item.id} to={`/account/${item.id}`}>
-                    <li key={item.id} className="py-1 ">
+                    <li key={item.id} className={`py-4 px-3 ${darkMode?.isEnabled ? "hover:bg-gray-600" : "hover:bg-gray-300"}`}>
                       {item.value}
                     </li>
                   </Link>
@@ -128,11 +128,11 @@ export const Header: FC<HeaderProps> = () => {
           </Link>
         </div>
         <button onClick={handleDarkMode}><CgDarkMode /></button>
-        <div className="hidden md:flex group">
+        <div className="hidden md:flex group h-full">
           <button>
             <PiDotsThreeVerticalBold />
           </button>
-          <ul className="hidden group-hover:flex flex-col w-48  absolute  right-0 top-10 bg-white border border-blue-800 z-50">
+          <ul className={`hidden group-hover:flex flex-col w-48  absolute  right-0 top-10 ${darkMode?.isEnabled ? "bg-darkModeBg" : "bg-white"} border border-blue-800 z-50`}>
             {headerMoreBtnData?.map((data) => (
               <li
                 key={data}

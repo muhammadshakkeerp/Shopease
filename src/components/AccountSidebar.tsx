@@ -2,7 +2,6 @@ import { Link } from "react-router-dom"
 import { accountLinks } from "../assets/globalUtlities"
 import { useState } from "react"
 
-
 export const AccountSidebar = () => {
   const [showActiveRoute, setShowActiveRoute] = useState("")
   console.log(showActiveRoute)

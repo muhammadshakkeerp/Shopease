@@ -3,7 +3,7 @@ import { FaUser, FaEnvelope, FaPhone, FaGenderless } from 'react-icons/fa';
 
 export const Profile: React.FC = () => {
   return (
-    <div className="max-w-3xl mx-auto py-8">
+    <div className="max-w-3xl mx-auto py-8 px-8 xl:px-0">
       {/* Personal Information Section */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Personal Information</h2>

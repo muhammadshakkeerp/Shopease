@@ -8,11 +8,11 @@ export const Orders: React.FC = () => {
       id: '1',
       date: '2023-11-29',
       items: [
-        { name: 'Product 1', price: 25.99 },
-        { name: 'Product 2', price: 19.99 },
+        { name: 'Product 1', price: 0 },
+        { name: 'Product 2', price: 0 },
         // Additional item details
       ],
-      total: 45.98,
+      total: 0,
       status: 'Delivered',
     },
     // More orders
@@ -21,7 +21,7 @@ export const Orders: React.FC = () => {
   return (
     <div className="p-6">
       {/*  */}
-      <div className='md:h-[90vh] w-full flex justify-center items-center flex-col'>
+      <div className=' w-full flex justify-center items-center flex-col'>
         <img src="/imgs/emptyOrders.png" alt="empty image" />
         <h4 className='font-bold'>You have no orders</h4>
         <button className='bg-blue-700 text-white p-1 rounded-sm primary-font font-semibold'>Start Shopping</button> 

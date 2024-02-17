@@ -75,7 +75,7 @@ export const Header: FC<HeaderProps> = () => {
       </div>
       {/* Searchbar */}
 
-      <div className="hidden md:flex items-center border-2 border-none w-full  md:w-2/3 bg-[#f0f5ff] h-[40px] px-2 rounded-md">
+      <div className={`hidden md:flex items-center border-2 border-none w-full  md:w-2/3 ${darkMode?.isEnabled ? "bg-gray-500" : "bg-[#f0f5ff] "} h-[40px] px-2 rounded-md`}>
         <img
           src={searchIcon}
           alt="serach_icon"
@@ -84,7 +84,7 @@ export const Header: FC<HeaderProps> = () => {
         <input
           type="search"
           placeholder="Search for Products,Brands and More"
-          className=" md:w-full border-none bg-transparent outline-none h-[40px]   text-[10px] md:text-[18px] placeholder-[#717478] pl-5"
+          className={`md:w-full border-none bg-transparent outline-none h-[40px]   text-[10px] md:text-[18px] ${darkMode?.isEnabled ? "placeholder-gray-300" : "placeholder-[#717478]"} pl-5`}
         />
       </div>
       {/* third */}

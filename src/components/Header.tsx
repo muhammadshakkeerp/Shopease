@@ -22,11 +22,19 @@ interface HeaderProps {
 }
 
 export const Header: FC<HeaderProps> = () => {
+
+  const menuItems = [
+    { title: "Home", link: "/" },
+    { title: "Products", link: "/products" },
+    { title: "Categories", link: "/categories" },
+    // Add more menu items as needed
+  ];
+
   const cart = useSelector((state: RootState) => state.cart);
   const dispatch = useDispatch()
   const darkMode = useSelector((state: RootState) => state?.dark)
- 
 
+  const [toggleMenu, setToggleMenu] = useState(false)
   const [showHoverItem, setShowHoverItem] = useState<boolean>(false);
 
   const handleDarkMode = () => {
@@ -35,9 +43,28 @@ export const Header: FC<HeaderProps> = () => {
   return (
     <header className={`h-[50px] ${darkMode?.isEnabled ? " bg-darkModeBg text-darkModeText" : "bg-white"} md:h-[66px] flex items-center justify-around   md:flex-row  md:justify-between relative`}>
       {/* Logo */}
+      <div className="flex items-center gap-4 md:gap-0 ">
+        <button onClick={() => setToggleMenu(!toggleMenu)}>
+          <MdOutlineMenu className="md:hidden" />
+        </button>
 
-      <div className="flex items-center gap-4 md:gap-0">
-        <MdOutlineMenu className="md:hidden" />
+        {toggleMenu && (
+          <div className="absolute xl:hidden z-50  left-0 right-0 top-5 mt-2  bg-white border rounded-lg shadow-lg">
+            <ul>
+              {menuItems.map((item, index) => (
+                <li key={index}>
+                  <a
+                    href={item.link}
+                    className="block text-gray-800 px-4 py-3 hover:bg-gray-200"
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         <Link to={`/`} className=" z-30 top-[20px] left-[20px] md:left-0 md:flex flex-col">
           <img src={logo} alt="logo" className="w-[100px] md:w-[150px] object-none" />
           {/* <h4 className=" text-[#a1a09e] primary-font font-fam2 ">
@@ -72,7 +99,7 @@ export const Header: FC<HeaderProps> = () => {
             className="flex p-2 cursor-pointer group primary-bg-h rounded-md relative"
             onMouseEnter={() => setShowHoverItem(true)}
             onMouseLeave={() => setShowHoverItem(false)}
-          > 
+          >
             <CgProfile className=" group-hover:text-white" />
             <button className="hidden lg:block text-sm">Login</button>
             <span className="hidden lg:block transition-transform transform-gpu  ease-in-out group-hover:rotate-180">

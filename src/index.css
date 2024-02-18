@@ -86,10 +86,3 @@ body{
 .custom_icon_size {
   font-size: 40px;
 }
-
-/* DARK MODE  */
-   /* text */
-
-  .darkMod_white_text {
-   color: white !important;
-  }

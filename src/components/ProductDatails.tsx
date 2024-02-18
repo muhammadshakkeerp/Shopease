@@ -1,6 +1,6 @@
 import { useState, FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { rowProductsData } from "../assets/globalUtlities";
 import { ProductDetailsProps, } from "../assets/types";
 import { CartState, RootState } from "../redux/store";
@@ -63,7 +63,10 @@ const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
                       Add To Cart
                     </button>
                     <button className="bg-[#fb641b] px-6 py-3 tracking-wider font-semibold w-1/2 md:w-auto text-white rounded-lg shadow-md transition duration-300 hover:bg-[#e64a19]">
-                      Buy Now
+                      <Link to={`/productDetails/${item.id}/checkout`} >
+                        Buy Now
+
+                      </Link>
                     </button>
                   </div>
                 </div>

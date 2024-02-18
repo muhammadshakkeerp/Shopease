@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { Account, Cart, ProductGallery, Home, PopupCard, ProductsGroup, } from "./paths";
+import { Account, Cart, ProductGallery, Home, PopupCard, ProductsGroup, Checkout, PaymentSuccessful, } from "./paths";
 import { Footer, Header, ProductDatails } from "./paths";
 import { Route, Routes } from "react-router-dom";
 import { ProductDetailsProps } from "./assets/types";
@@ -48,6 +48,8 @@ const App: FC<ProductDetailsProps> = () => {
             />
           }
         />
+        <Route path="/productDetails/:id/checkout" element={<Checkout />}></Route>
+        <Route path="/productDetails/:id/checkout/successfull" element={<PaymentSuccessful />}></Route>
         {/* Nested Routing... */}
         <Route path="/account/*" element={<Account />} />
         {/* END -- Nested Routing... */}

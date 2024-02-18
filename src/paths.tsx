@@ -19,6 +19,8 @@ import { ProductFilterSiderbar } from "./components/ProductFilterSiderbar"
 import { Ad } from "./components/Ad";
 import { AccountSidebar } from "./components/AccountSidebar";
 import { AccountDetails } from "./components/AccountDetails"
+import { Checkout } from './components/Checkout'
+import { PaymentSuccessful } from "./components/PaymentSuccesfull";
 
 export {
   CustomProductsRows,
@@ -39,7 +41,9 @@ export {
   ProductCard,
   ProductGroupsTab,
   ProductFilterSiderbar,
+  Checkout,
   AccountSidebar,
+  PaymentSuccessful,
   AccountDetails,
   Footer,
 };

@@ -1,5 +1,5 @@
 import { useState, FC, useEffect } from "react";
-import { useSelector } from "react-redux/es/exports";
+import { useDispatch, useSelector } from "react-redux/es/exports";
 import { useParams } from "react-router-dom";
 import { rowProductsData } from "../assets/globalUtlities";
 import { ProductDetailsProps, } from "../assets/types";
@@ -8,14 +8,14 @@ import { ProductProps } from "../types/globalTypes";
 import { MdLocalOffer, MdLocationSearching, MdOutlineDelete } from "react-icons/md";
 import { BsHeart } from "react-icons/bs";
 import { RiEditBoxLine } from "react-icons/ri";
+import { addToCart } from "../redux/actions/cartActions";
 
 const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
   const { id } = useParams();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const darkMode = useSelector((state: RootState) => state?.dark)
 
   const [showDetails, setShowDetials] = useState<ProductProps[]>([]);
-  // if click to add-to-card , then show counter ( +  or - )
   const cartProducts = useSelector((state: { cart: CartState }) => state.cart);
   console.log(cartProducts);
   const getProductDetails = () => {
@@ -32,19 +32,13 @@ const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
     getProductDetails();
   }, [id, cartProducts]);
 
-
-  // const _isProductInCart = (productId: number) =>
-  //   rowProductsData.some((item) => item.id === productId);
-
-
-  // PICK TO REDUX 
-  // const [showDetails, setShowDetails] = useState([]);
   const [userReview, setUserReview] = useState('');
-  const [reviews, setReviews] = useState<string[]>([]); // Store reviews here
+  const [reviews, setReviews] = useState<string[]>([]);
 
   const handleReviewSubmit = () => {
-    // Add logic to submit user review
-    setReviews([...reviews, userReview]); // Add user review to reviews array
+    if (userReview.trim() !== "") {
+      setReviews([...reviews, userReview]);
+    } // Add user review to reviews array
     setUserReview(''); // Clear the input after submitting review
   };
 
@@ -63,7 +57,9 @@ const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
                     <BsHeart className="" />
                   </span>
                   <div className="fixed w-full md:w-auto bottom-0 md:static md:flex gap-4 justify-center mt-2">
-                    <button className="bg-[#ff9f00] px-6 py-3 tracking-wider font-semibold w-1/2 md:w-auto text-white rounded-lg shadow-md transition duration-300 hover:bg-[#e69100]">
+                    <button className="bg-[#ff9f00] px-6 py-3 tracking-wider font-semibold w-1/2 md:w-auto text-white rounded-lg shadow-md transition duration-300 hover:bg-[#e69100]"
+                      onClick={() => dispatch(addToCart(item.id))}
+                    >
                       Add To Cart
                     </button>
                     <button className="bg-[#fb641b] px-6 py-3 tracking-wider font-semibold w-1/2 md:w-auto text-white rounded-lg shadow-md transition duration-300 hover:bg-[#e64a19]">
@@ -123,7 +119,7 @@ const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
                       </div>
                       <div className="mb-4">
                         <h2 className={`text-lg font-semibold mb-2 ${darkMode?.isEnabled ? "text-white" : "text-gray-900"}`}>Capacity</h2>
-                        <div className={`flex space-x-4 ${darkMode?.isEnabled ? "text-white": "text-gray-900"}`}>
+                        <div className={`flex space-x-4 ${darkMode?.isEnabled ? "text-white" : "text-gray-900"}`}>
                           <p className="text-sm border-2 px-3 border-gray-300 ">64 GB</p>
                           <p className="text-sm border-2 px-3 border-gray-300 ">128 GB</p>
                           <p className="text-sm border-2 px-3 border-gray-300 ">256 GB</p>

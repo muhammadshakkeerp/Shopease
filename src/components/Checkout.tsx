@@ -10,13 +10,6 @@ export const Checkout: React.FC = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [address, setAddress] = useState('');
-    const [paymentMethod, setPaymentMethod] = useState('');
-
-    const handlePlaceOrder = () => {
-        // Handle placing the order, e.g., sending data to backend, etc.
-        // Redirect to order confirmation page
-        // history.push('/order-confirmation');
-    };
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -61,7 +54,6 @@ export const Checkout: React.FC = () => {
 
             {/* Place Order Button */}
             <button
-                onClick={handlePlaceOrder}
                 className="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition-colors"
             >
                 <Link to={`/productDetails/${id}/checkout/successfull`} > Place Order</Link>
@@ -75,19 +67,11 @@ export const Payment: React.FC = () => {
     // const history = useHistory();
 
     // State for form fields
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [address, setAddress] = useState('');
     const [paymentMethod, setPaymentMethod] = useState('');
     const [cardNumber, setCardNumber] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
     const [cvv, setCVV] = useState('');
 
-    const handlePlaceOrder = () => {
-        // Handle placing the order, e.g., sending data to backend, etc.
-        // Redirect to order confirmation page
-        //   history.push('/order-confirmation');
-    };
 
     // Function to render payment method form based on the selected payment method
     const renderPaymentMethodForm = () => {

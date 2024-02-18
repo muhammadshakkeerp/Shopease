@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 // import { useHistory } from 'react-router-dom'; // Assuming you're using React Router for navigation
 
@@ -17,6 +17,10 @@ export const Checkout: React.FC = () => {
         // Redirect to order confirmation page
         // history.push('/order-confirmation');
     };
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div className="container mx-auto px-4 py-8">

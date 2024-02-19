@@ -1,11 +1,11 @@
-import menuIcon from "./imgs/icons/menu.svg";
-import refreshIcon from "./imgs/icons/refresh.svg";
-import searchIcon from "./imgs/icons/search.svg";
-import bannerImg1 from "./imgs/homeBanners/1.webp";
-import bannerImg2 from "./imgs/homeBanners/2.webp";
-import bannerImg3 from "./imgs/homeBanners/3.webp";
-import bannerImg4 from "./imgs/homeBanners/4.webp";
-import bannerImg5 from "./imgs/homeBanners/5.webp";
+import menuIcon from "/imgs/icons/menu.svg";
+import refreshIcon from "/imgs/icons/refresh.svg";
+import searchIcon from "/imgs/icons/search.svg";
+import bannerImg1 from "/imgs/homeBanners/1.webp";
+import bannerImg2 from "/imgs/homeBanners/2.webp";
+import bannerImg3 from "/imgs/homeBanners/3.webp";
+import bannerImg4 from "/imgs/homeBanners/4.webp";
+import bannerImg5 from "/imgs/homeBanners/5.webp";
 import { AiOutlineRight } from "react-icons/ai";
 
 export {

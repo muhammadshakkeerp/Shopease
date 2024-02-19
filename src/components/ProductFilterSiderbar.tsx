@@ -53,7 +53,7 @@ export const ProductFilterSiderbar = () => {
         { value: 5, label: '5 stars' },
     ];
     return (
-        <div className="w-full xl:w-1/5 bg-white">
+        <div className="w-full xl:w-1/5 ">
             {/* this style will be displayed untill screen size is 1270px */}
             <div className='flex justify-evenly xl:hidden'>
                 <button className="flexCenter">Sort<PiSortAscending />
@@ -70,6 +70,7 @@ export const ProductFilterSiderbar = () => {
                 <div className="relative mb-6">
                     <h4 className="px-2 py-1 text-center">PRICE</h4>
                     <input
+                    title='Set Your Price Range'
                         type="range"
                         min="0"
                         max="100"

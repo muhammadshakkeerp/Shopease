@@ -18,6 +18,9 @@ import { ProductGroupsTab } from "./components/ProductGroupsTab";
 import { ProductFilterSiderbar } from "./components/ProductFilterSiderbar"
 import { Ad } from "./components/Ad";
 import { AccountSidebar } from "./components/AccountSidebar";
+import { AccountDetails } from "./components/AccountDetails"
+import { Checkout } from './components/Checkout'
+import { PaymentSuccessful } from "./components/PaymentSuccesfull";
 
 export {
   CustomProductsRows,
@@ -38,7 +41,10 @@ export {
   ProductCard,
   ProductGroupsTab,
   ProductFilterSiderbar,
+  Checkout,
   AccountSidebar,
+  PaymentSuccessful,
+  AccountDetails,
   Footer,
 };
 
@@ -47,8 +53,7 @@ import { default as Home } from "./pages/Home";
 import { default as Cart } from "./pages/Cart";
 import ProductsGroup from "./pages/ProductsGroup";
 import { default as Error } from "./pages/Error";
-import { default as RowGallery } from "./pages/RowGallery";
-import { default as ColumGallery } from "./pages/ColumGallery";
+import { default as ProductGallery } from "./pages/ProductGallery";
 import Account from "./pages/Accout";
 
-export { Home,  Cart, Error, RowGallery, ColumGallery, ProductsGroup,Account };
+export { Home, Cart, Error, ProductGallery, ProductsGroup, Account };

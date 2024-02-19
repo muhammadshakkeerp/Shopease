@@ -34,4 +34,12 @@ interface GraphProducts {
   };
 }
 
-export type { FetchProducts, ProductProps, GraphProducts };
+ interface AddProductType {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
+  price: number;
+}
+
+export type { FetchProducts, ProductProps, GraphProducts ,AddProductType};

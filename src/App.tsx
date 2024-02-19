@@ -6,6 +6,7 @@ import { ProductDetailsProps } from "./assets/types";
 import NestedHoverNavlink from "./components/NestedHoverNavlink";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
+import { AdminProductAddConsole } from "./components/addProducts/AdminProductAddConsole";
 
 // graphQl apollo client
 
@@ -50,6 +51,7 @@ const App: FC<ProductDetailsProps> = () => {
         />
         <Route path="/productDetails/:id/checkout" element={<Checkout />}></Route>
         <Route path="/productDetails/:id/checkout/successfull" element={<PaymentSuccessful />}></Route>
+        <Route path="/adminProductAddConsole" element={<AdminProductAddConsole/>} ></Route>
         {/* Nested Routing... */}
         <Route path="/account/*" element={<Account />} />
         {/* END -- Nested Routing... */}

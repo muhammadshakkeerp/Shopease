@@ -6,4 +6,3 @@ test('fetchData function fetches data successfully', async () => {
   expect(dispatchMock).toHaveBeenCalledTimes(2); // Assuming fetchDataRequest and fetchDataSuccess dispatch actions are called
 });
 
-// Add more test cases as needed

@@ -7,7 +7,7 @@ import logo from "/logo.png";
 import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai";
 import { PiDotsThreeVerticalBold } from "react-icons/pi";
-import { CgDarkMode, CgProfile } from 'react-icons/cg'
+import { CgAdd, CgDarkMode, CgProfile } from 'react-icons/cg'
 import { MdOutlineMenu } from "react-icons/md";
 import { BsCart } from 'react-icons/bs'
 import { Link } from "react-router-dom";
@@ -128,6 +128,10 @@ export const Header: FC<HeaderProps> = () => {
           </Link>
         </div>
         <button onClick={handleDarkMode}><CgDarkMode /></button>
+        <button>
+          <Link to={`/adminProductAddConsole`}><CgAdd /></Link>
+
+        </button>
         <div className="hidden md:flex group h-full">
           <button>
             <PiDotsThreeVerticalBold />
@@ -142,6 +146,8 @@ export const Header: FC<HeaderProps> = () => {
               </li>
             ))}
           </ul>
+
+
         </div>
       </div>
     </header>

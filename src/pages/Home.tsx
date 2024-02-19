@@ -22,7 +22,6 @@ const Home: FC<headerCategoriesProps> = () => {
       <Offer />
       <CustomProductsRows title={"Popular Products"} totalProductsDisplay={12} />
       <CustomProductsRows title={"Offers"} totalProductsDisplay={12} />
-
       <div className="flex flex-col-reverse xl:flex-row ">
         <div>
           <CustomProductsRows title={undefined} totalProductsDisplay={4} />
@@ -32,13 +31,8 @@ const Home: FC<headerCategoriesProps> = () => {
           <Ad />
         </div>
       </div>
-
-
       <CustomProductsRows title={"Popular Products"} totalProductsDisplay={12} />
       <CustomProductsRows title={"Offers"} totalProductsDisplay={12} />
-
-
-
       <div className="flex flex-col-reverse xl:flex-row ">
         <div>
           <CustomProductsRows title={undefined} totalProductsDisplay={4} />

@@ -70,7 +70,7 @@ export const rowProductsData = [
   {
     id: 1,
     title: "title",
-    img: "/imgs/demo_row_products/1.png",
+    img: "./imgs/demo_row_products/1.png",
     price: 20,
     quantity: 0,
     offerAvailable: true,

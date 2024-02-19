@@ -108,8 +108,8 @@ export const Header: FC<HeaderProps> = () => {
             {showHoverItem && (
               <ul className={`hidden md:flex flex-col primary-font font-[400] absolute z-50 ${darkMode?.isEnabled ? "bg-darkModeBg text-darkModeText" : "bg-[#f0f5ff]"} md:px-[10px] md:py-[15px] md:w-[200px] md:top-[40px] md:right-[20px]`}>
                 {accountLinks?.map((item) => (
-                  <Link key={item.id} to={`/account/${item.id}`}>
-                    <li key={item.id} className={`py-4 px-3 ${darkMode?.isEnabled ? "hover:bg-gray-600" : "hover:bg-gray-300"}`}>
+                  <Link key={item.id} to={`/account/${item.id}`} >
+                    <li key={item.id} className={`py-4 px-3 ${darkMode?.isEnabled ? "hover:bg-gray-600" : "hover:bg-gray-300"}`} onClick={() => setShowHoverItem(false)}>
                       {item.value}
                     </li>
                   </Link>

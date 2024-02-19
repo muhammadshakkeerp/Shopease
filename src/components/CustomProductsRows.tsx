@@ -70,12 +70,16 @@ const CustomProductsRows: FC<RowProps> = ({ title, totalProductsDisplay }) => {
         </button>
       </Link>
       {/* ROW TITLE */}
-      <h5 className="primary-font text-color font-bold md:text-[20px] md:py-5 md:px-5">
+      <h5 className="primary-font  font-bold md:text-[20px] md:py-5 md:px-5">
         {title}
       </h5>
       <div
-        className={`flex justify-between gap-2 w-full overflow-x-auto scroll-smooth ${inViewport ? "fade-in" : "opacity-0"
-          }`}
+        style={{
+          scrollbarWidth: "thin",
+        }}
+        className={`flex justify-between gap-2 w-full overflow-x-auto scroll-smooth  ${inViewport ? "fade-in" : "opacity-0"
+          }`
+        }
         onWheel={handleWheel}
         ref={galleryRef}
       >

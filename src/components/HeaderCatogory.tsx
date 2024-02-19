@@ -73,7 +73,7 @@ export const HeaderCatogory: FC<headerCategoriesProps> = () => {
                   Array.from(findSubCetogory)?.map((item, subIndex) => (
                     <li
                       key={subIndex}
-                      className="primary-font font-semibold py-2 px-1 cursor-pointer"
+                      className="primary-font font-semibold py-2 px-1 cursor-pointer hover:bg-slate-600"
                     >
                       {item?.category}
                     </li>

@@ -1,4 +1,5 @@
-![zqlOUxCwBw](https://github.com/MuhammadShakkeer2030/flipkart_clone/assets/121001685/567ea6af-fb9f-475a-bc5b-482bc8aef3e4)
+![image](https://github.com/MuhammadShakkeer2030/flipkart_clone/assets/121001685/74597859-dee3-4b66-8290-b1a4b9438e49)
+
 
 
 # Flikart clone

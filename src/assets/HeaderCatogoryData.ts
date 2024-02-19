@@ -36,7 +36,7 @@ export const headerCategories:headerCategoriesProps= [
         ],
       },
       {
-        category: "Bakery & Snacks",
+        category: "Cooking Essentials",
         title: "Grocery",
         subItems: [
           { name: "Bread", id: "bread" },
@@ -46,7 +46,7 @@ export const headerCategories:headerCategoriesProps= [
         ],
       },
       {
-        category: "Bakery & Snacks",
+        category: "Sweets & Chocolates",
         title: "Grocery",
         subItems: [
           { name: "Bread", id: "bread" },
@@ -56,7 +56,7 @@ export const headerCategories:headerCategoriesProps= [
         ],
       },
       {
-        category: "Bakery & Snacks",
+        category: "Frozen Foods",
         title: "Grocery",
         subItems: [
           { name: "Bread", id: "bread" },
@@ -92,7 +92,7 @@ export const headerCategories:headerCategoriesProps= [
         ],
       },
       {
-        category: "Laptops",
+        category: "Tv",
         title: "Electronics",
         subItems: [
           { name: "HP", id: "hp" },
@@ -102,7 +102,7 @@ export const headerCategories:headerCategoriesProps= [
         ],
       },
       {
-        category: "Laptops",
+        category: "Refrigerator",
         title: "Electronics",
         subItems: [
           { name: "HP", id: "hp" },
@@ -112,7 +112,7 @@ export const headerCategories:headerCategoriesProps= [
         ],
       },
       {
-        category: "Laptops",
+        category: "Cameras",
         title: "Electronics",
         subItems: [
           { name: "HP", id: "hp" },
@@ -122,7 +122,7 @@ export const headerCategories:headerCategoriesProps= [
         ],
       },
       {
-        category: "Laptops",
+        category: "Speakers",
         title: "Electronics",
         subItems: [
           { name: "HP", id: "hp" },
@@ -148,7 +148,7 @@ export const headerCategories:headerCategoriesProps= [
         ],
       },
       {
-        category: "Skincare",
+        category: "Clothing",
         title: "Beauty",
         subItems: [
           { name: "Cleansers", id: "cleansers" },
@@ -158,7 +158,7 @@ export const headerCategories:headerCategoriesProps= [
         ],
       },
       {
-        category: "Skincare",
+        category: "Footwear",
         title: "Beauty",
         subItems: [
           { name: "Cleansers", id: "cleansers" },
@@ -168,7 +168,7 @@ export const headerCategories:headerCategoriesProps= [
         ],
       },
       {
-        category: "Skincare",
+        category: "Accessories",
         title: "Beauty",
         subItems: [
           { name: "Cleansers", id: "cleansers" },
@@ -184,7 +184,7 @@ export const headerCategories:headerCategoriesProps= [
     img: "./imgs/headerCatogeryImgs/Furnniture.webp",
     subCategories : [
       {
-        category: "Living Room",
+        category: "Sofas & Sectionals",
         title: "Furnniture",
         subItems: [
           { name: "Sofas", id: "sofas" },
@@ -194,7 +194,7 @@ export const headerCategories:headerCategoriesProps= [
         ],
       },
       {
-        category: "Bedroom",
+        category: "Beds",
         title: "Furnniture",
         subItems: [
           { name: "Beds", id: "beds" },
@@ -204,7 +204,7 @@ export const headerCategories:headerCategoriesProps= [
         ],
       },
       {
-        category: "Kitchen",
+        category: "Dining Sets",
         title: "Furnniture",
         subItems: [
           { name: "Beds", id: "beds" },
@@ -214,7 +214,7 @@ export const headerCategories:headerCategoriesProps= [
         ],
       },
       {
-        category: "Bathroom",
+        category: "Tables",
         title: "Furnniture",
         subItems: [
           { name: "Beds", id: "beds" },
@@ -225,13 +225,12 @@ export const headerCategories:headerCategoriesProps= [
       },
     ]
   },
-
  {
   title:"Beauty",
   img:"./imgs/headerCatogeryImgs/Furnniture.webp",
   subCategories : [
     {
-      category: "Living Room",
+      category: "Skincare",
       title: "Furnniture",
       subItems: [
         { name: "Sofas", id: "sofas" },
@@ -241,7 +240,37 @@ export const headerCategories:headerCategoriesProps= [
       ],
     },
     {
-      category: "Bedroom",
+      category: "Makeup",
+      title: "Furnniture",
+      subItems: [
+        { name: "Beds", id: "beds" },
+        { name: "Dressers", id: "dressers" },
+        { name: "Nightstands", id: "nightstands" },
+        // Add more sub-items as needed
+      ],
+    },
+    {
+      category: "Haircare",
+      title: "Furnniture",
+      subItems: [
+        { name: "Beds", id: "beds" },
+        { name: "Dressers", id: "dressers" },
+        { name: "Nightstands", id: "nightstands" },
+        // Add more sub-items as needed
+      ],
+    },
+    {
+      category: "Fragrances",
+      title: "Furnniture",
+      subItems: [
+        { name: "Beds", id: "beds" },
+        { name: "Dressers", id: "dressers" },
+        { name: "Nightstands", id: "nightstands" },
+        // Add more sub-items as needed
+      ],
+    },
+    {
+      category: "Beauty Accessories",
       title: "Furnniture",
       subItems: [
         { name: "Beds", id: "beds" },
@@ -254,7 +283,6 @@ export const headerCategories:headerCategoriesProps= [
   ]
   
  }
-  
 ];
 
 

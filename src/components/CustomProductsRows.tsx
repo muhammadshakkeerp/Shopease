@@ -70,7 +70,7 @@ const CustomProductsRows: FC<RowProps> = ({ title, totalProductsDisplay }) => {
         </button>
       </Link>
       {/* ROW TITLE */}
-      <h5 className="primary-font  font-bold md:text-[20px] md:py-5 md:px-5">
+      <h5 className="primary-font  font-bold md:text-[20px] md:py-2 md:px-5">
         {title}
       </h5>
       <div

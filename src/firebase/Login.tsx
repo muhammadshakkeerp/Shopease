@@ -54,46 +54,46 @@ const Login: React.FC<LoginProps> = () => {
 
   return (
     <div className="w-full max-w-md mx-auto mt-10">
-    <div className="flex flex-col items-center">
-      <h1 className="text-3xl font-semibold ">Login</h1>
-      <p className="mt-4 ">
-        Get access to your Orders, Wishlist, and Recommendations
-      </p>
+      <div className="flex flex-col items-center">
+        <h1 className="text-3xl font-semibold ">Login</h1>
+        <p className="mt-4 ">
+          Get access to your Orders, Wishlist, and Recommendations
+        </p>
+      </div>
+
+      <form className="flex flex-col mt-8" onSubmit={handleSubmit}>
+        <input
+          type="tel"
+          placeholder="Phone Number"
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          className="p-3 border border-gray-300 rounded-md mb-4 focus:outline-none focus:border-blue-500"
+        />
+        <button
+          type="button"
+          onClick={handleSendOTP}
+          className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-md mb-4"
+        >
+          Send OTP
+        </button>
+        <input
+          type="text"
+          placeholder="Verification Code"
+          value={verificationCode}
+          onChange={(e) => setVerificationCode(e.target.value)}
+          className="p-3 border border-gray-300 rounded-md mb-4 focus:outline-none focus:border-blue-500"
+        />
+        <button
+          type="button"
+          onClick={handleLogin}
+          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md"
+        >
+          Login
+        </button>
+      </form>
     </div>
-  
-    <form className="flex flex-col mt-8" onSubmit={handleSubmit}>
-      <input
-        type="tel"
-        placeholder="Phone Number"
-        value={phoneNumber}
-        onChange={(e) => setPhoneNumber(e.target.value)}
-        className="p-3 border border-gray-300 rounded-md mb-4 focus:outline-none focus:border-blue-500"
-      />
-      <button
-        type="button"
-        onClick={handleSendOTP}
-        className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-md mb-4"
-      >
-        Send OTP
-      </button>
-      <input
-        type="text"
-        placeholder="Verification Code"
-        value={verificationCode}
-        onChange={(e) => setVerificationCode(e.target.value)}
-        className="p-3 border border-gray-300 rounded-md mb-4 focus:outline-none focus:border-blue-500"
-      />
-      <button
-        type="button"
-        onClick={handleLogin}
-        className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md"
-      >
-        Login
-      </button>
-    </form>
-  </div>
-  
+
   );
 };
 
-export { Login };
+export default Login 

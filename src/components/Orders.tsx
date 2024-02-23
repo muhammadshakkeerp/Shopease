@@ -1,9 +1,9 @@
 // Orders.tsx
 import React from 'react';
 
-export const Orders: React.FC = () => {
- // Sample orders data
- const orders = [
+ const Orders: React.FC = () => {
+  // Sample orders data
+  const orders = [
     {
       id: '1',
       date: '2023-11-29',
@@ -24,7 +24,7 @@ export const Orders: React.FC = () => {
       <div className=' w-full flex justify-center items-center flex-col'>
         <img src="/imgs/emptyOrders.png" alt="empty image" />
         <h4 className='font-bold'>You have no orders</h4>
-        <button className='bg-blue-700 text-white p-1 rounded-sm primary-font font-semibold'>Start Shopping</button> 
+        <button className='bg-blue-700 text-white p-1 rounded-sm primary-font font-semibold'>Start Shopping</button>
       </div>
       {/*  */}
       <h1 className="text-3xl font-semibold mb-4">Your Orders</h1>
@@ -54,3 +54,4 @@ export const Orders: React.FC = () => {
 };
 
 
+export default Orders

@@ -1,6 +1,7 @@
 import { lazy } from "react";
+
 const Home = lazy(() => import("../pages/Home"));
-const Account = lazy(() => import("../pages/Accout"));
+const Account = lazy(() => import("../pages/Account"));
 const Cart = lazy(() => import("../pages/Cart"));
 const ProductsGroup = lazy(() => import("../pages/ProductsGroup"));
 const NestedHoverNavlink = lazy(
@@ -24,3 +25,14 @@ export {
   PaymentSuccessful,
   ChatBot,
 };
+
+// Account section optimization
+const AccountDetails = lazy(() => import("../components/AccountDetails"));
+const Login = lazy(() => import("../firebase/Login"));
+
+const Profile = lazy(() => import("../components/Profile"));
+const Wishlist = lazy(() => import("../components/WishList"));
+const Orders = lazy(() => import("../components/Orders"));
+const Rewards = lazy(() => import("../components/Rewards"));
+
+export { AccountDetails, Login, Profile, Wishlist, Orders, Rewards };

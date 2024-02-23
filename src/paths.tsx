@@ -21,6 +21,7 @@ import { AccountSidebar } from "./components/AccountSidebar";
 import { AccountDetails } from "./components/AccountDetails"
 import { Checkout } from './components/Checkout'
 import { PaymentSuccessful } from "./components/PaymentSuccesfull";
+import { ChatBot } from "./components/chatbot/ChatBot";
 
 export {
   CustomProductsRows,
@@ -44,6 +45,7 @@ export {
   Checkout,
   AccountSidebar,
   PaymentSuccessful,
+  ChatBot,
   AccountDetails,
   Footer,
 };

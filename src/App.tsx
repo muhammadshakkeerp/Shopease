@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { Account, Cart, ProductGallery, Home, PopupCard, ProductsGroup, Checkout, PaymentSuccessful, } from "./paths";
+import { Account, Cart, ProductGallery, Home, PopupCard, ProductsGroup, Checkout, PaymentSuccessful, ChatBot, } from "./paths";
 import { Footer, Header, ProductDatails } from "./paths";
 import { Route, Routes } from "react-router-dom";
 import { ProductDetailsProps } from "./assets/types";
@@ -28,7 +28,7 @@ const App: FC<ProductDetailsProps> = () => {
   }, []);
 
   return (
-    <div className={`${DarkMode?.isEnabled ? "dark:bg-darkModeBg text-darkModeText" : "bg-white"}`}>
+    <div className={`${DarkMode?.isEnabled ? "dark:bg-darkModeBg text-darkModeText" : "bg-white"} relative`}>
       {showPopUp && <PopupCard setShowPopUp={setShowPopUp} />}
       <Header toggleDarkMode={() => { }} />
 
@@ -75,6 +75,10 @@ const App: FC<ProductDetailsProps> = () => {
         <Route path="/nested" element={<NestedHoverNavlink />} />
         <Route path="/productGallery" element={<ProductGallery />} />
       </Routes>
+
+      <div className="fixed bottom-5 right-4 z-50">
+        <ChatBot />
+      </div>
       <Footer />
     </div >
   );

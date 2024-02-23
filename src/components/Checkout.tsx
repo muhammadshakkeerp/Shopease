@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 // import { useHistory } from 'react-router-dom'; // Assuming you're using React Router for navigation
 
-export const Checkout: React.FC = () => {
+const Checkout: React.FC = () => {
     const { id } = useParams();
     console.log(id)
 
@@ -147,3 +147,4 @@ export const Payment: React.FC = () => {
         </div>
     );
 };
+export default Checkout

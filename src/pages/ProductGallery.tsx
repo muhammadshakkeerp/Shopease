@@ -75,7 +75,7 @@ const ProductGallery = () => {
               <BiStar />
               {item?.rating?.rate}
             </p>
-            <button type="button" onClick={() => setToggleFevourite((prev) => [...prev, item?.id])}>
+            <button title="click to add your wishlist" type="button" onClick={() => setToggleFevourite((prev) => [...prev, item?.id])}>
               <BiHeart className={toggleFevourite?.includes(item.id) ? "text-yellow-500" : ""} />
             </button>
           </div>

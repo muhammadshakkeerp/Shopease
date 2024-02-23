@@ -187,8 +187,6 @@ const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
                       {/* <!-- Include similar blocks for other reviews --> */}
                     </div>
                   </div>
-
-
                 </div>
               </div>
             </div>
@@ -224,8 +222,8 @@ const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
             reviews.map((review, index) => (
               <div key={index} className="border-b border-gray-200 p-4 flex justify-between">
                 <p className="text-sm">{review}</p>
-                <span><button><RiEditBoxLine /></button>
-                  <button><MdOutlineDelete /></button></span>
+                <span><button title="click to edit"><RiEditBoxLine /></button>
+                  <button title="click to delete"><MdOutlineDelete /></button></span>
               </div>
             ))
           )}
@@ -238,4 +236,4 @@ const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
   );
 };
 
-export { ProductDatails };
+export default ProductDatails 

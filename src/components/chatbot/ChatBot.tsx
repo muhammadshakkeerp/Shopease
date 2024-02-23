@@ -3,7 +3,7 @@ import { BsChatQuoteFill } from 'react-icons/bs';
 import { FaTimes } from 'react-icons/fa';
 import ChatBox from './ChatBox';
 
-export const ChatBot = () => {
+ const ChatBot = () => {
     const [toggleChat, setToggleChat] = useState(false);
 
     const toggleChatWindow = () => {
@@ -54,3 +54,5 @@ export const ChatBot = () => {
         </div>
     );
 };
+
+export default ChatBot

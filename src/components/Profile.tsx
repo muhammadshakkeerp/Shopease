@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaUser, FaEnvelope, FaPhone, FaGenderless } from 'react-icons/fa';
 
-export const Profile: React.FC = () => {
+const Profile: React.FC = () => {
   return (
     <div className="max-w-3xl mx-auto py-8 px-8 xl:px-0">
       {/* Personal Information Section */}
@@ -51,3 +51,4 @@ export const Profile: React.FC = () => {
     </div>
   );
 };
+export default Profile

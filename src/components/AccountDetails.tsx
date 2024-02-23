@@ -1,4 +1,4 @@
-export const AccountDetails: React.FC = () => {
+const AccountDetails: React.FC = () => {
     return (
         <div className="max-w-md mx-auto bg-white shadow-md rounded-md p-8 mt-8">
             <h1 className="text-2xl font-semibold mb-4">Personal Information</h1>
@@ -41,3 +41,5 @@ export const AccountDetails: React.FC = () => {
         </div>
     );
 };
+
+export default AccountDetails

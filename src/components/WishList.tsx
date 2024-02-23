@@ -8,7 +8,7 @@ interface WishlistItem {
   image: string;
 }
 
-export const Wishlist: React.FC = () => {
+ const Wishlist: React.FC = () => {
   const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([
     {
       id: 1,
@@ -55,3 +55,4 @@ export const Wishlist: React.FC = () => {
     </div>
   );
 };
+export default Wishlist

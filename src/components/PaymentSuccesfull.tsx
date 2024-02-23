@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-export const PaymentSuccessful: React.FC = () => {
+const PaymentSuccessful: React.FC = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
@@ -16,3 +16,5 @@ export const PaymentSuccessful: React.FC = () => {
 
     );
 };
+
+export default PaymentSuccessful

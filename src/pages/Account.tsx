@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom"
-import { AccountDetails, AccountSidebar, Login, Orders, Profile, Rewards, Wishlist } from "../paths"
+import { AccountDetails, Login, Orders, Profile, Rewards, Wishlist } from "../optimazation/AppOptimazation"
+import { AccountSidebar } from "../paths"
 
 const Account = () => {
     return (

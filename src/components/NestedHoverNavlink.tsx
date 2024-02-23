@@ -134,7 +134,7 @@ const NestedHoverNavlink: FC = () => {
             key={category.id}
             className="relative group"
             onMouseEnter={() => handleCategoryHover(category.id)}
-            //   onMouseLeave={() => handleCategoryHover(null)}
+          //   onMouseLeave={() => handleCategoryHover(null)}
           >
             <span className="text-lg font-semibold cursor-pointer">
               {category.title}
@@ -146,7 +146,7 @@ const NestedHoverNavlink: FC = () => {
                     key={subCategory.id}
                     className="mb-2"
                     onMouseEnter={() => handleSubCategoryHover(subCategory.id)}
-                    //   onMouseLeave={() => handleSubCategoryHover(null)}
+                  //   onMouseLeave={() => handleSubCategoryHover(null)}
                   >
                     <span className="font-semibold cursor-pointer">
                       {subCategory.name}

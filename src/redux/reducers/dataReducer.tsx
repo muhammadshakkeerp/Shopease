@@ -7,7 +7,6 @@ const initialState = {
 };
 
 const dataReducer = (state = initialState, action: DataFunctionsTypes) => {
-  console.log(state)
   switch (action.type) {
     case FETCH_DATA_REQUEST:
       return {

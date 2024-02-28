@@ -13,12 +13,12 @@ import { BsCart } from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import { RootState } from "../redux/store";
 import { useDispatch, useSelector } from "react-redux";
-import { FC, useState } from "react";
+import { FC, useCallback, useState } from "react";
 import { toggleDarkMode } from "../redux/actions/DarkModeAction";
+import { startVoiceSearch } from "../redux/actions/voiceActions";
 
 interface HeaderProps {
   toggleDarkMode: () => void
-
 }
 
 export const Header: FC<HeaderProps> = () => {
@@ -36,12 +36,42 @@ export const Header: FC<HeaderProps> = () => {
 
   const [toggleMenu, setToggleMenu] = useState(false)
   const [showHoverItem, setShowHoverItem] = useState<boolean>(false);
-  console.log(darkMode)
   const handleDarkMode = () => {
     dispatch(toggleDarkMode())
   }
 
+  const handleVoiceSearch = useCallback(() => {
+    if ('webkitSpeechRecognition' in window) {
+      const recognition = new (window as any).webkitSpeechRecognition();
 
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = 'en-US';
+
+      recognition.onstart = () => {
+        console.log('Voice search started...');
+      };
+
+      recognition.onresult = (event:SpeechRecognitionEvent) => {
+        const transcript = event.results[0][0].transcript;
+        console.log('Voice search result:', transcript);
+        // Dispatch action to start voice search with transcript
+        dispatch(startVoiceSearch(transcript));
+      };
+
+      recognition.onerror = (event) => {
+        console.error('Voice search error:', event.error);
+      };
+
+      recognition.onend = () => {
+        console.log('Voice search ended.');
+      };
+
+      recognition.start();
+    } else {
+      console.error('SpeechRecognition API not supported.');
+    }
+  }, [dispatch]);
   return (
     <header className={`h-[50px] ${darkMode?.isEnabled ? " bg-darkModeBg text-darkModeText" : "bg-white"} md:h-[66px] flex items-center justify-around   md:flex-row  md:justify-between relative`}>
       {/* Logo */}
@@ -88,7 +118,7 @@ export const Header: FC<HeaderProps> = () => {
           placeholder="Search for Products,Brands and More"
           className={`md:w-full border-none bg-transparent outline-none h-[40px]   text-[10px] md:text-[18px] ${darkMode?.isEnabled ? "placeholder-gray-300" : "placeholder-[#717478]"} pl-5`}
         />
-        <button title="Click to search through voice">  <MdKeyboardVoice className="text-yellow-700 " /></button>
+        <button title="Click to search through voice" onClick={handleVoiceSearch}>  <MdKeyboardVoice className="text-yellow-700 " /></button>
       </div>
       {/* third */}
       <div className="flex gap-3 lg:gap-0 items-center justify-evenly w-[40%] h-full lg:w-1/3 font-fam">

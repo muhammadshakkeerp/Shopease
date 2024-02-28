@@ -8,7 +8,7 @@ import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai";
 import { PiDotsThreeVerticalBold } from "react-icons/pi";
 import { CgDarkMode, CgProfile } from 'react-icons/cg'
-import { MdOutlineMenu } from "react-icons/md";
+import { MdKeyboardVoice, MdOutlineMenu } from "react-icons/md";
 import { BsCart } from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import { RootState } from "../redux/store";
@@ -40,11 +40,13 @@ export const Header: FC<HeaderProps> = () => {
   const handleDarkMode = () => {
     dispatch(toggleDarkMode())
   }
+
+
   return (
     <header className={`h-[50px] ${darkMode?.isEnabled ? " bg-darkModeBg text-darkModeText" : "bg-white"} md:h-[66px] flex items-center justify-around   md:flex-row  md:justify-between relative`}>
       {/* Logo */}
       <div className="flex items-center gap-4 md:gap-0 ">
-        <button onClick={() => setToggleMenu(!toggleMenu)}>
+        <button title="menu" onClick={() => setToggleMenu(!toggleMenu)}>
           <MdOutlineMenu className="md:hidden" />
         </button>
 
@@ -86,10 +88,11 @@ export const Header: FC<HeaderProps> = () => {
           placeholder="Search for Products,Brands and More"
           className={`md:w-full border-none bg-transparent outline-none h-[40px]   text-[10px] md:text-[18px] ${darkMode?.isEnabled ? "placeholder-gray-300" : "placeholder-[#717478]"} pl-5`}
         />
+        <button title="Click to search through voice">  <MdKeyboardVoice className="text-yellow-700 " /></button>
       </div>
       {/* third */}
       <div className="flex gap-3 lg:gap-0 items-center justify-evenly w-[40%] h-full lg:w-1/3 font-fam">
-        <button className="hidden md:flex lg:ml-2 lg:gap-2">
+        <button title="best seller option" className="hidden md:flex lg:ml-2 lg:gap-2">
           <AiOutlineHome />
           <p className="hidden lg:block text-sm ">Become a Seller</p>
         </button>
@@ -101,7 +104,7 @@ export const Header: FC<HeaderProps> = () => {
             onMouseLeave={() => setShowHoverItem(false)}
           >
             <CgProfile className=" group-hover:text-white" />
-            <button className="hidden lg:block text-sm">Login</button>
+            <button title="click to login" className="hidden lg:block text-sm">Login</button>
             <span className="hidden lg:block transition-transform transform-gpu  ease-in-out group-hover:rotate-180">
               <BiChevronDown />
             </span>
@@ -127,9 +130,9 @@ export const Header: FC<HeaderProps> = () => {
             </div>
           </Link>
         </div>
-        <button onClick={handleDarkMode}><CgDarkMode /></button>
+        <button title="click to toggle darkmode" onClick={handleDarkMode}><CgDarkMode /></button>
         <div className="hidden md:flex group h-full">
-          <button>
+          <button title="click to see options">
             <PiDotsThreeVerticalBold />
           </button>
           <ul className={`hidden group-hover:flex flex-col w-48  absolute  right-0 top-10 ${darkMode?.isEnabled ? "bg-darkModeBg" : "bg-white"} border border-blue-800 z-50`}>

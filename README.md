@@ -43,7 +43,7 @@ To run tests:
 npm test
 ```
 
-## Key Features
+## 🔑 Key Features
 
   - Add-to-Cart
   - Dark Mode

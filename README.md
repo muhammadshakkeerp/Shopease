@@ -2,7 +2,7 @@
 
 
 
-# Flikart clone
+# 🛒 Flikart clone
 
 ## Description
 

@@ -4,7 +4,7 @@
 
 # 🛒 Flikart clone
 
-## Description
+## 📙 Description
 
 Flikart is a project developed for [briefly describe the purpose or goal of the project]. It incorporates various technologies and libraries to achieve [mention the key goals].
 

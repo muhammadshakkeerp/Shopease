@@ -71,7 +71,7 @@ npm test
   - ESLint
   - Vite
 
-## Folder Structure
+## 📁  Folder Structure
 
 ```plaintext
 flikart/

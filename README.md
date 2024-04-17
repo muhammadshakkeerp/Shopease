@@ -17,7 +17,7 @@ Before getting started, ensure you have Node.js and npm installed on your machin
 git clone https://github.com/MuhammadShakkeer2030/flipkart_clone.git
 
 # Navigate to the project directory
-cd flikart
+cd flipkart_clone
 
 # Install dependencies
 npm install

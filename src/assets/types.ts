@@ -29,7 +29,7 @@ type RowProductsProps = {
 type ProductDetailsProps = {
   id:   number ;
   title: string;
-  img: string;
+  thumbImg: string;
   price:number,
   quantity:number,
   offerAvailable: boolean;

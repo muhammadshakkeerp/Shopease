@@ -90,7 +90,8 @@ const CustomProductsRows: FC<RowProps> = ({ title, totalProductsDisplay }) => {
             product={{
               id: product.id,
               title: product.title,
-              img: product.img,
+              thumbImg: product.thumbImg,
+              img: "",
               price: product.price,
               offerAvailable: false,
             }}

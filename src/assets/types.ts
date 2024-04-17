@@ -4,7 +4,6 @@ type SubItem = {
 };
 
 export type SubCategory = {
-  
   category: string;
   title: string;
   subItems: SubItem[];
@@ -16,22 +15,22 @@ type HeaderCategory = {
   subCategories: SubCategory[];
 };
 
-type  headerCategoriesProps = HeaderCategory[] 
+type headerCategoriesProps = HeaderCategory[];
 
 type RowProductsProps = {
-  id:   number ;
+  id: number;
   title: string;
   img: string;
-  price:number,
-  quantity:number,
+  price: number;
+  quantity: number;
   offerAvailable: boolean;
 }[];
 type ProductDetailsProps = {
-  id:   number ;
+  id: number;
   title: string;
-  thumbImg: string;
-  price:number,
-  quantity:number,
+  img: string;
+  price: number;
+  quantity: number;
   offerAvailable: boolean;
 };
 interface FooterDataItem {
@@ -43,12 +42,10 @@ interface FooterDataProps {
   [section: string]: FooterDataItem;
 }
 
-
-
 export type {
   RowProductsProps,
   ProductDetailsProps,
   FooterDataProps,
   headerCategoriesProps,
-  HeaderCategory
+  HeaderCategory,
 };

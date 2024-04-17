@@ -2,13 +2,13 @@
 
 
 
-# Flikart clone
+# 🛒 Flikart clone
 
-## Description
+## 📙 Description
 
-Flikart is a project developed for [briefly describe the purpose or goal of the project]. It incorporates various technologies and libraries to achieve [mention the key goals].
+Flikart is a project developed for online shopping inspired from flipkart. It incorporates various technologies and libraries to achieve Html5, css3, React, typescript, redux, tailwindcss
 
-## Installation
+## 🛠️ Installation
 
 Before getting started, ensure you have Node.js and npm installed on your machine.
 
@@ -17,7 +17,7 @@ Before getting started, ensure you have Node.js and npm installed on your machin
 git clone https://github.com/MuhammadShakkeer2030/flipkart_clone.git
 
 # Navigate to the project directory
-cd flikart
+cd flipkart_clone
 
 # Install dependencies
 npm install
@@ -43,7 +43,7 @@ To run tests:
 npm test
 ```
 
-## Key Features
+## 🔑 Key Features
 
   - Add-to-Cart
   - Dark Mode
@@ -54,7 +54,7 @@ npm test
   - Order & Wishlist section
 
 
-## Technologies Used
+## 👨‍💻  Technologies Used
 
 - **Frontend:**
   - React
@@ -62,7 +62,6 @@ npm test
   - Tailwind CSS
   - Apollo Client
   - React Router Dom
-  - Firebase
   - GraphQL
   - Jest
 
@@ -71,7 +70,7 @@ npm test
   - ESLint
   - Vite
 
-## Folder Structure
+## 📁  Folder Structure
 
 ```plaintext
 flikart/
@@ -90,6 +89,7 @@ flikart/
 ├── tsconfig.json
 └── ...
 ```
+![image](https://github.com/muhammadshakkeerp/flipkart_clone/assets/121001685/0ae96fbf-dc94-4691-87f0-36e04bcbf93d)
 
 ## Optimized File
 ``` 

@@ -62,7 +62,6 @@ npm test
   - Tailwind CSS
   - Apollo Client
   - React Router Dom
-  - Firebase
   - GraphQL
   - Jest
 

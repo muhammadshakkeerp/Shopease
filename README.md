@@ -90,6 +90,7 @@ flikart/
 ├── tsconfig.json
 └── ...
 ```
+![image](https://github.com/muhammadshakkeerp/flipkart_clone/assets/121001685/0ae96fbf-dc94-4691-87f0-36e04bcbf93d)
 
 ## Optimized File
 ``` 

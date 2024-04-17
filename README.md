@@ -6,7 +6,7 @@
 
 ## 📙 Description
 
-Flikart is a project developed for [briefly describe the purpose or goal of the project]. It incorporates various technologies and libraries to achieve [mention the key goals].
+Flikart is a project developed for online shopping inspired from flipkart. It incorporates various technologies and libraries to achieve Html5, css3, React, typescript, redux, tailwindcss
 
 ## 🛠️ Installation
 

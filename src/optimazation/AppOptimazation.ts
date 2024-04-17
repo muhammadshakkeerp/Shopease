@@ -28,7 +28,7 @@ export {
 
 // Account section optimization
 const AccountDetails = lazy(() => import("../components/AccountDetails"));
-const Login = lazy(() => import("../firebase/Login"));
+const Login = lazy(() => import("../pages/Login"));
 
 const Profile = lazy(() => import("../components/Profile"));
 const Wishlist = lazy(() => import("../components/WishList"));

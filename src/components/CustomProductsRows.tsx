@@ -8,10 +8,11 @@ import React from "react";
 
 interface RowProps {
   title: string | undefined;
-  totalProductsDisplay: number | undefined;
+  starProducts: number;
+  endProducts: number | undefined;
 }
 
-const CustomProductsRows: FC<RowProps> = ({ title, totalProductsDisplay }) => {
+const CustomProductsRows: FC<RowProps> = ({ title, endProducts, starProducts }) => {
   // Darkmode
   const darkMode = useSelector((state: RootState) => state?.dark)
   // refresh window when click home more allow btn 
@@ -83,7 +84,7 @@ const CustomProductsRows: FC<RowProps> = ({ title, totalProductsDisplay }) => {
         onWheel={handleWheel}
         ref={galleryRef}
       >
-        {rowProductsData?.slice(0, totalProductsDisplay).map((product, index) => (
+        {rowProductsData?.slice(starProducts, endProducts).map((product, index) => (
           <ProductCard
             index={index}
             key={index}

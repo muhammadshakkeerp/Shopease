@@ -13,7 +13,7 @@ import Rewards from "./components/Rewards";
 import Profile from "./components/Profile";
 import Wishlist from "./components/WishList";
 import Orders from "./components/Orders";
-import Login from "./firebase/Login";
+import Login from "./pages/Login";
 import { ProductGroupsTab } from "./components/ProductGroupsTab";
 import { ProductFilterSiderbar } from "./components/ProductFilterSiderbar";
 import { Ad } from "./components/Ad";

@@ -37,5 +37,5 @@ const store = configureStore({
     getDefaultMiddleware().concat(additionalMiddleware),
   devTools: process.env.NODE_ENV !== "production",
 });
-
+console.log("store",store)
 export default store;

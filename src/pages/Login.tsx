@@ -9,7 +9,6 @@ const Login: React.FC<LoginProps> = () => {
   // const dispatch = useDispatch();
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [verificationCode, setVerificationCode] = useState("");
-  const [_recaptchaVerifier, _setRecaptchaVerifier] = useState<any>(null); // State to store recaptchaVerifier
 
 
   const handleSendOTP = () => {

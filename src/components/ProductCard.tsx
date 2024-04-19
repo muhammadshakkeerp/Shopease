@@ -17,7 +17,7 @@ const ProductCard = ({
           <div className="w-full flex justify-center">
             <p className="font-[400] primary-font text-color">{product?.title}</p>
           </div>
-          <p className="font-semibold primary-font">offer</p>
+          <p className="font-semibold primary-font">{product?.title}</p>
         </div>
       </Link>
     </div>

@@ -1,4 +1,4 @@
-import { FC, Suspense,  useEffect, useState } from "react";
+import { FC, Suspense, useEffect, useState } from "react";
 import { Footer, Header, PopupCard } from "./paths";
 import { Route, Routes } from "react-router-dom";
 import { ProductDetailsProps } from "./assets/types";

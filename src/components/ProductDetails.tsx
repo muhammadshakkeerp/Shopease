@@ -10,7 +10,7 @@ import { BsHeart } from "react-icons/bs";
 import { RiEditBoxLine } from "react-icons/ri";
 import { addToCart } from "../redux/actions/cartActions";
 
-const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
+const ProductDatails: FC<ProductDetailsProps & ProductProps[]> = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const darkMode = useSelector((state: RootState) => state?.dark)
@@ -52,7 +52,7 @@ const ProductDatails: FC<ProductDetailsProps & CartState> = () => {
               {/* Left side with item details */}
               <div className="flex flex-col xl:flex-row mx-auto  shadow-lg rounded-lg overflow-hidden">
                 <div className="xl:w-2/5 relative">
-                  <img src={item.thumbImg} alt={item.title} className="w-full h-[60vh] xl:h-auto object-cover border rounded-lg" />
+                  <img src={item.img} alt={item.title} className="w-full h-[60vh] xl:h-auto object-cover border rounded-lg" />
                   <span className="absolute top-4 right-4 p-2 rounded-full bg-primary">
                     <BsHeart className="" />
                   </span>

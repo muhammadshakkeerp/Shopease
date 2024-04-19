@@ -5,11 +5,13 @@ import { useState, useEffect, useRef, WheelEvent, FC } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import React from "react";
+import { ProductProps } from "../types/globalTypes";
 
 interface RowProps {
   title: string | undefined;
   starProducts: number;
   endProducts: number | undefined;
+  featuredProducts: ProductProps[] | undefined
 }
 
 const CustomProductsRows: FC<RowProps> = ({ title, endProducts, starProducts }) => {
@@ -92,7 +94,7 @@ const CustomProductsRows: FC<RowProps> = ({ title, endProducts, starProducts }) 
               id: product.id,
               title: product.title,
               thumbImg: product.thumbImg,
-              img: "",
+              img: product.img,
               price: product.price,
               offerAvailable: false,
             }}

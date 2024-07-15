@@ -83,7 +83,7 @@ const ProductDatails: FC<ProductDetailsProps & ProductProps[]> = () => {
                     <div className="py-2">
                       <div className="flex items-center text-green-600 font-semibold">
                         <MdLocalOffer className="text-green-800 tex-[20px] xl:text-[40px]" />
-                        <p>5% Cashback on Flipkart Axis Bank Card <span className="text-sm">(T&C)</span></p>
+                        <p>5% Cashback on ShopEase Axis Bank Card <span className="text-sm">(T&C)</span></p>
                       </div>
                       <div className="flex items-center text-green-600 font-semibold">
                         <MdLocalOffer className="text-green-800 tex-[20px] xl:text-[40px]" />
@@ -178,7 +178,7 @@ const ProductDatails: FC<ProductDetailsProps & ProductProps[]> = () => {
                         <div className="ml-4">
                           <p className="text-sm text-primary">Product Received in Good condition. But...</p>
                           <p className="text-sm text-primary">Thank you for reading my Review.🙂</p>
-                          <p className="text-sm text-primary">Flipkart Customer</p>
+                          <p className="text-sm text-primary">ShopEase Customer</p>
                           <p className="text-sm text-primary">Certified Buyer, Aduthurai</p>
                           <p className="text-sm text-primary">10 months ago</p>
                           <p className="text-primary">83158</p>

@@ -24,7 +24,7 @@ export const accountLinks = [
   { id: "login", value: "Login" },
   // { id: "newCustomer", value: "New Customer" },
   { id: "profile", value: "Profile" },
-  // { id: "flipkartPlus", value: "Flipkart pluse zone" },
+  // { id: "ShopEasePlus", value: "ShopEase pluse zone" },
   { id: "orders", value: "Orders" },
   { id: "wishlist", value: "WishList" },
   { id: "rewards", value: "Rewards" },

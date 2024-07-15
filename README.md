@@ -1,12 +1,12 @@
-![image](https://github.com/MuhammadShakkeer2030/flipkart_clone/assets/121001685/74597859-dee3-4b66-8290-b1a4b9438e49)
+![image](https://github.com/MuhammadShakkeer2030/ShopEase_clone/assets/121001685/74597859-dee3-4b66-8290-b1a4b9438e49)
 
 
 
-# 🛒 Flikart clone
+# 🛒 ShopEase clone
 
 ## 📙 Description
 
-Flikart is a project developed for online shopping inspired from flipkart. It incorporates various technologies and libraries to achieve Html5, css3, React, typescript, redux, tailwindcss
+Flikart is a project developed for online shopping inspired from ShopEase. It incorporates various technologies and libraries to achieve Html5, css3, React, typescript, redux, tailwindcss
 
 ## 🛠️ Installation
 
@@ -14,10 +14,10 @@ Before getting started, ensure you have Node.js and npm installed on your machin
 
 ```bash
 # Clone the repository
-git clone https://github.com/MuhammadShakkeer2030/flipkart_clone.git
+git clone https://github.com/MuhammadShakkeer2030/ShopEase_clone.git
 
 # Navigate to the project directory
-cd flipkart_clone
+cd ShopEase_clone
 
 # Install dependencies
 npm install
@@ -89,7 +89,7 @@ flikart/
 ├── tsconfig.json
 └── ...
 ```
-![image](https://github.com/muhammadshakkeerp/flipkart_clone/assets/121001685/0ae96fbf-dc94-4691-87f0-36e04bcbf93d)
+![image](https://github.com/muhammadshakkeerp/ShopEase_clone/assets/121001685/0ae96fbf-dc94-4691-87f0-36e04bcbf93d)
 
 ## Optimized File
 ``` 

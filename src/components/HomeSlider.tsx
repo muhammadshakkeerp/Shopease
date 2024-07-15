@@ -2,18 +2,12 @@ import { useState, useEffect } from "react";
 import {
   bannerImg1,
   bannerImg2,
-  bannerImg3,
-  bannerImg4,
-  bannerImg5,
 } from "../assets/globalUtlities";
 
 const HomeSlider = () => {
   const bannerImgArray = [
     bannerImg1,
     bannerImg2,
-    bannerImg3,
-    bannerImg4,
-    bannerImg5,
   ];
   const [currentImg, setCurrentImg] = useState(0);
 
@@ -24,7 +18,7 @@ const HomeSlider = () => {
       setCurrentImg(nextImg);
     }, 2000);
     return () => clearInterval(timer);
-  }, [currentImg]);
+  }, [bannerImgArray.length, currentImg]);
 
   return (
     <div className=" transition-all ease-linear transform-gpu">

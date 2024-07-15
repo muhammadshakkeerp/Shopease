@@ -181,7 +181,7 @@ export const headerCategories:headerCategoriesProps= [
   },
   {
     title: "Furnniture",
-    img: "./imgs/headerCatogeryImgs/beauty.webp",
+    img: "./imgs/headerCatogeryImgs/furnniture.webp",
     subCategories : [
       {
         category: "Sofas & Sectionals",
@@ -227,7 +227,7 @@ export const headerCategories:headerCategoriesProps= [
   },
  {
   title:"Beauty",
-  img:"./imgs/headerCatogeryImgs/furnniture.webp",
+  img:"./imgs/headerCatogeryImgs/beauty.webp",
   subCategories : [
     {
       category: "Skincare",

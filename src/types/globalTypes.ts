@@ -15,9 +15,9 @@ interface RatingProps {
 
 interface ProductProps {
   id: number;
-  title: string;
+  title: string | undefined;
   thumbImg:string;
-  img: string;
+  img: string | undefined;
   price: number;
   offerAvailable: boolean;
   cart?: ProductProps[];

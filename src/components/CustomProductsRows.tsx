@@ -5,13 +5,16 @@ import { useState, useEffect, useRef, WheelEvent, FC } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import React from "react";
+import { ProductProps } from "../types/globalTypes";
 
 interface RowProps {
   title: string | undefined;
-  totalProductsDisplay: number | undefined;
+  starProducts: number;
+  endProducts: number | undefined;
+  featuredProducts: ProductProps[] | undefined
 }
 
-const CustomProductsRows: FC<RowProps> = ({ title, totalProductsDisplay }) => {
+const CustomProductsRows: FC<RowProps> = ({ title, endProducts, starProducts }) => {
   // Darkmode
   const darkMode = useSelector((state: RootState) => state?.dark)
   // refresh window when click home more allow btn 
@@ -83,7 +86,7 @@ const CustomProductsRows: FC<RowProps> = ({ title, totalProductsDisplay }) => {
         onWheel={handleWheel}
         ref={galleryRef}
       >
-        {rowProductsData?.slice(0, totalProductsDisplay).map((product, index) => (
+        {rowProductsData?.slice(starProducts, endProducts).map((product, index) => (
           <ProductCard
             index={index}
             key={index}
@@ -91,7 +94,7 @@ const CustomProductsRows: FC<RowProps> = ({ title, totalProductsDisplay }) => {
               id: product.id,
               title: product.title,
               thumbImg: product.thumbImg,
-              img: "",
+              img: product.img,
               price: product.price,
               offerAvailable: false,
             }}

@@ -3,7 +3,7 @@ import { headerCategoriesProps } from "./types";
 export const headerCategories:headerCategoriesProps= [
   {
     title: "Grocery",
-    img: "./imgs/headerCatogeryImgs/Grocery.webp",
+    img: "./imgs/headerCatogeryImgs/grocery.webp",
     subCategories: [
       {
         category: "Fruits & Vegetables",
@@ -69,7 +69,7 @@ export const headerCategories:headerCategoriesProps= [
   },
   {
     title: "Electronics",
-    img: "./imgs/headerCatogeryImgs/Electronics.webp",
+    img: "./imgs/headerCatogeryImgs/electronics.webp",
     subCategories: [
       {
         category: "Smartphones",
@@ -135,7 +135,7 @@ export const headerCategories:headerCategoriesProps= [
   },
   {
     title: "Fashions",
-    img: "./imgs/headerCatogeryImgs/Fashions.webp",
+    img: "./imgs/headerCatogeryImgs/fashions.webp",
     subCategories: [
       {
         category: "Skincare",
@@ -181,7 +181,7 @@ export const headerCategories:headerCategoriesProps= [
   },
   {
     title: "Furnniture",
-    img: "./imgs/headerCatogeryImgs/Furnniture.webp",
+    img: "./imgs/headerCatogeryImgs/furnniture.webp",
     subCategories : [
       {
         category: "Sofas & Sectionals",
@@ -227,7 +227,7 @@ export const headerCategories:headerCategoriesProps= [
   },
  {
   title:"Beauty",
-  img:"./imgs/headerCatogeryImgs/Furnniture.webp",
+  img:"./imgs/headerCatogeryImgs/beauty.webp",
   subCategories : [
     {
       category: "Skincare",

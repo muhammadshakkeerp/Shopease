@@ -3,9 +3,6 @@ import refreshIcon from "/imgs/icons/refresh.svg";
 import searchIcon from "/imgs/icons/search.svg";
 import bannerImg1 from "/imgs/homeBanners/1.webp";
 import bannerImg2 from "/imgs/homeBanners/2.webp";
-import bannerImg3 from "/imgs/homeBanners/3.webp";
-import bannerImg4 from "/imgs/homeBanners/4.webp";
-import bannerImg5 from "/imgs/homeBanners/5.webp";
 import { AiOutlineRight } from "react-icons/ai";
 
 export {
@@ -14,9 +11,6 @@ export {
   searchIcon,
   bannerImg1,
   bannerImg2,
-  bannerImg3,
-  bannerImg4,
-  bannerImg5,
   AiOutlineRight,
 };
 export const accountLinks = [
@@ -24,7 +18,7 @@ export const accountLinks = [
   { id: "login", value: "Login" },
   // { id: "newCustomer", value: "New Customer" },
   { id: "profile", value: "Profile" },
-  // { id: "flipkartPlus", value: "Flipkart pluse zone" },
+  // { id: "ShopEasePlus", value: "ShopEase pluse zone" },
   { id: "orders", value: "Orders" },
   { id: "wishlist", value: "WishList" },
   { id: "rewards", value: "Rewards" },
@@ -62,8 +56,9 @@ export const rowProductsData = [
   {
     id: 1,
     title: "Tv",
-    thumbImg: "./imgs/demo_row_products/1.png",
-    img: "",
+    img: "/imgs/demo_row_products/Best_seller/image/1.png",
+    category:"best_seller",
+    thumbImg: "/imgs/demo_row_products/Best_seller/thumbImg/1.png",
     price: 20,
     quantity: 0,
     offerAvailable: true,
@@ -71,8 +66,9 @@ export const rowProductsData = [
   {
     id: 2,
     title: "Bycycle",
-    thumbImg: "/imgs/demo_row_products/2.png",
-    img: "",
+    img: "/imgs/demo_row_products/Best_seller/image/2.png",
+    category:"best_seller",
+    thumbImg: "/imgs/demo_row_products/Best_seller/thumbImg/2.png",
     price: 20,
     quantity: 0,
     offerAvailable: true,
@@ -80,8 +76,9 @@ export const rowProductsData = [
   {
     id: 3,
     title: "Trimmer",
-    thumbImg: "/imgs/demo_row_products/3.png",
-    img: "",
+    img: "/imgs/demo_row_products/Best_seller/image/3.png",
+    category:"best_seller",
+    thumbImg: "/imgs/demo_row_products/Best_seller/thumbImg/3.png",
     price: 20,
     quantity: 0,
     offerAvailable: true,
@@ -89,17 +86,19 @@ export const rowProductsData = [
   {
     id: 4,
     title: "Mat",
-    thumbImg: "/imgs/demo_row_products/4.png",
-    img: "",
+    img: "/imgs/demo_row_products/Best_seller/image/4.png",
+    category:"best_seller",
+    thumbImg: "/imgs/demo_row_products/Best_seller/thumbImg/4.png",
     price: 20,
     quantity: 0,
     offerAvailable: true,
   },
   {
     id: 5,
-    title: "Coocker",
-    thumbImg: "/imgs/demo_row_products/5.png",
-    img: "",
+    title: "Cooker",
+    img: "/imgs/demo_row_products/Best_seller/image/5.png",
+    category:"best_seller",
+    thumbImg: "/imgs/demo_row_products/Best_seller/thumbImg/5.png",
     price: 20,
     quantity: 0,
     offerAvailable: true,
@@ -107,8 +106,9 @@ export const rowProductsData = [
   {
     id: 6,
     title: "Plant pot",
+    img: "/imgs/demo_row_products/6.png",
+    category:"",
     thumbImg: "/imgs/demo_row_products/6.png",
-    img: "",
     price: 20,
     quantity: 0,
     offerAvailable: true,
@@ -116,8 +116,9 @@ export const rowProductsData = [
   {
     id: 7,
     title: "Oil",
+    img: "/imgs/demo_row_products/7.png",
+    category:"",
     thumbImg: "/imgs/demo_row_products/7.png",
-    img: "",
     price: 20,
     quantity: 0,
     offerAvailable: true,
@@ -125,8 +126,9 @@ export const rowProductsData = [
   {
     id: 8,
     title: "Rich dad poor dad",
+    img: "/imgs/demo_row_products/8.png",
+    category:"",
     thumbImg: "/imgs/demo_row_products/8.png",
-    img: "",
     price: 20,
     quantity: 0,
     offerAvailable: true,
@@ -134,8 +136,9 @@ export const rowProductsData = [
   {
     id: 9,
     title: "premium boot",
+    img: "/imgs/demo_row_products/8.png",
+    category:"",
     thumbImg: "/imgs/demo_row_products/9.png",
-    img: "",
     price: 20,
     quantity: 0,
     offerAvailable: true,
@@ -143,73 +146,24 @@ export const rowProductsData = [
   {
     id: 10,
     title: "cycle",
+    img: "/imgs/demo_row_products/8.png",
+    category:"",
     thumbImg: "/imgs/demo_row_products/10.png",
-    img: "",
-    price: 20,
-    quantity: 0,
-    offerAvailable: true,
-  },
-  {
-    id: 11,
-    title: "title",
-    thumbImg: "/imgs/demo_row_products/11.png",
-    img: "",
-    price: 20,
-    quantity: 0,
-    offerAvailable: true,
-  },
-  {
-    id: 12,
-    title: "title",
-    thumbImg: "/imgs/demo_row_products/12.png",
-    img: "",
-    price: 20,
-    quantity: 0,
-    offerAvailable: true,
-  },
-  {
-    id: 13,
-    title: "title",
-    thumbImg: "/imgs/demo_row_products/13.png",
-    img: "",
-    price: 20,
-    quantity: 0,
-    offerAvailable: true,
-  },
-  {
-    id: 14,
-    title: "title",
-    thumbImg: "/imgs/demo_row_products/14.png",
-    img: "",
-    price: 20,
-    quantity: 0,
-    offerAvailable: true,
-  },
-  {
-    id: 15,
-    title: "title",
-    thumbImg: "/imgs/demo_row_products/15.png",
-    img: "",
-    price: 20,
-    quantity: 0,
-    offerAvailable: true,
-  },
-  {
-    id: 16,
-    title: "title",
-    thumbImg: "/imgs/demo_row_products/16.png",
-    img: "",
-    price: 20,
-    quantity: 0,
-    offerAvailable: true,
-  },
-  {
-    id: 17,
-    title: "title",
-    thumbImg: "/imgs/demo_row_products/17.png",
-    img: "",
     price: 20,
     quantity: 0,
     offerAvailable: true,
   },
 ];
+
+export const featuredProducts = [
+  {
+    id: 1,
+    title: "Tv",
+    img: "/imgs/demo_row_products/Featured/image/1.png",
+    category:"featured",
+    thumbImg: "/imgs/demo_row_products/Featured/thumbImg/1.png",
+    price: 20,
+    quantity: 0,
+    offerAvailable: true,
+  },
+]

@@ -3,7 +3,7 @@ import {
   headerMoreBtnData,
   searchIcon,
 } from "../assets/globalUtlities";
-import logo from "/logo.png";
+import logo from "/dist/shopeaseLogo.webp";
 import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai";
 import { PiDotsThreeVerticalBold } from "react-icons/pi";
@@ -44,7 +44,7 @@ export const Header: FC<HeaderProps> = () => {
     <header className={`h-[50px] ${darkMode?.isEnabled ? " bg-darkModeBg text-darkModeText" : "bg-white"} md:h-[66px] flex items-center justify-around   md:flex-row  md:justify-between relative`}>
       {/* Logo */}
       <div className="flex items-center gap-4 md:gap-0 ">
-        <button onClick={() => setToggleMenu(!toggleMenu)}>
+        <button type="button" title="Click to toggle" onClick={() => setToggleMenu(!toggleMenu)}>
           <MdOutlineMenu className="md:hidden" />
         </button>
 
@@ -89,7 +89,7 @@ export const Header: FC<HeaderProps> = () => {
       </div>
       {/* third */}
       <div className="flex gap-3 lg:gap-0 items-center justify-evenly w-[40%] h-full lg:w-1/3 font-fam">
-        <button className="hidden md:flex lg:ml-2 lg:gap-2">
+        <button type="button" title="best seller" className="hidden md:flex lg:ml-2 lg:gap-2">
           <AiOutlineHome />
           <p className="hidden lg:block text-sm ">Become a Seller</p>
         </button>
@@ -101,7 +101,7 @@ export const Header: FC<HeaderProps> = () => {
             onMouseLeave={() => setShowHoverItem(false)}
           >
             <CgProfile className=" group-hover:text-white" />
-            <button className="hidden lg:block text-sm">Login</button>
+            <button type="button" title="click to login" className="hidden lg:block text-sm">Login</button>
             <span className="hidden lg:block transition-transform transform-gpu  ease-in-out group-hover:rotate-180">
               <BiChevronDown />
             </span>
@@ -127,9 +127,9 @@ export const Header: FC<HeaderProps> = () => {
             </div>
           </Link>
         </div>
-        <button onClick={handleDarkMode}><CgDarkMode /></button>
+        <button type="button" title="click to change theme" onClick={handleDarkMode}><CgDarkMode /></button>
         <div className="hidden md:flex group h-full">
-          <button>
+          <button title="click to see options" type="button">
             <PiDotsThreeVerticalBold />
           </button>
           <ul className={`hidden group-hover:flex flex-col w-48  absolute  right-0 top-10 ${darkMode?.isEnabled ? "bg-darkModeBg" : "bg-white"} border border-blue-800 z-50`}>

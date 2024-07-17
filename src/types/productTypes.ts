@@ -19,6 +19,7 @@ interface ProductProps {
   thumbImg:string;
   img: string | undefined;
   price: number;
+  quantity?:number;
   offerAvailable: boolean;
   cart?: ProductProps[];
 }

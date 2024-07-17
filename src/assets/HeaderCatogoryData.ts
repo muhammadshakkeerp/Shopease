@@ -1,4 +1,4 @@
-import { headerCategoriesProps } from "./types";
+import { headerCategoriesProps } from "../types/layoutTypes";
 
 export const headerCategories:headerCategoriesProps= [
   {

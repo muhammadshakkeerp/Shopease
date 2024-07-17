@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ProductProps } from "../types/globalTypes";
+import { ProductProps } from "../types/productTypes";
 
 const ProductCard = ({
   product,

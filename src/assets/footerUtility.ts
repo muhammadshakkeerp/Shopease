@@ -1,4 +1,4 @@
-import { FooterDataProps } from "./types";
+import { FooterDataProps } from "../types/layoutTypes";
 
 export const footerData: FooterDataProps = {
   aboutShopEase: {

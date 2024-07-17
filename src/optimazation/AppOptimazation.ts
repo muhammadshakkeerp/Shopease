@@ -8,7 +8,7 @@ const NestedHoverNavlink = lazy(
   () => import("../components/NestedHoverNavlink")
 );
 const ProductGallery = lazy(() => import("../pages/ProductGallery"));
-const ProductDatails = lazy(() => import("../components/ProductDetails"));
+const ProductDetails = lazy(() => import("../components/ProductDetails"));
 const Checkout = lazy(() => import("../components/Checkout"));
 const PaymentSuccessful = lazy(() => import("../components/PaymentSuccesfull"));
 const ChatBot = lazy(() => import("../components/chatbot/ChatBot"));
@@ -20,7 +20,7 @@ export {
   ProductsGroup,
   NestedHoverNavlink,
   ProductGallery,
-  ProductDatails,
+  ProductDetails,
   Checkout,
   PaymentSuccessful,
   ChatBot,

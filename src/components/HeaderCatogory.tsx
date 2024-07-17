@@ -1,7 +1,7 @@
 import { BiChevronDown } from "react-icons/bi";
 import { FC, useState } from "react";
-import { headerCategories } from "../assets/HeaderCatogoryData";
-import { HeaderCategory, SubCategory } from "../assets/types";
+import { headerCategories } from "../assets/headerCatogoryData";
+import { HeaderCategory, SubCategory } from "../types/layoutTypes";
 import { Link } from "react-router-dom";
 import { RootState } from "../redux/store";
 import { useSelector } from "react-redux";

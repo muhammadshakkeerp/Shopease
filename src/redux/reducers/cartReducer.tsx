@@ -1,5 +1,5 @@
 import { rowProductsData } from "../../assets/globalUtlities";
-import { ProductProps } from "../../types/globalTypes";
+import { ProductProps } from "../../types/productTypes";
 import { CartFunctionType, CartAction } from "../actions/cartActions";
 
 export interface CartState {

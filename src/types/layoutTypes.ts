@@ -1,3 +1,5 @@
+import { ProductProps } from "./productTypes";
+
 type SubItem = {
   name: string;
   id: string;
@@ -32,6 +34,7 @@ type ProductDetailsProps = {
   price: number;
   quantity: number;
   offerAvailable: boolean;
+  cart?:ProductProps[]
 };
 interface FooterDataItem {
   heading: string;

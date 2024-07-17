@@ -3,7 +3,7 @@ import {
   headerMoreBtnData,
   searchIcon,
 } from "../assets/globalUtlities";
-import logo from "/dist/shopeaseLogo.webp";
+import logo from "/imgs/shopeaseLogo.webp";
 import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai";
 import { PiDotsThreeVerticalBold } from "react-icons/pi";

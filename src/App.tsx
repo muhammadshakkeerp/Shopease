@@ -1,15 +1,14 @@
 import { FC, Suspense, useEffect, useState } from "react";
 import { Footer, Header, PopupCard } from "./paths";
 import { Route, Routes } from "react-router-dom";
-import { ProductDetailsProps } from "./assets/types";
 import { useSelector } from "react-redux";
 import { DarkState } from "./redux/store";
-import { Account, Cart, ChatBot, Checkout, Home, NestedHoverNavlink, PaymentSuccessful, ProductDatails, ProductGallery, ProductsGroup } from "./optimazation/AppOptimazation";
+import { Account, Cart, ChatBot, Checkout, Home, NestedHoverNavlink, PaymentSuccessful, ProductGallery, ProductsGroup, ProductDetails } from "./optimazation/AppOptimazation";
+import { ProductProps } from "./types/productTypes";
 
 
-const App: FC<ProductDetailsProps> = () => {
+const App: FC<ProductProps> = () => {
   const [showPopUp, setShowPopUp] = useState(false);
-
   const DarkMode = useSelector((state: { dark: DarkState }) => state?.dark)
   // after 4 sec of initial loading
   useEffect(() => {
@@ -25,6 +24,18 @@ const App: FC<ProductDetailsProps> = () => {
     return () => clearTimeout(timeOut);
   }, []);
 
+
+  const productDetails: ProductProps = {
+    id: 0,
+    title: "",
+    img: "",
+    offerAvailable: false,
+    price: 0,
+    quantity: 0,
+    cart: [],
+    thumbImg: ""
+  }
+
   return (
     <div className={`${DarkMode?.isEnabled ? "dark:bg-darkModeBg text-darkModeText" : "bg-white"} relative`}>
       {showPopUp && <PopupCard setShowPopUp={setShowPopUp} />}
@@ -35,14 +46,8 @@ const App: FC<ProductDetailsProps> = () => {
           <Route
             path="/productDetails/:id"
             element={
-              <ProductDatails
-                id={0}
-                title={""}
-                img={""}
-                offerAvailable={false}
-                price={0}
-                quantity={0}
-                cart={[]}
+              <ProductDetails
+                {...productDetails}
               />
             }
           />

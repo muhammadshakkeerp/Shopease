@@ -19,8 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             img={""}
             offerAvailable={false}
             price={0}
-            quantity={0}
-          />
+            quantity={0} thumbImg={""}          />
         </BrowserRouter>
       </ApolloProvider>
     </Provider>

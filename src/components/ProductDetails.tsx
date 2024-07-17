@@ -2,15 +2,15 @@ import { useState, FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { Link, useParams } from "react-router-dom";
 import { rowProductsData } from "../assets/globalUtlities";
-import { ProductDetailsProps, } from "../assets/types";
+// import { ProductDetailsProps, } from "../types/layoutTypes";
 import { CartState, RootState } from "../redux/store";
-import { ProductProps } from "../types/globalTypes";
+import { ProductProps } from "../types/productTypes";
 import { MdLocalOffer, MdLocationSearching, MdOutlineDelete } from "react-icons/md";
 import { BsHeart } from "react-icons/bs";
 import { RiEditBoxLine } from "react-icons/ri";
 import { addToCart } from "../redux/actions/cartActions";
 
-const ProductDatails: FC<ProductDetailsProps & ProductProps[]> = () => {
+const ProductDetails: FC<ProductProps> = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const darkMode = useSelector((state: RootState) => state?.dark)
@@ -57,12 +57,12 @@ const ProductDatails: FC<ProductDetailsProps & ProductProps[]> = () => {
                     <BsHeart className="" />
                   </span>
                   <div className="fixed w-full md:w-auto bottom-0 md:static md:flex gap-4 justify-center mt-2">
-                    <button className="bg-[#ff9f00] px-6 py-3 tracking-wider font-semibold w-1/2 md:w-auto text-white rounded-lg shadow-md transition duration-300 hover:bg-[#e69100]"
+                    <button type="button" title="click to buy" className="bg-[#ff9f00] px-6 py-3 tracking-wider font-semibold w-1/2 md:w-auto text-white rounded-lg shadow-md transition duration-300 hover:bg-[#e69100]"
                       onClick={() => dispatch(addToCart(item.id))}
                     >
                       Add To Cart
                     </button>
-                    <button className="bg-[#fb641b] px-6 py-3 tracking-wider font-semibold w-1/2 md:w-auto text-white rounded-lg shadow-md transition duration-300 hover:bg-[#e64a19]">
+                    <button type="button" title="click to buy" className="bg-[#fb641b] px-6 py-3 tracking-wider font-semibold w-1/2 md:w-auto text-white rounded-lg shadow-md transition duration-300 hover:bg-[#e64a19]">
                       <Link to={`/productDetails/${item.id}/checkout`} >
                         Buy Now
 
@@ -208,7 +208,7 @@ const ProductDatails: FC<ProductDetailsProps & ProductProps[]> = () => {
               onChange={(e) => setUserReview(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md outline-none focus:border-primary"
             />
-            <button
+            <button type="submit"
               onClick={handleReviewSubmit}
               className="mt-2 px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors duration-300"
             >
@@ -222,8 +222,8 @@ const ProductDatails: FC<ProductDetailsProps & ProductProps[]> = () => {
             reviews.map((review, index) => (
               <div key={index} className="border-b border-gray-200 p-4 flex justify-between">
                 <p className="text-sm">{review}</p>
-                <span><button title="click to edit"><RiEditBoxLine /></button>
-                  <button title="click to delete"><MdOutlineDelete /></button></span>
+                <span><button type="button" title="click to edit"><RiEditBoxLine /></button>
+                  <button type="button" title="click to delete"><MdOutlineDelete /></button></span>
               </div>
             ))
           )}
@@ -236,4 +236,4 @@ const ProductDatails: FC<ProductDetailsProps & ProductProps[]> = () => {
   );
 };
 
-export default ProductDatails 
+export default ProductDetails 

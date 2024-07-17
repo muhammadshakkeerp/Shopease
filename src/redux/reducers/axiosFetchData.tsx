@@ -28,6 +28,7 @@ export const fetchProductData = createAsyncThunk("product/fetchData", async () =
         ])
 
     const _products = productsResponse.data.products
+    console.log(_products)
     const categories = categoriesResponse.data
 
     const newCategoryMap: CategoryMap = {};

@@ -14,7 +14,7 @@ Before getting started, ensure you have Node.js and npm installed on your machin
 
 ```bash
 # Clone the repository
-git clone https://github.com/MuhammadShakkeer2030/ShopEase_clone.git
+https://github.com/muhammadshakkeerp/Shopease.git
 
 # Navigate to the project directory
 cd ShopEase_clone

@@ -5,6 +5,7 @@ on:
     branches:
       - main
       -  feature/Account
+      -  fix/netlify
 
 jobs:
   deploy:

@@ -22,12 +22,11 @@ const initialState: AppState = {
 }
 
 export const fetchProductData = createAsyncThunk("product/fetchData", async () => {
-    const [productsResponse, categoriesResponse] = await Promise.all(
+    const [, categoriesResponse] = await Promise.all(
         [axios.get<{ products: Product[] }>('https://dummyjson.com/products'),
         axios.get<string[]>('https://dummyjson.com/products')
         ])
 
-    const _products = productsResponse.data.products
     const categories = categoriesResponse.data
 
     const newCategoryMap: CategoryMap = {};

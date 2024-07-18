@@ -1,6 +1,6 @@
 import { CustomProductsRows } from "./components/CustomProductsRows";
 import { Header } from "./components/Header";
-import { HeaderCatogory } from "./components/HeaderCatogory";
+import { HeaderCatogory } from "./components/HeaderCategory";
 import { HomeBanner } from "./components/HomeBanner";
 import { HomeSlider } from "./components/HomeSlider";
 import { Offer } from "./components/Offer";

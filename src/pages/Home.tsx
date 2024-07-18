@@ -1,5 +1,5 @@
 import { FC, } from "react";
-import { HeaderCategory } from "../assets/types";
+import { HeaderCategory } from "../types/layoutTypes";
 import {
   Ad,
   CustomProductsRows,

@@ -1,10 +1,10 @@
 import { BiChevronDown } from "react-icons/bi";
 import { FC, useState } from "react";
-import { headerCategories } from "../assets/HeaderCatogoryData";
-import { HeaderCategory, SubCategory } from "../assets/types";
+import { headerCategories } from "../assets/headerCategoryData";
 import { Link } from "react-router-dom";
 import { RootState } from "../redux/store";
 import { useSelector } from "react-redux";
+import { HeaderCategory, SubCategory } from "../types/layoutTypes";
 
 interface headerCategoriesProps {
   headerCategories: HeaderCategory[]
@@ -30,7 +30,7 @@ export const HeaderCatogory: FC<headerCategoriesProps> = () => {
     let foundSubCategory: SubCategory[] | undefined;
     if (categoryName) {
       const foundCategory = headerCategories.find(
-        (item) => item.title === categoryName
+        (item: HeaderCategory) => item.title === categoryName
       );
       if (foundCategory && foundCategory.subCategories) {
         foundSubCategory = foundCategory.subCategories;

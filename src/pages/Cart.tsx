@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import { RowProductsProps } from "../assets/types";
+import { RowProductsProps } from "../types/layoutTypes";
 import { removeToCart } from "../redux/actions/cartActions";
 
 type CartProps = {

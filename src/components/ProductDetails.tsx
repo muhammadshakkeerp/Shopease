@@ -2,7 +2,6 @@ import { useState, FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { Link, useParams } from "react-router-dom";
 import { rowProductsData } from "../assets/globalUtlities";
-import { ProductDetailsProps, } from "../assets/types";
 import { CartState, RootState } from "../redux/store";
 import { ProductProps } from "../types/globalTypes";
 import { MdLocalOffer, MdLocationSearching, MdOutlineDelete } from "react-icons/md";
@@ -10,7 +9,7 @@ import { BsHeart } from "react-icons/bs";
 import { RiEditBoxLine } from "react-icons/ri";
 import { addToCart } from "../redux/actions/cartActions";
 
-const ProductDatails: FC<ProductDetailsProps & ProductProps[]> = () => {
+const ProductDatails: FC<ProductProps> = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const darkMode = useSelector((state: RootState) => state?.dark)

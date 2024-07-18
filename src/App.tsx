@@ -1,7 +1,7 @@
 import { FC, Suspense, useEffect, useState } from "react";
 import { Footer, Header, PopupCard } from "./paths";
 import { Route, Routes } from "react-router-dom";
-import { ProductDetailsProps } from "./assets/types";
+import { ProductDetailsProps } from "./types/layoutTypes";
 import { useSelector } from "react-redux";
 import { DarkState } from "./redux/store";
 import { Account, Cart, ChatBot, Checkout, Home, NestedHoverNavlink, PaymentSuccessful, ProductDatails, ProductGallery, ProductsGroup } from "./optimazation/AppOptimazation";
@@ -42,8 +42,7 @@ const App: FC<ProductDetailsProps> = () => {
                 offerAvailable={false}
                 price={0}
                 quantity={0}
-                cart={[]}
-              />
+                cart={[]} thumbImg={""} />
             }
           />
           <Route path="/productDetails/:id/checkout" element={<Checkout />}></Route>

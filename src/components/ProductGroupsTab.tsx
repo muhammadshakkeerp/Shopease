@@ -1,4 +1,4 @@
-import { headerCategories } from "../assets/HeaderCatogoryData"
+import { headerCategories } from "../assets/headerCategoryData"
 
 export const ProductGroupsTab = () => {
     return (

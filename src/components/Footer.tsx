@@ -1,6 +1,6 @@
 import React from "react";
 import { footerData, footerLinks } from "../assets/footerUtility";
-import { FooterDataProps } from "../assets/types";
+import { FooterDataProps } from "../types/layoutTypes";
 import { Link } from "react-router-dom";
 
 export const Footer: React.FC<FooterDataProps> = () => {

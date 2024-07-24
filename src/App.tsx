@@ -7,7 +7,7 @@ import { Account, Cart, ChatBot, Checkout, Home, NestedHoverNavlink, PaymentSucc
 import { ProductProps } from "./types/productTypes";
 
 
-const App: FC<ProductProps> = () => {
+const App: FC = () => {
   const [showPopUp, setShowPopUp] = useState(false);
   const DarkMode = useSelector((state: { dark: DarkState }) => state?.dark)
   // after 4 sec of initial loading
@@ -47,8 +47,7 @@ const App: FC<ProductProps> = () => {
             path="/productDetails/:id"
             element={
               <ProductDetails
-                {...productDetails}
-              />
+                {...productDetails}        />
             }
           />
           <Route path="/productDetails/:id/checkout" element={<Checkout />}></Route>

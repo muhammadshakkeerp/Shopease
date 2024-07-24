@@ -16,8 +16,9 @@ interface RatingProps {
 interface ProductProps {
   id: number;
   title: string | undefined;
-  thumbImg:string;
+  thumbImg: string;
   img: string | undefined;
+  quantity?: number;
   price: number;
   quantity?:number;
   offerAvailable: boolean;

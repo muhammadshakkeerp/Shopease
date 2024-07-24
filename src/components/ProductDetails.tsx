@@ -10,8 +10,8 @@ import { BsHeart } from "react-icons/bs";
 import { RiEditBoxLine } from "react-icons/ri";
 import { addToCart } from "../redux/actions/cartActions";
 
-const ProductDetails: FC<ProductProps> = () => {
-  const { id } = useParams();
+const ProductDatails: FC<ProductProps> = () => {
+const { id } = useParams();
   const dispatch = useDispatch();
   const darkMode = useSelector((state: RootState) => state?.dark)
 
@@ -236,4 +236,4 @@ const ProductDetails: FC<ProductProps> = () => {
   );
 };
 
-export default ProductDetails 
+export default  ProductDatails

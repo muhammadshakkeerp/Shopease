@@ -26,9 +26,9 @@ export const fetchProductData = createAsyncThunk("product/fetchData", async () =
         [axios.get<{ products: Product[] }>('https://dummyjson.com/products'),
         axios.get<string[]>('https://dummyjson.com/products')
         ])
-
     const _products = productsResponse.data.products
     console.log(_products)
+
     const categories = categoriesResponse.data
 
     const newCategoryMap: CategoryMap = {};

@@ -1,5 +1,5 @@
 import { BiChevronDown } from "react-icons/bi";
-import { FC, useState } from "react";
+import { FC, useMemo, useState } from "react";
 import { HeaderCategoryProps, SubCategory } from "../types/layoutTypes";
 import { Link } from "react-router-dom";
 import { RootState } from "../redux/store";
@@ -26,20 +26,25 @@ export const HeaderCategory: FC<headerCategoriesProps> = () => {
   const handleMouseLeave = () => {
     setHoveredCategory(null);
   };
-  const handleHoverCategory = (categoryName: string) => {
-    let foundSubCategory: SubCategory[] | undefined;
-    if (categoryName) {
-      const foundCategory = headerCategories.find(
-        (item: HeaderCategoryProps) => item.title === categoryName
-      );
-      if (foundCategory && foundCategory.subCategories) {
-        foundSubCategory = foundCategory.subCategories;
-      } else {
-        foundSubCategory = undefined;
-      }
-    }
-    setFindSubCategory(foundSubCategory);
-  };
+  const handleHoverCategory = useMemo(() => (categoryName: string) => {
+    // let foundSubCategory: SubCategory[] | undefined;
+    // if (categoryName) {
+    //   const foundCategory = headerCategories.find(
+    //     (item: HeaderCategoryProps) => item.title === categoryName
+    //   );
+    //   if (foundCategory && foundCategory.subCategories) {
+    //     foundSubCategory = foundCategory.subCategories;
+    //   } else {
+    //     foundSubCategory = undefined;
+    //   }
+    // }
+    // setFindSubCategory(foundSubCategory);
+    const foundCategory = headerCategories?.find((item: HeaderCategoryProps) => item.title === categoryName)
+
+    // setFindSubCategory(foundCategory?.subCategories || [])
+    return foundCategory?.subCategories || []
+    // console.log(foundCategory?.subCategories)
+  }, [])
 
   return (
     <div className={`flex gap-1 flex-shrink-0 justify-between ${DarkMode?.isEnabled ? "bg-slate-800 text-white" : "bg-[#e4adff] md:bg-white"}  md:gap-3 header-category-img-p  relative`}>
@@ -69,7 +74,7 @@ export const HeaderCategory: FC<headerCategoriesProps> = () => {
                 onMouseEnter={() => handleHoverCategory(category.title)}
                 className={`hidden md:block absolute w-[200px] transform origin-top -translate-y-10 group-hover:-translate-y-0 transition-transform duration-300 top-[120px] left-0 ${DarkMode ? "bg-darkModeBg/90 border border-white/50 text-darkModeText" : "bg-white"} shadow-2xl shadow-slate-700 px-2 py-1 rounded-sm z-50`}
               >
-                {findSubCategory &&
+                {/* {findSubCategory &&
                   Array.from(findSubCategory)?.map((item, subIndex) => (
                     <li
                       key={subIndex}
@@ -77,7 +82,15 @@ export const HeaderCategory: FC<headerCategoriesProps> = () => {
                     >
                       {item?.category}
                     </li>
-                  ))}
+                  ))} */}
+                {handleHoverCategory(category.title)?.map((item, subIndex) => (
+                  <li
+                    key={subIndex}
+                    className="primary-font font-semibold py-2 px-1 cursor-pointer hover:bg-slate-600"
+                  >
+                    {item?.category}
+                  </li>
+                ))}
               </ul>
             )}
           </div>

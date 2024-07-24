@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { offerImgs } from '../assets/globalUtlities';
 
-export  const Offer = () => {
+export const Offer = () => {
   const [numImagesToShow, setNumImagesToShow] = useState(4);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export  const Offer = () => {
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-center flex-shrink-0 flex-row">
+    <div className="flex flex-wrap justify-center flex-shrink-0 flex-row relative z-30">
       {offerImgs?.slice(0, numImagesToShow).map((img, index) => (
         <div key={index} className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 md:p-1">
           <img src={img.img} alt={img.img} className="w-full h-auto " />

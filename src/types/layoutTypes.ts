@@ -11,13 +11,13 @@ export type SubCategory = {
   subItems: SubItem[];
 };
 
-type HeaderCategory = {
+type HeaderCategoryProps = {
   title: string;
   img: string;
   subCategories: SubCategory[];
 };
 
-type headerCategoriesProps = HeaderCategory[];
+type headerCategoriesProps = HeaderCategoryProps[];
 
 type RowProductsProps = {
   id: number;
@@ -50,5 +50,5 @@ export type {
   ProductDetailsProps,
   FooterDataProps,
   headerCategoriesProps,
-  HeaderCategory,
+  HeaderCategoryProps,
 };

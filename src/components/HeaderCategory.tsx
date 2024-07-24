@@ -1,16 +1,16 @@
 import { BiChevronDown } from "react-icons/bi";
 import { FC, useState } from "react";
-import { HeaderCategory, SubCategory } from "../types/layoutTypes";
+import { HeaderCategoryProps, SubCategory } from "../types/layoutTypes";
 import { Link } from "react-router-dom";
 import { RootState } from "../redux/store";
 import { useSelector } from "react-redux";
 import { headerCategories } from "../assets/headerCategoryData";
 
 interface headerCategoriesProps {
-  headerCategories: HeaderCategory[]
+  headerCategories: HeaderCategoryProps[]
 }
 
-export const HeaderCatogory: FC<headerCategoriesProps> = () => {
+export const HeaderCategory: FC<headerCategoriesProps> = () => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
   const [findSubCetogory, setFindSubCetogory] = useState<
     SubCategory[] | undefined
@@ -30,7 +30,7 @@ export const HeaderCatogory: FC<headerCategoriesProps> = () => {
     let foundSubCategory: SubCategory[] | undefined;
     if (categoryName) {
       const foundCategory = headerCategories.find(
-        (item: HeaderCategory) => item.title === categoryName
+        (item: HeaderCategoryProps) => item.title === categoryName
       );
       if (foundCategory && foundCategory.subCategories) {
         foundSubCategory = foundCategory.subCategories;
@@ -42,7 +42,7 @@ export const HeaderCatogory: FC<headerCategoriesProps> = () => {
   };
 
   return (
-    <div className={`flex   gap-1 flex-shrink-0 justify-between ${DarkMode?.isEnabled ? "bg-slate-800 text-white" : "bg-[#e4adff] md:bg-white"}  md:gap-3 header-category-img-p  relative`}>
+    <div className={`flex gap-1 flex-shrink-0 justify-between ${DarkMode?.isEnabled ? "bg-slate-800 text-white" : "bg-[#e4adff] md:bg-white"}  md:gap-3 header-category-img-p  relative`}>
       {headerCategories?.map((category, index) => (
         <Link to="/productsGroup" key={index}>
           <div

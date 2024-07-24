@@ -12,7 +12,7 @@ interface headerCategoriesProps {
 
 export const HeaderCategory: FC<headerCategoriesProps> = () => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
-  const [findSubCetogory, setFindSubCetogory] = useState<
+  const [findSubCategory, setFindSubCategory] = useState<
     SubCategory[] | undefined
   >([]);
 
@@ -38,7 +38,7 @@ export const HeaderCategory: FC<headerCategoriesProps> = () => {
         foundSubCategory = undefined;
       }
     }
-    setFindSubCetogory(foundSubCategory);
+    setFindSubCategory(foundSubCategory);
   };
 
   return (
@@ -69,8 +69,8 @@ export const HeaderCategory: FC<headerCategoriesProps> = () => {
                 onMouseEnter={() => handleHoverCategory(category.title)}
                 className={`hidden md:block absolute w-[200px] transform origin-top -translate-y-10 group-hover:-translate-y-0 transition-transform duration-300 top-[120px] left-0 ${DarkMode ? "bg-darkModeBg/90 border border-white/50 text-darkModeText" : "bg-white"} shadow-2xl shadow-slate-700 px-2 py-1 rounded-sm z-50`}
               >
-                {findSubCetogory &&
-                  Array.from(findSubCetogory)?.map((item, subIndex) => (
+                {findSubCategory &&
+                  Array.from(findSubCategory)?.map((item, subIndex) => (
                     <li
                       key={subIndex}
                       className="primary-font font-semibold py-2 px-1 cursor-pointer hover:bg-slate-600"

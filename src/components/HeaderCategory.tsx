@@ -1,6 +1,6 @@
 import { BiChevronDown } from "react-icons/bi";
 import { FC, useMemo, useState } from "react";
-import { HeaderCategoryProps, SubCategory } from "../types/layoutTypes";
+import { HeaderCategoryProps } from "../types/layoutTypes";
 import { Link } from "react-router-dom";
 import { RootState } from "../redux/store";
 import { useSelector } from "react-redux";
@@ -12,9 +12,9 @@ interface headerCategoriesProps {
 
 export const HeaderCategory: FC<headerCategoriesProps> = () => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
-  const [findSubCategory, setFindSubCategory] = useState<
-    SubCategory[] | undefined
-  >([]);
+  // const [findSubCategory, setFindSubCategory] = useState<
+  //   SubCategory[] | undefined
+  // >([]);
 
   // Darkmode
   const DarkMode = useSelector((state: RootState) => state?.dark)

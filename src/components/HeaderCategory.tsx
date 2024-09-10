@@ -27,20 +27,8 @@ export const HeaderCategory: FC<headerCategoriesProps> = () => {
     setHoveredCategory(null);
   };
   const handleHoverCategory = useMemo(() => (categoryName: string) => {
-    // let foundSubCategory: SubCategory[] | undefined;
-    // if (categoryName) {
-    //   const foundCategory = headerCategories.find(
-    //     (item: HeaderCategoryProps) => item.title === categoryName
-    //   );
-    //   if (foundCategory && foundCategory.subCategories) {
-    //     foundSubCategory = foundCategory.subCategories;
-    //   } else {
-    //     foundSubCategory = undefined;
-    //   }
-    // }
     // setFindSubCategory(foundSubCategory);
     const foundCategory = headerCategories?.find((item: HeaderCategoryProps) => item.title === categoryName)
-
     // setFindSubCategory(foundCategory?.subCategories || [])
     return foundCategory?.subCategories || []
     // console.log(foundCategory?.subCategories)

@@ -12,6 +12,8 @@ const HomeSlider = () => {
   const [currentImg, setCurrentImg] = useState(0);
 
   useEffect(() => {
+    // Modulo Operation algorithms used here
+    // Cycling Through Images Using Modulo
     const timer = setInterval(() => {
       // (1+1) % 5 =
       const nextImg = (currentImg + 1) % bannerImgArray.length;

@@ -1,9 +1,9 @@
 import { FC, } from "react";
-import { HeaderCategory } from "../types/layoutTypes";
+import { HeaderCategoryProps } from "../types/layoutTypes";
 import {
   Ad,
   CustomProductsRows,
-  HeaderCatogory,
+  HeaderCategory,
   HomeSlider,
   Offer,
 } from "../paths";
@@ -12,7 +12,7 @@ import { AxiosFetchState } from "../redux/store";
 import { featuredProducts } from "../assets/globalUtlities";
 
 interface headerCategoriesProps {
-  headerCategories: HeaderCategory[],
+  headerCategories: HeaderCategoryProps[],
 
 }
 
@@ -22,7 +22,7 @@ const Home: FC<headerCategoriesProps> = () => {
   return (
     <div>
       <HomeSlider />
-      <HeaderCatogory headerCategories={[]} />
+      <HeaderCategory headerCategories={[]} />
       <Offer />
       <div>
         <CustomProductsRows title={"Popular Products"} starProducts={0} endProducts={12} featuredProducts={undefined} />

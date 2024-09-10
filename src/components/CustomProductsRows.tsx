@@ -64,7 +64,7 @@ const CustomProductsRows: FC<RowProps> = ({ title, endProducts, starProducts }) 
     // e.preventDefault(); // Prevent the default window scroll behavior when using touch events (optional)
   };
   return (
-    <div className={`relative ${darkMode?.isEnabled ? "bg-darkModeBg text-darkModeText" : "bg-white"} m-2 `} onWheel={handleScroll} >
+    <div className={`relative ${darkMode?.isEnabled ? "bg-darkModeBg text-darkModeText" : ""} m-2 `} onWheel={handleScroll} >
       <Link to="/ProductGallery" >
         <button type="button" title="Display More products" onClick={() => setRefreshSite(true)}>
           {

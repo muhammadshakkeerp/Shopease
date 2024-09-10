@@ -37,7 +37,7 @@ const App: FC<ProductProps> = () => {
   }
 
   return (
-    <div className={`${DarkMode?.isEnabled ? "dark:bg-darkModeBg text-darkModeText" : "bg-white"} relative`}>
+    <div className={`${DarkMode?.isEnabled ? "dark:bg-darkModeBg text-darkModeText" : "bg-primaryColor"} relative`}>
       {showPopUp && <PopupCard setShowPopUp={setShowPopUp} />}
       <Header toggleDarkMode={() => { }} />
       <Suspense fallback={<div className="text-center mt-10">Loading...</div>} >

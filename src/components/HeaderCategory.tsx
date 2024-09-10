@@ -35,7 +35,7 @@ export const HeaderCategory: FC<headerCategoriesProps> = () => {
   }, [])
 
   return (
-    <div className={`flex gap-1 flex-shrink-0 justify-between ${DarkMode?.isEnabled ? "bg-slate-800 text-white" : "bg-[#e4adff] md:bg-white"}  md:gap-3 header-category-img-p  relative`}>
+    <div className={`flex gap-1 flex-shrink-0 justify-between ${DarkMode?.isEnabled ? "bg-slate-800 text-white" : ""}  md:gap-3 header-category-img-p  relative`}>
       {headerCategories?.map((category, index) => (
         <Link to="/productsGroup" key={index}>
           <div

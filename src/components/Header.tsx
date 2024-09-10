@@ -41,7 +41,7 @@ export const Header: FC<HeaderProps> = () => {
     dispatch(toggleDarkMode())
   }
   return (
-    <header className={`h-[50px] ${darkMode?.isEnabled ? " bg-darkModeBg text-darkModeText" : "bg-white"} md:h-[66px] flex items-center justify-around   md:flex-row  md:justify-between relative`}>
+    <header className={`h-[50px] ${darkMode?.isEnabled ? " bg-darkModeBg text-darkModeText" : "bg-secondaryColor"} md:h-[66px] flex items-center justify-around   md:flex-row  md:justify-between relative`}>
       {/* Logo */}
       <div className="flex items-center gap-4 md:gap-0 ">
         <button type="button" title="Click to toggle" onClick={() => setToggleMenu(!toggleMenu)}>

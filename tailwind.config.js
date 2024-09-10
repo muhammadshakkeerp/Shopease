@@ -23,7 +23,16 @@ export default {
         lightGray:"#D1D5DB",
         primary:"#2874f0"
       },
-      
+      backgroundImage: {
+        'gradient-primary': 'linear-gradient(to right, var(--tw-gradient-stops))',
+        'gradient-secondary': 'linear-gradient(to bottom, var(--tw-gradient-stops))',
+      },
+      gradientColorStops: theme => ({
+        'primary-start': theme('colors.primaryColor'),
+        'primary-end': theme('colors.secondaryColor'),
+        'dark-start': theme('colors.darkModeBg'),
+        'dark-end': theme('colors.dark'),
+      }),
       
     },
   },

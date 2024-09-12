@@ -6,13 +6,15 @@ export async function fetchProducts(): Promise<Product[]> {
   const response = await fetch(ENDPOINTS.PRODUCTS);
   return response.json();
 }
-export async function fetchProduct(id:number):Promise<Product> {
-    const response = await fetch(ENDPOINTS.PRODUCT(id))
-    return response.json()
+export async function fetchProduct(id: number): Promise<Product> {
+  const response = await fetch(ENDPOINTS.PRODUCT(id));
+  return response.json();
 }
-export async function fetchProductsByCategory(category:string):Promise<Product[]> {
-    const response = await fetch(ENDPOINTS.CATEGORY(category))
-    return response.json()
+export async function fetchProductsByCategory(
+  category: string
+): Promise<Product[]> {
+  const response = await fetch(ENDPOINTS.CATEGORY(category));
+  return response.json();
 }
 // export async function fetchUserCart(): {};
 // export async function fetchUsers(): {};

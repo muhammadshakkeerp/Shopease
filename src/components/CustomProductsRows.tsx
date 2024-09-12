@@ -1,10 +1,6 @@
-import { ProductCard } from "../paths";
-import { AiOutlineRight, rowProductsData } from "../assets/globalUtlities";
-import { Link } from "react-router-dom";
 import { useState, useEffect, useRef, WheelEvent, FC } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import React from "react";
 import { ProductProps } from "../types/productTypes";
 
 interface RowProps {
@@ -60,7 +56,6 @@ const CustomProductsRows: FC<RowProps> = ({ title, endProducts, starProducts }) 
     // console.log(e);
   };
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleScroll = (_e: React.UIEvent<HTMLDivElement>) => {
     // e.preventDefault(); // Prevent the default window scroll behavior when using touch events (optional)
   };
   return (

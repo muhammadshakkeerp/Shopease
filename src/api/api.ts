@@ -9,8 +9,10 @@ export async function fetchProducts(): Promise<Product[]> {
 export async function fetchProduct(id:number):Promise<Product> {
     const response = await fetch(ENDPOINTS.PRODUCT(id))
     return response.json()
-};
-export async function fetchProducts(): {};
-export async function fetchProductsByCategory(): {};
-export async function fetchUserCart(): {};
-export async function fetchUsers(): {};
+}
+export async function fetchProductsByCategory(category:string):Promise<Product[]> {
+    const response = await fetch(ENDPOINTS.CATEGORY(category))
+    return response.json()
+}
+// export async function fetchUserCart(): {};
+// export async function fetchUsers(): {};

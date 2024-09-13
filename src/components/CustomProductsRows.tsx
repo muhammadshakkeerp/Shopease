@@ -1,10 +1,9 @@
 import { ProductCard } from "../paths";
 import { AiOutlineRight, rowProductsData } from "../assets/globalUtlities";
 import { Link } from "react-router-dom";
-import { useState, useEffect, useRef, WheelEvent, FC } from "react";
+import { useState,FC } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import React from "react";
 import { ProductProps } from "../types/productTypes";
 
 interface RowProps {
@@ -20,50 +19,48 @@ const CustomProductsRows: FC<RowProps> = ({ title, endProducts, starProducts }) 
   // refresh window when click home more allow btn 
   const [refreshSite, setRefreshSite] = useState(false)
   // INTERSECTION OBSERVER - LAZY LOADING
-  const [inViewport, setInViewport] = useState(false);
+  // const [inViewport, setInViewport] = useState(false);
 
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: "10px",
-      threshold: .5, // Intersection ratio to trigger the callback
-    };
+  // useEffect(() => {
+  //   const options = {
+  //     root: null,
+  //     rootMargin: "10px",
+  //     threshold: .5, // Intersection ratio to trigger the callback
+  //   };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setInViewport(true);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, options);
+  //   const observer = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         setInViewport(true);
+  //         observer.unobserve(entry.target);
+  //       }
+  //     });
+  //   }, options);
 
-    if (galleryRef.current) {
-      observer.observe(galleryRef.current);
-    }
+  //   if (galleryRef.current) {
+  //     observer.observe(galleryRef.current);
+  //   }
 
-    return () => {
-      if (galleryRef.current) {
-        observer.unobserve(galleryRef.current);
-      }
-    };
-  }, []);
+  //   return () => {
+  //     if (galleryRef.current) {
+  //       observer.unobserve(galleryRef.current);
+  //     }
+  //   };
+  // }, []);
 
   // SCROLLING PRODUCT WHEN MOUSE WHEEL (middle button)
-  const galleryRef = useRef<HTMLDivElement>(null);
-  const handleWheel = (e: WheelEvent<HTMLDivElement>) => {
-    if (galleryRef.current) {
-      console.log(galleryRef.current);
-      galleryRef.current.scrollLeft += e.deltaY;
-      // e.preventDefault();  
-    }
-    // console.log(e);
-  };
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    // e.preventDefault(); // Prevent the default window scroll behavior when using touch events (optional)
-  };
+  // const galleryRef = useRef<HTMLDivElement>(null);
+  // const handleWheel = (e: WheelEvent<HTMLDivElement>) => {
+  //   if (galleryRef.current) {
+  //     console.log(galleryRef.current);
+  //     galleryRef.current.scrollLeft += e.deltaY;
+  //     // e.preventDefault();  
+  //   }
+  //   // console.log(e);
+  // };
+
   return (
-    <div className={`relative ${darkMode?.isEnabled ? "bg-darkModeBg text-darkModeText" : ""} m-2 `} onWheel={handleScroll} >
+    <div className={`relative ${darkMode?.isEnabled ? "bg-darkModeBg text-darkModeText" : ""} m-2 `} >
       <Link to="/ProductGallery" >
         <button type="button" title="Display More products" onClick={() => setRefreshSite(true)}>
           {
@@ -79,11 +76,10 @@ const CustomProductsRows: FC<RowProps> = ({ title, endProducts, starProducts }) 
         style={{
           scrollbarWidth: "thin",
         }}
-        className={`flex justify-between gap-2 w-full overflow-x-auto scroll-smooth  ${inViewport ? "fade-in" : "opacity-0"
-          }`
+        className={`flex justify-between gap-2 w-full overflow-x-auto scroll-smooth`
         }
-        onWheel={handleWheel}
-        ref={galleryRef}
+      // onWheel={handleWheel}
+      // ref={galleryRef}
       >
         {rowProductsData?.slice(starProducts, endProducts).map((product, index) => (
           <ProductCard

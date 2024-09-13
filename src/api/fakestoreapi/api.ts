@@ -1,7 +1,7 @@
 import { ENDPOINTS } from "./endpoints";
 import { Product } from "./types";
 
-// https://claude.site/artifacts/fc5422b0-0df6-4dee-8102-74a083d0c50c
+// https://claude.ai/chat/bde7c898-4f10-47c3-a823-f20f8b2b4448
 export async function fetchProducts(): Promise<Product[]> {
   const response = await fetch(ENDPOINTS.PRODUCTS);
   return response.json();
